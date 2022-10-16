@@ -9,6 +9,7 @@ DROP TABLE AcuerdosCompra;
 DROP TABLE Pedido;
 COMMIT;
 
+--Listo
 CREATE TABLE Productos
 (
     codigo numeric(10),
@@ -38,6 +39,7 @@ CREATE TABLE Productos
     CHECK (categoriaAlmacenamiento is not null)
 );
 
+--Listo
 CREATE TABLE Sucursales
 (
     ciudad varchar(20),
@@ -51,6 +53,7 @@ CREATE TABLE Sucursales
 );
 COMMIT;
 
+--FaltaConectarSucursal
 CREATE TABLE Proveedores
 (
     nit numeric(10),
@@ -63,6 +66,7 @@ CREATE TABLE Proveedores
 );
 COMMIT;
 
+--TODO
 CREATE TABLE AcuerdosCompra
 ( 
     ciudadSucursal, direccionSucursal,
@@ -79,6 +83,7 @@ CREATE TABLE AcuerdosCompra
 );
 COMMIT;
 
+--TODO
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
@@ -101,6 +106,7 @@ CREATE TABLE Pedidos
 );
 COMMIT;
 
+--Listo
 CREATE TABLE Bodegas
 (
     codigo numeric(10),
@@ -115,6 +121,7 @@ CREATE TABLE Bodegas
 );
 COMMIT;
 
+--Listo
 CREATE TABLE Estantes
 (
     codigo numeric(10),
@@ -131,6 +138,7 @@ CREATE TABLE Estantes
 );
 COMMIT;
 
+--TODO
 CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
@@ -145,7 +153,7 @@ CREATE TABLE EnDisplay
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
 COMMIT;
-
+--TODO
 CREATE TABLE Compras
 (
    codigo numeric(10),
@@ -156,6 +164,7 @@ CREATE TABLE Compras
 );
 COMMIT;
 
+--TODO
 CREATE TABLE CantProductosComprados
 (
    compra REFERENCES Compras,
@@ -167,6 +176,7 @@ CREATE TABLE CantProductosComprados
 );
 COMMIT;
 
+--TODO
 CREATE TABLE Clientes
 (
    numDocumento numeric(10),
@@ -183,6 +193,7 @@ CREATE TABLE Clientes
 );
 COMMIT;
 
+--TODO
 CREATE TABLE ClientesSucursales
 (
    ciudadSucursal, direccion,
@@ -193,6 +204,7 @@ CREATE TABLE ClientesSucursales
 );
 COMMIT;
 
+--TODO
 CREATE TABLE Usuarios
 (
    numDocumento numeric(10),
