@@ -1,0 +1,13 @@
+{
+	"title": "Nombres de las tablas de Parranderos Uniandes para la aplicación B",
+	"unidadPersistencia": "Parranderos",
+	"tablas":
+	[
+		"B_Superandes_sequence",
+		"B_SUCURSALES",
+		"B_PRODUCTOS",
+		"B_PROVEEDORES",
+		"B_BODEGAS",
+		"B_ESTANTES"
+	]
+}

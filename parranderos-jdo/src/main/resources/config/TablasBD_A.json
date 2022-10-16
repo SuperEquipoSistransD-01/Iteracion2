@@ -1,0 +1,13 @@
+{
+	"title": "Nombres de las tablas de Superandes para la aplicación A",
+	"unidadPersistencia": "Parranderos",
+	"tablas":
+	[
+		"Superandes_sequence",
+		"SUCURSALES",
+		"PRODUCTOS",
+		"PROVEEDORES",
+		"BODEGAS",
+		"ESTANTES"
+	]
+}
