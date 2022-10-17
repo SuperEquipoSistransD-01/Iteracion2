@@ -9,7 +9,7 @@ DROP TABLE AcuerdosCompra;
 DROP TABLE Pedido;
 COMMIT;
 
---Listo
+--Falta conectar Sucursal
 CREATE TABLE Productos
 (
     codigo numeric(10),
@@ -66,7 +66,7 @@ CREATE TABLE Proveedores
 );
 COMMIT;
 
---TODO
+--TODO Trombilu
 CREATE TABLE AcuerdosCompra
 ( 
     ciudadSucursal, direccionSucursal,
@@ -83,7 +83,7 @@ CREATE TABLE AcuerdosCompra
 );
 COMMIT;
 
---TODO
+--TODO David
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
@@ -138,7 +138,7 @@ CREATE TABLE Estantes
 );
 COMMIT;
 
---TODO
+--TODO Trombilu
 CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
@@ -153,7 +153,7 @@ CREATE TABLE EnDisplay
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
 COMMIT;
---TODO
+--TODO David
 CREATE TABLE Compras
 (
    codigo numeric(10),
@@ -164,7 +164,7 @@ CREATE TABLE Compras
 );
 COMMIT;
 
---TODO
+--TODO Trombilu
 CREATE TABLE CantProductosComprados
 (
    compra REFERENCES Compras,
@@ -176,7 +176,7 @@ CREATE TABLE CantProductosComprados
 );
 COMMIT;
 
---TODO
+--TODO David
 CREATE TABLE Clientes
 (
    numDocumento numeric(10),
@@ -193,7 +193,7 @@ CREATE TABLE Clientes
 );
 COMMIT;
 
---TODO
+--TODO Trombilu
 CREATE TABLE ClientesSucursales
 (
    ciudadSucursal, direccion,
@@ -204,7 +204,7 @@ CREATE TABLE ClientesSucursales
 );
 COMMIT;
 
---TODO
+--TODO David
 CREATE TABLE Usuarios
 (
    numDocumento numeric(10),
