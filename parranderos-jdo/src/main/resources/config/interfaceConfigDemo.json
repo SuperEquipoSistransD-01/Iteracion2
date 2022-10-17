@@ -50,6 +50,15 @@
 				}
 			]
 		},
+			{ "menuTitle": "Acuerdos de Compra",
+			  "options":
+				[
+					{
+						"label": "Adicionar Acuerdo de Compra",
+						"event": "adicionarAcuerdoCompra" 
+					}
+				]
+		},
 		{ "menuTitle": "Documentación",
 		  "options":
 			[

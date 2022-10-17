@@ -76,7 +76,4 @@ class SQLSucursal
         return (long) q.executeUnique();
 	}
 
-
 }
-
-//Hola Daveeeee :b
