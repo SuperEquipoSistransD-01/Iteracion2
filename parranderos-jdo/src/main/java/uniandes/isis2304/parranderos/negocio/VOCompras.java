@@ -1,10 +1,12 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import oracle.sql.DATE;
+import java.sql.Timestamp;
+
+
 
 public interface VOCompras {
 	public long getCodigo();
 	
-	public DATE getFecha();
-
+	public Timestamp getFecha();
+ 
 }

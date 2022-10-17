@@ -10,6 +10,7 @@
 		"BODEGAS",
 		"ESTANTES",
 		"PEDIDOS",
-		"COMPRAS"
+		"COMPRAS",
+		"CLIENTES"
 	]
 }

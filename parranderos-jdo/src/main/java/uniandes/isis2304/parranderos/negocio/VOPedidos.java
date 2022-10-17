@@ -1,6 +1,6 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import oracle.sql.DATE;
+import java.sql.Timestamp;;
 
 public interface VOPedidos {
 	public long getCodigo();
@@ -13,5 +13,5 @@ public interface VOPedidos {
 	public long getDiasDesdePedido();
 	public long getVolumenProducto();
 	public long getDiasParaEntrega();
-	public DATE getFechaPedido();
+	public Timestamp getFechaPedido();
 }

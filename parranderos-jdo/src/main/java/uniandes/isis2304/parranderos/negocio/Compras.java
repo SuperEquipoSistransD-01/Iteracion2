@@ -1,16 +1,18 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import oracle.sql.DATE;
+import java.sql.Timestamp;
+
+
 
 public class Compras implements VOCompras{
 	private long codigo;
-	private DATE fecha ;
+	private Timestamp fecha ;
 	
 	public Compras() {
 		this.setCodigo(0);
 		this.setFecha(fecha);
 	}
-	public Compras(long codigo, DATE fecha) {
+	public Compras(long codigo, Timestamp fecha) {
 		this.setCodigo(codigo);
 		this.setFecha(fecha);
 	}
@@ -20,10 +22,10 @@ public class Compras implements VOCompras{
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
-	public DATE getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
-	public void setFecha(DATE fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

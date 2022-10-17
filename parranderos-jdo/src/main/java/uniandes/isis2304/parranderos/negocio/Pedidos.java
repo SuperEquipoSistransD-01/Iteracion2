@@ -2,7 +2,7 @@ package uniandes.isis2304.parranderos.negocio;
 
 
 
-import oracle.sql.DATE;
+import java.sql.Timestamp;
 
 public class Pedidos implements VOPedidos{
     private long codigo;
@@ -10,7 +10,7 @@ public class Pedidos implements VOPedidos{
     private String direccionSucursal; 
     private long proveedor;
     private long producto;
-    private DATE fechaPedido;
+    private Timestamp fechaPedido;
     private long diasDesdePedido;
     private long volumenProducto;
     private long diasParaEntrega;
@@ -32,7 +32,7 @@ public class Pedidos implements VOPedidos{
     String direccionSucursal, 
     long proveedor,
     long producto,
-    DATE fechaPedido,
+    Timestamp fechaPedido,
     long diasDesdePedido,
     long volumenProducto,
     long diasParaEntrega) {
@@ -95,10 +95,10 @@ public class Pedidos implements VOPedidos{
 	public void setDiasParaEntrega(long diasParaEntrega) {
 		this.diasParaEntrega = diasParaEntrega;
 	}
-	public DATE getFechaPedido() {
+	public Timestamp getFechaPedido() {
 		return fechaPedido;
 	}
-	public void setFechaPedido(DATE fechaPedido) {
+	public void setFechaPedido(Timestamp fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
 
