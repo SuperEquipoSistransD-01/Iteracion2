@@ -78,12 +78,12 @@ CREATE TABLE AcuerdosCompra
     
     PRIMARY KEY (ciudadSucursal, direccionSucursal, proveedor, producto),
     FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
-    CHECK (precioCompraProducto > 0),
-    CHECK (precioVentaProducto > 0)
+    CHECK (precioCompraProducto is not null and precioCompraProducto > 0),
+    CHECK (precioVentaProducto is not null and precioVentaProducto > 0)
 );
 COMMIT;
 
---TODO David
+--Listo David
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
