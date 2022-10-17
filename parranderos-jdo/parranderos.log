@@ -256,3 +256,63 @@ ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
 15:52:58,291 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
 15:59:49,576 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
 15:59:50,514 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: uniandes.isis2304.parranderos.negocio.ClienteSucursal@589a1919 tuplas insertadas
+17:59:09,833 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:59:09,834 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:59:09,853 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:05:40,722 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:05:40,723 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:05:40,742 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:05:57,633 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:06:52,987 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:06:52,987 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:06:53,010 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:07:05,410 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:07:55,983 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:07:55,983 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:07:56,002 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:08:12,094 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:09:10,026 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:09:10,027 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:09:10,047 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:09:22,290 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:09:53,547 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:09:53,548 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:09:53,576 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:10:03,742 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:11:34,717 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:11:34,717 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:11:34,742 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:11:48,320 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:12:21,108 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:12:21,108 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:12:21,129 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:12:32,009 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:13:10,897 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:13:10,898 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:13:10,917 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:13:23,177 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:13:56,049 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:13:56,050 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:13:56,072 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:14:07,851 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:17:10,784 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:17:10,785 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:17:10,808 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:17:21,947 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:17:42,041 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:17:42,042 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:17:42,067 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:17:52,298 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:24:01,962 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:24:01,963 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:24:01,983 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:24:26,917 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:30:08,213 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:30:08,214 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:30:08,236 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:30:28,989 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:31:32,813 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:31:32,814 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:31:32,839 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:31:44,895 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [10]
+18:31:45,013 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Obtenido usuario: [uniandes.isis2304.parranderos.negocio.Usuarios@1c379bf7]

@@ -157,6 +157,13 @@ public class SuperAndes
 		return resp;
 	}
 	
+	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
+		log.info("Iniciando sesión del usuario ["+numDocumento+"]");
+		List<Usuarios> resp = pp.obtenerUsuario(numDocumento, clave);
+		log.info ("Obtenido usuario: " + resp);
+		return resp;
+	}
+	
 
 	/* ****************************************************************
 	 * 			Métodos para administración

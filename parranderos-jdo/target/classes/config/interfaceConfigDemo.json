@@ -5,6 +5,15 @@
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
+		{ "menuTitle": "Perfil",
+		  "options":
+			[
+				{
+					"label": "Iniciar Sesion",
+					"event": "iniciarSesion"
+				}
+			]
+		},
 		{ "menuTitle": "Sucursales",
 		  "options":
 			[
@@ -59,6 +68,29 @@
 					}
 				]
 		},
+			{ "menuTitle": "Clientes",
+			  "options":
+				[
+					{
+						"label": "Registrar un nuevo cliente",
+						"event": "registrarCliente" 
+					},
+					{
+						"label": "Registrar un cliente a una sucursal",
+						"event": "registrarClienteSucursal" 
+					}
+				]
+		},
+		{ "menuTitle": "Usuarios",
+			  "options":
+				[
+					{
+						"label": "Registrar un nuevo usuario",
+						"event": "registrarUsuario" 
+					}
+				]
+		},
+		
 		{ "menuTitle": "Documentación",
 		  "options":
 			[

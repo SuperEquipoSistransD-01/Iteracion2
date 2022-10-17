@@ -49,6 +49,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 import uniandes.isis2304.parranderos.interfazApp.PanelDatos;
 import uniandes.isis2304.parranderos.negocio.SuperAndes;
+import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.VOBodega;
 import uniandes.isis2304.parranderos.negocio.VOClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.VOClientes;
@@ -56,6 +57,7 @@ import uniandes.isis2304.parranderos.negocio.VOEstante;
 import uniandes.isis2304.parranderos.negocio.VOProductos;
 import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
+import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 
 
@@ -543,6 +545,42 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+    
+    public void iniciarSesion( )
+    {
+    	try 
+    	{
+    		long numDocumento = Long.parseLong(JOptionPane.showInputDialog (this, "Ingrése su número de documento", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String clave = JOptionPane.showInputDialog (this, "Ingrese su contraseña", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		    		
+    		if (numDocumento != 0 && clave != null)
+    		{
+    			System.out.println("PrimerPunto");
+        		List<Usuarios> tb = parranderos.obtenerUsuario(numDocumento, clave);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo iniciar sesion");
+        		}
+        		String resultado = "En iniciarSesion\n\n";
+        		resultado += "Sesion exitosamente iniciada: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    			System.out.println(tb);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    
     
    
 	/* ****************************************************************

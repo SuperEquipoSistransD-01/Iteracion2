@@ -40,6 +40,7 @@ import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
+import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 
@@ -114,6 +115,8 @@ public class PersistenciaParranderos
 	
 	private SQLClienteSucursal sqlClienteSucursal;
 	
+	private SQLUsuarios sqlUsuarios;
+	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -139,6 +142,7 @@ public class PersistenciaParranderos
 		tablas.add ("SUCURSALES");
 		tablas.add ("CLIENTES");
 		tablas.add ("CLIENTESSUCURSALES");
+		tablas.add("USUARIOS");
 }
 
 	/**
@@ -223,81 +227,11 @@ public class PersistenciaParranderos
 		sqlAcuerdosCompra = new SQLAcuerdosCompra(this);
 		sqlClientes = new SQLClientes(this);
 		sqlClienteSucursal = new SQLClienteSucursal(this);
+		sqlUsuarios = new SQLUsuarios(this);
 	}
 
 	/**
 	 * @return La cadena de caracteres con el nombre del secuenciador de parranderos
-	 */
-	public String darSeqParranderos ()
-	{
-		return tablas.get (0);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de TipoBebida de parranderos
-	 */
-	public String darTablaTipoBebida ()
-	{
-		return tablas.get (1);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Bebida de parranderos
-	 */
-	public String darTablaBebida ()
-	{
-		return tablas.get (2);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Bar de parranderos
-	 */
-	public String darTablaBar ()
-	{
-		return tablas.get (3);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Bebedor de parranderos
-	 */
-	public String darTablaBebedor ()
-	{
-		return tablas.get (4);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Gustan de parranderos
-	 */
-	public String darTablaGustan ()
-	{
-		return tablas.get (5);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Sirven de parranderos
-	 */
-	public String darTablaSirven ()
-	{
-		return tablas.get (6);
-	}
-
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Visitan de parranderos
-	 */
-	public String darTablaVisitan ()
-	{
-		return tablas.get (7);
-	}
-	
-	public String darTablaSucursal ()
-	{
-		return tablas.get (8);
-	}
-	
-	/**
-	 * Transacción para el generador de secuencia de Parranderos
-	 * Adiciona entradas al log de la aplicación
-	 * @return El siguiente número del secuenciador de Parranderos
 	 */
 	private long nextval ()
 	{
@@ -626,5 +560,9 @@ public class PersistenciaParranderos
             }
             pm.close();
         }
+	}
+	
+	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
+		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
  }

@@ -5,6 +5,15 @@
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
+		{ "menuTitle": "Perfil",
+		  "options":
+			[
+				{
+					"label": "Iniciar Sesion",
+					"event": "iniciarSesion"
+				}
+			]
+		},
 		{ "menuTitle": "Sucursales",
 		  "options":
 			[
@@ -72,6 +81,16 @@
 					}
 				]
 		},
+		{ "menuTitle": "Usuarios",
+			  "options":
+				[
+					{
+						"label": "Registrar un nuevo usuario",
+						"event": "registrarUsuario" 
+					}
+				]
+		},
+		
 		{ "menuTitle": "Documentación",
 		  "options":
 			[

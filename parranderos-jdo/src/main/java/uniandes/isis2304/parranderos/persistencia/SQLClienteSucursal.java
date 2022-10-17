@@ -38,10 +38,8 @@ public class SQLClienteSucursal {
 	
 	public long registrarClienteSucursal (PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long cliente) 
 	{
-		System.out.println("punto1");
         Query q = pm.newQuery(SQL, "INSERT INTO ClientesSucursales (ciudadSucursal, direccionSucursal, cliente) VALUES (?,?,?)");
         q.setParameters(ciudadSucursal, direccionSucursal, cliente);
-        System.out.println("punto2");
         return (long) q.executeUnique();
 	}
 
