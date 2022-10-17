@@ -8,7 +8,7 @@ public interface VOPedidos {
 	public String getCiudadSucursal();
 	
 	public String getDireccionSucursal();
-	public String getProveedor();
+	public long getProveedor();
 	public long getProducto();
 	public long getDiasDesdePedido();
 	public long getVolumenProducto();

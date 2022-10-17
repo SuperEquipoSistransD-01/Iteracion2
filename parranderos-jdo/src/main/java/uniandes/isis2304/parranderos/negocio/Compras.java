@@ -5,6 +5,15 @@ import oracle.sql.DATE;
 public class Compras implements VOCompras{
 	private long codigo;
 	private DATE fecha ;
+	
+	public Compras() {
+		this.setCodigo(0);
+		this.setFecha(fecha);
+	}
+	public Compras(long codigo, DATE fecha) {
+		this.setCodigo(codigo);
+		this.setFecha(fecha);
+	}
 	public long getCodigo() {
 		return codigo;
 	}

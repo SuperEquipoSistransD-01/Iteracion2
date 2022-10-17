@@ -176,7 +176,7 @@ CREATE TABLE CantProductosComprados
 );
 COMMIT;
 
---TODO David
+--Listo David
 CREATE TABLE Clientes
 (
    numDocumento numeric(10),

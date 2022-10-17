@@ -8,12 +8,44 @@ public class Pedidos implements VOPedidos{
     private long codigo;
     private String ciudadSucursal;
     private String direccionSucursal; 
-    private String proveedor;
+    private long proveedor;
     private long producto;
     private DATE fechaPedido;
     private long diasDesdePedido;
     private long volumenProducto;
     private long diasParaEntrega;
+    
+    public Pedidos() {
+    	this.setCiudadSucursal("");
+    	this.setCodigo(0);
+    	this.setDiasDesdePedido(0);
+    	this.setDiasParaEntrega(0);
+    	this.setDireccionSucursal("");
+    	this.setFechaPedido(fechaPedido);
+    	this.setProducto(0);
+    	this.setProveedor(0);
+    	this.setVolumenProducto(0);
+    }
+    
+    public Pedidos(long codigo,
+    String ciudadSucursal,
+    String direccionSucursal, 
+    long proveedor,
+    long producto,
+    DATE fechaPedido,
+    long diasDesdePedido,
+    long volumenProducto,
+    long diasParaEntrega) {
+    	this.setCiudadSucursal(ciudadSucursal);
+    	this.setCodigo(codigo);
+    	this.setDiasDesdePedido(diasDesdePedido);
+    	this.setDiasParaEntrega(diasParaEntrega);
+    	this.setDireccionSucursal(direccionSucursal);
+    	this.setFechaPedido(fechaPedido);
+    	this.setProducto(volumenProducto);
+    	this.setProveedor(proveedor);
+    	this.setVolumenProducto(volumenProducto);
+    }
     
 	public long getCodigo() {
 		return codigo;
@@ -33,10 +65,10 @@ public class Pedidos implements VOPedidos{
 	public void setDireccionSucursal(String direccionSucursal) {
 		this.direccionSucursal = direccionSucursal;
 	}
-	public String getProveedor() {
+	public long getProveedor() {
 		return proveedor;
 	}
-	public void setProveedor(String proveedor) {
+	public void setProveedor(long proveedor) {
 		this.proveedor = proveedor;
 	}
 	public long getProducto() {
