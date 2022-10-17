@@ -1,0 +1,214 @@
+00:56:58,249 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+00:56:58,250 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+00:56:58,264 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+00:57:25,074 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando sucursal [exito, carrera 16, bogota, 1000]
+00:57:26,128 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: Sucursal [nombre=exito, direccion=carrera 16 ciudad=bogota area=1000] tuplas insertadas
+00:58:20,875 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [oreos]
+00:58:21,224 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: Producto [codigo=61, nombre=oreos, marca=oreo, precioUnitario=1000, presentacionpaquetes de 4, precioUnidadMedida=1000, cantidadPresentacion4, unidadMedida=gr, volumenEmpaque=2, pesoEmpaque=250, tipoProducto=galletacategoriaAlmacenamientoharinas] tuplas insertadas
+00:59:29,336 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando proveedor [matias]
+00:59:29,381 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(nit, nombre, calificacion) values (?, ?, ?)".
+ORA-02290: restricción de control (ISIS2304D14202220.SYS_C00769052) violada
+
+00:59:29,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: null tuplas insertadas
+00:59:44,368 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando proveedor [matias]
+00:59:44,413 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: uniandes.isis2304.parranderos.negocio.Proveedores@5ddee191 tuplas insertadas
+01:10:07,491 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:10:07,492 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:10:07,506 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:10:51,890 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1000]
+01:10:51,988 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:10:51,990 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: null tuplas insertadas
+01:13:34,342 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:13:34,343 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:13:34,356 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:14:13,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1000]
+01:14:13,485 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:14:13,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: null tuplas insertadas
+01:19:34,401 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:19:34,402 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:19:34,416 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:20:09,619 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [12]
+01:20:09,695 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:20:09,696 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: null tuplas insertadas
+01:25:24,795 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:25:24,796 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:25:24,811 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:26:09,710 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [100]
+01:26:09,794 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:26:09,796 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+01:32:34,036 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:32:34,036 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:32:34,054 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:32:54,136 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [5]
+01:32:54,159 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:32:54,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+01:38:59,662 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:38:59,663 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:38:59,679 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:39:16,966 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1]
+01:39:16,989 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:39:16,991 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+01:41:11,158 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando bodegaCapacidad [7]
+01:41:12,518 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: uniandes.isis2304.parranderos.negocio.Bodega@1676386b tuplas insertadas
+01:43:03,784 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:43:03,785 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:43:03,799 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:43:17,239 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando bodegaCapacidad [3]
+01:43:18,249 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO BODEGAS (codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, volumenLimite) values (?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00769063) violada - clave principal no encontrada
+
+01:43:18,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: null tuplas insertadas
+01:46:08,105 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:46:08,106 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:46:08,123 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:46:17,584 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+01:46:17,609 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:46:17,610 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+01:50:27,844 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:50:27,844 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:50:27,859 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:50:45,695 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+01:50:45,720 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:50:45,722 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+01:56:38,142 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:56:38,142 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:56:38,157 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:56:47,697 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+01:56:47,721 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+01:56:47,723 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:02:34,170 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:02:34,170 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:02:34,184 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:02:44,328 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:02:44,354 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+02:02:44,356 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:04:32,314 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:04:32,315 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:04:32,329 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:04:39,305 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [4]
+02:04:39,329 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+02:04:39,331 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:07:02,336 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:07:02,337 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:07:02,351 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:07:10,930 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:07:10,961 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: uniandes.isis2304.parranderos.negocio.AcuerdoCompra@600ec625 tuplas insertadas
+02:08:21,051 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:08:21,051 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:08:21,066 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:08:31,834 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:08:31,857 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(javax.jdo.PersistenceManager, String, String, long, long, long, long, long)" because "this.sqlAcuerdosCompra" is null
+
+02:08:31,859 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:19:38,229 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:19:38,230 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:19:38,246 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:19:48,629 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [3]
+02:19:48,994 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ESTANTES (codigo, ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto) values (?, ?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00769068) violada - clave principal no encontrada
+
+02:19:49,017 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:21:00,583 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:21:00,583 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:21:00,598 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:21:10,103 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1]
+02:21:10,422 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ESTANTES (codigo, ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto) values (?, ?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00769068) violada - clave principal no encontrada
+
+02:21:10,443 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:30:06,156 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:30:06,157 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:30:06,172 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:30:15,381 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:30:15,402 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra()" because "this.sqlAcuerdosCompra" is null
+
+02:30:15,404 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:37:48,040 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:37:48,041 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:37:48,056 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:37:56,539 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:37:56,565 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLAcuerdosCompra.adicionarAcuerdoCompra(long)" because "this.sqlAcuerdosCompra" is null
+
+02:37:56,567 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+02:38:53,221 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:38:53,221 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:38:53,236 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:56:19,126 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:56:19,126 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:56:19,141 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:56:29,223 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+02:56:29,293 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: uniandes.isis2304.parranderos.negocio.AcuerdoCompra@628c68c7 tuplas insertadas
+03:03:43,816 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:03:43,816 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:03:43,833 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:03:51,777 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [8]
+03:03:52,625 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: uniandes.isis2304.parranderos.negocio.AcuerdoCompra@1db42574 tuplas insertadas
+03:08:41,176 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:08:41,177 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:08:41,191 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:09:07,890 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [5]
+03:09:08,351 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:09:08,380 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:10:12,752 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:10:12,753 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:10:12,767 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:10:44,049 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+03:10:44,422 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:10:44,447 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:11:38,726 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:11:38,727 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:11:38,741 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:12:48,438 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:12:48,439 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:12:48,454 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:13:35,864 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+03:13:36,516 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:13:36,552 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:14:08,550 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:14:08,551 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:14:08,566 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:15:07,109 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1000]
+03:15:07,498 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:15:07,526 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:17:19,371 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:17:19,371 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:17:19,386 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:17:37,661 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+03:18:11,483 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:18:11,483 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:18:11,498 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:18:28,285 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+03:18:28,609 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:18:28,645 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:20:32,615 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:20:32,616 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:20:32,631 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:21:07,439 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [7]
+03:21:07,822 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ?, direccionSucursal = ? and proveedor = ? and producto = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+03:21:07,858 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: null tuplas insertadas
+03:25:29,070 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:25:29,071 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:25:29,086 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD

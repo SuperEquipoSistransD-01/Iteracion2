@@ -454,8 +454,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		{    		
         			throw new Exception ("No se pudo crear el acuerdo de compra");
         		}
-        		String resultado = "En adicionarEstante\n\n";
-        		resultado += "Estante adicionada exitosamente: " + tb;
+        		String resultado = "En adicionarAcuerdoCompra\n\n";
+        		resultado += "Acuerdo de Compra adicionada exitosamente: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}

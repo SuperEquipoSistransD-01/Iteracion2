@@ -39,7 +39,6 @@ import javax.jdo.Query;
 		
 		public long adicionarBodega (PersistenceManager pm, long idBodega, String nombreSucursalAsociada, String direccionSucursalAsociada, String categoriaAlmacenamiento, long capacidad) 
 		{
-			
 	        Query q = pm.newQuery(SQL, "INSERT INTO " + "BODEGAS" + "	(codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, volumenLimite) values (?, ?, ?, ?, ?)");
 	        q.setParameters(idBodega, nombreSucursalAsociada, direccionSucursalAsociada, categoriaAlmacenamiento, capacidad);
 	        return (long) q.executeUnique();            

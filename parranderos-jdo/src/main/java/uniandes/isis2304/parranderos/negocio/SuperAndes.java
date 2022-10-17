@@ -139,7 +139,7 @@ public class SuperAndes
 			long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) {
 		log.info("Adicionando PrecioCompraProducto ["+precioCompraProducto+"]");
 		AcuerdoCompra resp = pp.adicionarAcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
-		log.info ("Adicionando Bodega: " + resp + " tuplas insertadas");
+		log.info ("Adicionando Acuerdo de Compra: " + resp + " tuplas insertadas");
 		return resp;
 	}
 

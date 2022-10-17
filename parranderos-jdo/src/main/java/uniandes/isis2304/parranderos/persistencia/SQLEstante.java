@@ -38,6 +38,7 @@ import javax.jdo.Query;
 		
 		public long adicionarEstante (PersistenceManager pm, long idEstante, String nombreSucursalAsociada, String direccionSucursalAsociada, long volumenLimite, long pesoLimite, String tipoProducto) 
 		{
+			System.out.println("Segundo Punto");
 	        Query q = pm.newQuery(SQL, "INSERT INTO " + "ESTANTES" + "	(codigo, ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto) values (?, ?, ?, ?, ?, ?)");
 	        q.setParameters(idEstante, nombreSucursalAsociada, direccionSucursalAsociada, volumenLimite, pesoLimite, tipoProducto);
 	        return (long) q.executeUnique();            

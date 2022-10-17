@@ -1,7 +1,6 @@
 DROP TABLE Productos;
 DROP TABLE Sucursales;
 DROP TABLE Proveedores;
-COMMIT;
 DROP TABLE Productos;
 DROP TABLE Sucursales;
 DROP TABLE Proveedores;
@@ -62,7 +61,7 @@ CREATE TABLE Proveedores
     
     PRIMARY KEY(nit),
     CHECK(nombre is not null),
-    CHECK(10 > calificacion  and calificacion > 0)
+    CHECK(10 => calificacion  and calificacion => 0)
 );
 COMMIT;
 
@@ -92,7 +91,7 @@ CREATE TABLE Pedidos
     diasDesdePedido numeric(3),
     volumenProducto numeric(20,2),
     diasParaEntrega numeric(3),
-    llego numeric(1)
+    llego numeric(1),
     
     PRIMARY KEY (codigo),
     FOREIGN KEY (ciudadSucursal, direccionSucursal, proveedor, producto) REFERENCES AcuerdosCompra,
@@ -160,9 +159,15 @@ CREATE TABLE Compras
 (
    codigo numeric(10),
    fecha date,
+   ciudadSucursal, direccionSucursal,
+   cliente REFERENCES Clientes,
     
     PRIMARY KEY (codigo),
-    CHECK(fecha is not null)
+    FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
+    CHECK(fecha is not null),
+    CHECK(ciudadSucursal is not null),
+    CHECK(direccionSucursal is not null),
+    CHECK(cliente is not null)
 );
 COMMIT;
 

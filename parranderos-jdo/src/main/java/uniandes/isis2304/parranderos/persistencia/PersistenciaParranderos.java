@@ -212,6 +212,7 @@ public class PersistenciaParranderos
 		sqlProveedor = new SQLProveedores(this);
 		sqlBodega = new SQLBodega(this);
 		sqlEstante = new SQLEstante(this);
+		sqlAcuerdosCompra = new SQLAcuerdosCompra(this);
 	}
 
 	/**
@@ -533,9 +534,8 @@ public class PersistenciaParranderos
         {
             tx.begin();            
             System.out.println("Antes de long");
-            long idEstante = nextval ();
             long tuplasInsertadas = sqlAcuerdosCompra.adicionarAcuerdoCompra(pm, ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
-            System.out.println("Antes de commit");
+            System.out.println("Segundo Punto");
             tx.commit();
             System.out.println("Despues de commit");
             log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
@@ -543,7 +543,7 @@ public class PersistenciaParranderos
         }
         catch (Exception e)
         {
-        	System.out.println("LAcosdn");
+        	System.out.println("Excepcion");
 //        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
         	return null;
