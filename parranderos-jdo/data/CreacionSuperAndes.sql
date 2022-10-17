@@ -153,7 +153,7 @@ CREATE TABLE EnDisplay
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
 COMMIT;
---TODO David
+--Listo David
 CREATE TABLE Compras
 (
    codigo numeric(10),

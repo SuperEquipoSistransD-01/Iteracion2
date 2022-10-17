@@ -14,6 +14,7 @@ public class Pedidos implements VOPedidos{
     private long diasDesdePedido;
     private long volumenProducto;
     private long diasParaEntrega;
+    
 	public long getCodigo() {
 		return codigo;
 	}
