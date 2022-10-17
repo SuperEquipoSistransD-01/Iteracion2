@@ -36,11 +36,10 @@ import com.google.gson.JsonObject;
 
 import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Estante;
-
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
-
 import uniandes.isis2304.parranderos.negocio.Sucursal;
+import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 
 
 /**
@@ -106,6 +105,8 @@ public class PersistenciaParranderos
 	private SQLBodega sqlBodega;
 	
 	private SQLEstante sqlEstante;
+	
+	private SQLAcuerdosCompra sqlAcuerdosCompra;
 	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
@@ -506,6 +507,39 @@ public class PersistenciaParranderos
             System.out.println("Despues de commit");
             log.trace ("Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
             return new Estante(idEstante, nombreSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public AcuerdoCompra adicionarAcuerdoCompra(String ciudadSucursal, String direccionSucursal, long proveedor,
+			long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            System.out.println("Antes de long");
+            long idEstante = nextval ();
+            long tuplasInsertadas = sqlAcuerdosCompra.adicionarAcuerdoCompra(pm, ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
+            System.out.println("Antes de commit");
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
+            return new AcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
         }
         catch (Exception e)
         {

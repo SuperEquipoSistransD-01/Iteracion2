@@ -134,6 +134,14 @@ public class SuperAndes
 		log.info ("Adicionando Bodega: " + resp + " tuplas insertadas");
 		return resp;
 	}
+	
+	public VOAcuerdoCompra adicionarAcuerdoCompra(String ciudadSucursal, String direccionSucursal, long proveedor,
+			long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) {
+		log.info("Adicionando PrecioCompraProducto ["+precioCompraProducto+"]");
+		AcuerdoCompra resp = pp.adicionarAcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
+		log.info ("Adicionando Bodega: " + resp + " tuplas insertadas");
+		return resp;
+	}
 
 	/* ****************************************************************
 	 * 			Métodos para administración

@@ -78,12 +78,12 @@ CREATE TABLE AcuerdosCompra
     
     PRIMARY KEY (ciudadSucursal, direccionSucursal, proveedor, producto),
     FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
-    CHECK (precioCompraProducto is not null and precioCompraProducto > 0),
-    CHECK (precioVentaProducto is not null and precioVentaProducto > 0)
+    CHECK (precioCompraProducto > 0),
+    CHECK (precioVentaProducto > 0)
 );
 COMMIT;
 
---Listo David
+--TODO David
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
@@ -92,6 +92,7 @@ CREATE TABLE Pedidos
     diasDesdePedido numeric(3),
     volumenProducto numeric(20,2),
     diasParaEntrega numeric(3),
+    llego numeric(1)
     
     PRIMARY KEY (codigo),
     FOREIGN KEY (ciudadSucursal, direccionSucursal, proveedor, producto) REFERENCES AcuerdosCompra,
@@ -102,7 +103,8 @@ CREATE TABLE Pedidos
     CHECK (fechaPedido is not null),
     CHECK (diasDesdePedido is not null and diasDesdePedido >= 0),
     CHECK (volumenProducto is not null and volumenProducto > 0),
-    CHECK (diasParaEntrega is not null and diasParaEntrega > 0)
+    CHECK (diasParaEntrega is not null and diasParaEntrega > 0),
+    CHECK (llego = 0 or llego = 1)
 );
 COMMIT;
 
@@ -153,7 +155,7 @@ CREATE TABLE EnDisplay
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
 COMMIT;
---Listo David
+--TODO David
 CREATE TABLE Compras
 (
    codigo numeric(10),
@@ -176,7 +178,7 @@ CREATE TABLE CantProductosComprados
 );
 COMMIT;
 
---Listo David
+--TODO David
 CREATE TABLE Clientes
 (
    numDocumento numeric(10),

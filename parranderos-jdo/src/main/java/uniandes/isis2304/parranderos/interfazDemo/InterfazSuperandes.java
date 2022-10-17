@@ -54,6 +54,7 @@ import uniandes.isis2304.parranderos.negocio.VOEstante;
 import uniandes.isis2304.parranderos.negocio.VOProductos;
 import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
+import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 
 
 /**
@@ -415,6 +416,43 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo crear un estante con volumen Limite: "+volumenLimite);
+        		}
+        		String resultado = "En adicionarEstante\n\n";
+        		resultado += "Estante adicionada exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    public void adicionarAcuerdoCompra( )
+    {
+    	try 
+    	{
+    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal = JOptionPane.showInputDialog (this, "Direccion de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		
+    		long proveedor = Long.parseLong(JOptionPane.showInputDialog (this, "Código del proveedor asociado?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Código del producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long precioCompraProducto = Long.parseLong(JOptionPane.showInputDialog (this, "¨Precio de compra acordado para el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long precioVentaProducto = Long.parseLong(JOptionPane.showInputDialog (this, "Precio al que se va a vender el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long nivelReorden = Long.parseLong(JOptionPane.showInputDialog (this, "Nivel de reorden del producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (ciudadSucursal != null && direccionSucursal != null && proveedor != 0 && producto != 0 && precioCompraProducto != 0 && precioVentaProducto != 0 && nivelReorden != 0)
+    		{
+        		VOAcuerdoCompra tb = parranderos.adicionarAcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo crear el acuerdo de compra");
         		}
         		String resultado = "En adicionarEstante\n\n";
         		resultado += "Estante adicionada exitosamente: " + tb;

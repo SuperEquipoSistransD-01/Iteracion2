@@ -10,7 +10,7 @@
 			[
 				{
 					"label": "Adicionar Sucursal",
-					"event": "adicionarSucursal" //antes: adicionarTipoBebida
+					"event": "adicionarSucursal"
 				}
 			]
 		},

@@ -1,6 +1,6 @@
 package uniandes.isis2304.parranderos.negocio;
 
-public class AcuerdoCompra {
+public class AcuerdoCompra implements VOAcuerdoCompra{
 	private String ciudadSucursal; 
 	private String direccionSucursal;
     private long proveedor;
@@ -18,6 +18,18 @@ public class AcuerdoCompra {
     	this.setPrecioVentaProducto(0);
     	this.setProducto(0);
     	this.setProveedor(0);
+    }
+    
+    public AcuerdoCompra(String ciudadSucursal, String direccionSucursal, long proveedor,
+			long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden)
+    {
+    	this.setCiudadSucursal(ciudadSucursal);
+    	this.setDireccionSucursal(direccionSucursal);
+    	this.setNivelReorden(nivelReorden);
+    	this.setPrecioCompraProducto(precioCompraProducto);
+    	this.setPrecioVentaProducto(precioVentaProducto);
+    	this.setProducto(producto);
+    	this.setProveedor(proveedor);
     }
 
 	public String getCiudadSucursal() {
