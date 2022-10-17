@@ -9,8 +9,10 @@
 		"PROVEEDORES",
 		"BODEGAS",
 		"ESTANTES",
+		"ACUERDOSCOMPRA",
 		"PEDIDOS",
 		"COMPRAS",
 		"CLIENTES"
+
 	]
 }
