@@ -212,3 +212,47 @@ ORA-00933: comando SQL no terminado correctamente
 03:25:29,070 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
 03:25:29,071 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
 03:25:29,086 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:25:49,506 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando PrecioCompraProducto [1]
+03:25:50,320 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Acuerdo de Compra: uniandes.isis2304.parranderos.negocio.AcuerdoCompra@3a0eb63b tuplas insertadas
+13:30:31,953 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+13:30:31,954 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+13:30:31,976 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+13:31:15,076 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando numDocumento [1000592166]
+13:31:16,534 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: uniandes.isis2304.parranderos.negocio.Clientes@76d572fc tuplas insertadas
+15:34:01,111 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:34:01,112 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:34:01,133 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:34:28,995 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:34:29,026 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLClienteSucursal.registrarClienteSucursal(javax.jdo.PersistenceManager, String, String, long)" because "this.sqlClienteSucursal" is null
+
+15:34:29,029 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
+15:37:10,327 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:37:10,328 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:37:10,348 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:37:31,507 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:37:31,533 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLClienteSucursal.registrarClienteSucursal(javax.jdo.PersistenceManager, String, String, long)" because "this.sqlClienteSucursal" is null
+
+15:37:31,535 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
+15:40:17,938 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:40:17,939 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:40:17,958 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:40:35,083 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:40:36,615 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ClientesSucursales (ciudadSucursal, direccionSucursal, cliente) VALUES (?,?,?)".
+ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
+
+15:40:36,684 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
+15:47:39,007 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:47:39,062 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ClientesSucursales (ciudadSucursal, direccionSucursal, cliente) VALUES (?,?,?)".
+ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
+
+15:47:39,090 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
+15:51:51,256 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:51:51,256 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:51:51,273 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:52:57,330 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:52:58,256 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ClientesSucursales (ciudadSucursal, direccionSucursal, cliente) VALUES (?,?,?)".
+ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
+
+15:52:58,291 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: null tuplas insertadas
+15:59:49,576 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrando cliente [1000592166]
+15:59:50,514 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Registrado cliente: uniandes.isis2304.parranderos.negocio.ClienteSucursal@589a1919 tuplas insertadas

@@ -1,14 +1,6 @@
-DROP TABLE Productos;
-DROP TABLE Sucursales;
-DROP TABLE Proveedores;
-DROP TABLE Productos;
-DROP TABLE Sucursales;
-DROP TABLE Proveedores;
-DROP TABLE AcuerdosCompra;
-DROP TABLE Pedido;
-COMMIT;
-
 --Falta conectar Sucursal
+--OK
+
 CREATE TABLE Productos
 (
     codigo numeric(10),
@@ -39,6 +31,7 @@ CREATE TABLE Productos
 );
 
 --Listo
+--OK
 CREATE TABLE Sucursales
 (
     ciudad varchar(20),
@@ -53,6 +46,7 @@ CREATE TABLE Sucursales
 COMMIT;
 
 --FaltaConectarSucursal
+--OK
 CREATE TABLE Proveedores
 (
     nit numeric(10),
@@ -61,11 +55,11 @@ CREATE TABLE Proveedores
     
     PRIMARY KEY(nit),
     CHECK(nombre is not null),
-    CHECK(10 => calificacion  and calificacion => 0)
+    CHECK(10 > calificacion  and calificacion > 0)
 );
 COMMIT;
 
---TODO Trombilu
+--OK
 CREATE TABLE AcuerdosCompra
 ( 
     ciudadSucursal, direccionSucursal,
@@ -82,7 +76,7 @@ CREATE TABLE AcuerdosCompra
 );
 COMMIT;
 
---TODO David
+--OK
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
@@ -108,6 +102,7 @@ CREATE TABLE Pedidos
 COMMIT;
 
 --Listo
+--OK
 CREATE TABLE Bodegas
 (
     codigo numeric(10),
@@ -123,6 +118,7 @@ CREATE TABLE Bodegas
 COMMIT;
 
 --Listo
+--OK
 CREATE TABLE Estantes
 (
     codigo numeric(10),
@@ -140,50 +136,39 @@ CREATE TABLE Estantes
 COMMIT;
 
 --TODO Trombilu
+--OK
 CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
-    bodega REFERENCES Bodegas,
+    estante REFERENCES Estantes,
     volumenEnEstante numeric(20,2),
     pesoEnEstante numeric(20,2),
     nivelAbastecimiento numeric(20,2),
     
-    PRIMARY KEY (producto, bodega),
+    PRIMARY KEY (producto, estante),
     CHECK(volumenEnEstante is not null and volumenEnEstante >= 0),
     CHECK(pesoEnEstante is not null and pesoEnEstante >= 0),
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
 COMMIT;
---TODO David
-CREATE TABLE Compras
-(
-   codigo numeric(10),
-   fecha date,
-   ciudadSucursal, direccionSucursal,
-   cliente REFERENCES Clientes,
-    
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
-    CHECK(fecha is not null),
-    CHECK(ciudadSucursal is not null),
-    CHECK(direccionSucursal is not null),
-    CHECK(cliente is not null)
-);
-COMMIT;
 
---TODO Trombilu
-CREATE TABLE CantProductosComprados
+--OK
+CREATE TABLE StockDisponible
 (
-   compra REFERENCES Compras,
-   producto REFERENCES Productos,
-   cantProductos numeric(10,2),
+    producto REFERENCES Productos,
+    bodega REFERENCES Bodegas,
+    volumenEnBodega numeric(20,2),
+    pesoEnBodega numeric(20,2),
     
-    PRIMARY KEY (compra, producto),
-    CHECK(cantProductos is not null and cantProductos > 0)
+    PRIMARY KEY (producto, bodega),
+    CHECK(volumenEnBodega is not null and volumenEnBodega >= 0),
+    CHECK(pesoEnBodega is not null and pesoEnBodega >= 0)
 );
 COMMIT;
 
 --TODO David
+--OK
+
 CREATE TABLE Clientes
 (
    numDocumento numeric(10),
@@ -201,17 +186,19 @@ CREATE TABLE Clientes
 COMMIT;
 
 --TODO Trombilu
+--OK
 CREATE TABLE ClientesSucursales
 (
-   ciudadSucursal, direccion,
+   ciudadSucursal, direccionSucursal,
    cliente REFERENCES clientes,
    
-   FOREIGN KEY (ciudadSucursal, direccion) REFERENCES Sucursales,
-   PRIMARY KEY (ciudadSucursal, direccion, cliente)
+   FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
+   PRIMARY KEY (ciudadSucursal, direccionSucursal, cliente)
 );
 COMMIT;
 
 --TODO David
+--OK
 CREATE TABLE Usuarios
 (
    numDocumento numeric(10),
@@ -221,11 +208,43 @@ CREATE TABLE Usuarios
    rol varchar(2),
    ciudadSucursal, direccionSucursal,
    
-   PRIMARY KEY (numDocumento),
+   PRIMARY KEY (numDocumento, clave),
    CHECK (rol is not null and rol in  ('a', 'gg', 'gs', 'o', 'c')),
    CHECK (nombre is not null),
    CHECK (correoElectronico is not null),
    CHECK (clave is not null),
    FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales
+);
+COMMIT;
+
+--TODO David
+--OK
+
+CREATE TABLE Compras
+(
+   codigo numeric(10),
+   fecha date,
+   ciudadSucursal, direccionSucursal,
+   cliente REFERENCES Clientes,
+    
+    PRIMARY KEY (codigo),
+    FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
+    CHECK(fecha is not null),
+    CHECK(ciudadSucursal is not null),
+    CHECK(direccionSucursal is not null),
+    CHECK(cliente is not null)
+);
+COMMIT;
+
+--TODO Trombilu
+--OK
+CREATE TABLE CantProductosComprados
+(
+   compra REFERENCES Compras,
+   producto REFERENCES Productos,
+   cantProductos numeric(10,2),
+    
+    PRIMARY KEY (compra, producto),
+    CHECK(cantProductos is not null and cantProductos > 0)
 );
 COMMIT;

@@ -35,11 +35,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import uniandes.isis2304.parranderos.negocio.Bodega;
+import uniandes.isis2304.parranderos.negocio.Clientes;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
+import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 
 
 /**
@@ -108,6 +110,10 @@ public class PersistenciaParranderos
 	
 	private SQLAcuerdosCompra sqlAcuerdosCompra;
 	
+	private SQLClientes sqlClientes;
+	
+	private SQLClienteSucursal sqlClienteSucursal;
+	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -131,6 +137,8 @@ public class PersistenciaParranderos
 		tablas.add ("SIRVEN");
 		tablas.add ("VISITAN");
 		tablas.add ("SUCURSALES");
+		tablas.add ("CLIENTES");
+		tablas.add ("CLIENTESSUCURSALES");
 }
 
 	/**
@@ -213,6 +221,8 @@ public class PersistenciaParranderos
 		sqlBodega = new SQLBodega(this);
 		sqlEstante = new SQLEstante(this);
 		sqlAcuerdosCompra = new SQLAcuerdosCompra(this);
+		sqlClientes = new SQLClientes(this);
+		sqlClienteSucursal = new SQLClienteSucursal(this);
 	}
 
 	/**
@@ -557,7 +567,64 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
-
 	
-
+	public Clientes registrarCliente(long numDocumento, String tipoDocumento, String nombre, String correoElectronico, String clave) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            System.out.println("Antes de long");
+            long tuplasInsertadas = sqlClientes.registrarCliente(pm,numDocumento, tipoDocumento, nombre, correoElectronico, clave);
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
+            return new Clientes(numDocumento, tipoDocumento, nombre, correoElectronico, clave);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public ClienteSucursal registrarClienteSucursal(String ciudadSucursal, String direccionSucursal, long cliente) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            System.out.println("Antes de long");
+            long tuplasInsertadas = sqlClienteSucursal.registrarClienteSucursal(pm, ciudadSucursal, direccionSucursal, cliente);
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
+            return new ClienteSucursal(ciudadSucursal, direccionSucursal, cliente);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
  }

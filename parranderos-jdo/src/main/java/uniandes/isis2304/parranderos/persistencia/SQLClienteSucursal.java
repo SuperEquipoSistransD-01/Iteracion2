@@ -2,13 +2,10 @@ package uniandes.isis2304.parranderos.persistencia;
 
 import java.util.List;
 
-
-
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-
-class SQLAcuerdosCompra {
+public class SQLClienteSucursal {
 	
 	/* ****************************************************************
 	 * 			Constantes
@@ -34,15 +31,17 @@ class SQLAcuerdosCompra {
 	 * Constructor
 	 * @param pp - El Manejador de persistencia de la aplicación
 	 */
-	public SQLAcuerdosCompra (PersistenciaParranderos pp)
+	public SQLClienteSucursal (PersistenciaParranderos pp)
 	{
 		this.pp = pp;
 	}
 	
-	public long adicionarAcuerdoCompra (PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long proveedor, long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) 
+	public long registrarClienteSucursal (PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long cliente) 
 	{
-        Query q = pm.newQuery(SQL, "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ? and direccionSucursal = ? and proveedor = ? and producto = ?");
-        q.setParameters(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden, ciudadSucursal, direccionSucursal, proveedor, producto);
+		System.out.println("punto1");
+        Query q = pm.newQuery(SQL, "INSERT INTO ClientesSucursales (ciudadSucursal, direccionSucursal, cliente) VALUES (?,?,?)");
+        q.setParameters(ciudadSucursal, direccionSucursal, cliente);
+        System.out.println("punto2");
         return (long) q.executeUnique();
 	}
 

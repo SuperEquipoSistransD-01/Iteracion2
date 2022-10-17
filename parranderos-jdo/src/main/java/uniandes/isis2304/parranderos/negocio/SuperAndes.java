@@ -142,6 +142,21 @@ public class SuperAndes
 		log.info ("Adicionando Acuerdo de Compra: " + resp + " tuplas insertadas");
 		return resp;
 	}
+	
+	public VOClientes registrarCliente(long numDocumento, String tipoDocumento, String nombre, String correoElectronico, String clave){
+		log.info("Registrando numDocumento ["+numDocumento+"]");
+		Clientes resp = pp.registrarCliente(numDocumento, tipoDocumento, nombre, correoElectronico, clave);
+		log.info ("Registrado cliente: " + resp + " tuplas insertadas");
+		return resp;
+	}
+	
+	public VOClienteSucursal registrarClienteSucursal(String ciudadSucursal, String direccionSucursal, long cliente){
+		log.info("Registrando cliente ["+cliente+"]");
+		ClienteSucursal resp = pp.registrarClienteSucursal(ciudadSucursal, direccionSucursal, cliente);
+		log.info ("Registrado cliente: " + resp + " tuplas insertadas");
+		return resp;
+	}
+	
 
 	/* ****************************************************************
 	 * 			Métodos para administración
