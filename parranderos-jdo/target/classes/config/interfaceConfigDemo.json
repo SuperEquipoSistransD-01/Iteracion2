@@ -59,6 +59,19 @@
 					}
 				]
 		},
+			{ "menuTitle": "Clientes",
+			  "options":
+				[
+					{
+						"label": "Registrar un nuevo cliente",
+						"event": "registrarCliente" 
+					},
+					{
+						"label": "Registrar un cliente a una sucursal",
+						"event": "registrarClienteSucursal" 
+					}
+				]
+		},
 		{ "menuTitle": "Documentación",
 		  "options":
 			[
