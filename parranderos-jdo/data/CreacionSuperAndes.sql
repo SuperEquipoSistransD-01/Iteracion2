@@ -71,8 +71,9 @@ CREATE TABLE AcuerdosCompra
     
     PRIMARY KEY (ciudadSucursal, direccionSucursal, proveedor, producto),
     FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
-    CHECK (precioCompraProducto > 0),
-    CHECK (precioVentaProducto > 0)
+    CHECK (precioCompraProducto > 0 and precioCompraProducto is not null),
+    CHECK (precioVentaProducto > 0 and precioVentaProducto is not null),
+    CHECK (nivelReorden > 0 and nivelReorden is not null)
 );
 COMMIT;
 

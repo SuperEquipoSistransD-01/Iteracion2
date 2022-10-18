@@ -41,7 +41,7 @@ class SQLAcuerdosCompra {
 	
 	public long adicionarAcuerdoCompra (PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long proveedor, long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) 
 	{
-        Query q = pm.newQuery(SQL, "UPDATE AcuerdosCompra SET ciudadSucursal = ?, direccionSucursal = ?, proveedor = ?, producto = ?, precioCompraProducto = ?, precioVentaProducto = ?, nivelReorden = ? WHERE ciudadSucursal = ? and direccionSucursal = ? and proveedor = ? and producto = ?");
+        Query q = pm.newQuery(SQL, "INSERT INTO AcuerdosCompra (ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden) VALUES (?,?,?,?,?,?,?");
         q.setParameters(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden, ciudadSucursal, direccionSucursal, proveedor, producto);
         return (long) q.executeUnique();
 	}
