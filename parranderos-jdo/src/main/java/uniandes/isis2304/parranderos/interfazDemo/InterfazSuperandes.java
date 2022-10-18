@@ -70,6 +70,11 @@ import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 
 public class InterfazSuperandes extends JFrame implements ActionListener
 {
+	
+	private String ciudadSucursal = null;
+	private String direccionSucursal = null;
+	private String rol = null;
+	
 	/* ****************************************************************
 	 * 			Constantes
 	 *****************************************************************/
@@ -266,16 +271,16 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	try 
     	{
     		String nombreSucursal = JOptionPane.showInputDialog (this, "Nombre de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Direccion de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String ciudadSucursal1 = JOptionPane.showInputDialog (this, "Ciudad de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal1 = JOptionPane.showInputDialog (this, "Direccion de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long areaSucursal = Long.parseLong(JOptionPane.showInputDialog (this, "Area de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
-    		if (nombreSucursal != null && ciudadSucursal != null && direccionSucursal != null && areaSucursal != 0)
+    		if (nombreSucursal != null && ciudadSucursal1 != null && direccionSucursal1 != null && areaSucursal != 0 && rol == "a")
     		{
-        		VOSucursal tb = parranderos.adicionarSucursal(nombreSucursal, direccionSucursal, ciudadSucursal, areaSucursal);
+        		VOSucursal tb = parranderos.adicionarSucursal(nombreSucursal, direccionSucursal1, ciudadSucursal1, areaSucursal);
         		if (tb == null)
         		{    		
-        			throw new Exception ("No se pudo crear una sucursal con nombre, ciudad, direccion y area : " + nombreSucursal+", "+ciudadSucursal+", "+direccionSucursal+", "+areaSucursal);
+        			throw new Exception ("No se pudo crear una sucursal con nombre, ciudad, direccion y area : " + nombreSucursal+", "+ciudadSucursal1+", "+direccionSucursal1+", "+areaSucursal);
         		}
         		String resultado = "En adicionarSucursal\n\n";
         		resultado += "Sucursal adicionada exitosamente: " + tb;
@@ -312,7 +317,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long pesoEmpaque = Long.parseLong(JOptionPane.showInputDialog (this, "Peso empaque?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
     		if (nombre != null && marca != null && presentacion != null && unidadMedida != null && tipoProducto!=null && categoriaAlmacenamiento!=null
-    				&& precioUnitario != 0 && precioUnidadMedida != 0 && cantidadPresentacion != 0 && volumenEmpaque != 0 && pesoEmpaque != 0)
+    				&& precioUnitario != 0 && precioUnidadMedida != 0 && cantidadPresentacion != 0 && volumenEmpaque != 0 && pesoEmpaque != 0 && rol == "gs")
     		{
         		VOProductos tb = parranderos.adicionarProducto(nombre, marca, presentacion, unidadMedida, tipoProducto, categoriaAlmacenamiento,
         				precioUnitario, precioUnidadMedida, cantidadPresentacion, volumenEmpaque, pesoEmpaque);
@@ -346,7 +351,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long nit = Long.parseLong(JOptionPane.showInputDialog (this, "Nit del proveedor?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long calificacion = Long.parseLong(JOptionPane.showInputDialog (this, "Calificacion del proveedor?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
-    		if (nombre != null && nit != 0 && calificacion != 0)
+    		if (nombre != null && nit != 0 && calificacion != 0 && rol == "gs")
     		{
         		VOProveedores tb = parranderos.adicionarProveedor(nit, nombre, calificacion);
         		if (tb == null)
@@ -375,13 +380,11 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String nombreSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Direccion de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Categoría Almacenamiento?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long capacidad = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica de la Bodega?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (nombreSucursal != null && capacidad != 0 && direccionSucursal != null)
+    		if (ciudadSucursal != null && capacidad != 0 && direccionSucursal != null && rol == "gs")
     		{
-        		VOBodega tb = parranderos.adicionarBodega(nombreSucursal, direccionSucursal, categoriaAlmacenamiento,capacidad);
+        		VOBodega tb = parranderos.adicionarBodega(ciudadSucursal, direccionSucursal, categoriaAlmacenamiento,capacidad);
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo crear una bodega con capacidad: "+capacidad);
@@ -408,15 +411,13 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String nombreSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Direccion de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Categoria Almacenamiento?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Tipo de Producto?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		
     		long volumenLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica del Estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		long pesoLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Peso Límite de la Bodega?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (nombreSucursal != null && direccionSucursal != null && volumenLimite != 0 && pesoLimite != 0)
+    		long pesoLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Peso Límite del estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (ciudadSucursal != null && direccionSucursal != null && volumenLimite != 0 && pesoLimite != 0 && rol == "gs")
     		{
-        		VOEstante tb = parranderos.adicionarEstante(nombreSucursal, direccionSucursal, volumenLimite, pesoLimite, categoriaAlmacenamiento);
+        		VOEstante tb = parranderos.adicionarEstante(ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, categoriaAlmacenamiento);
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo crear un estante con volumen Limite: "+volumenLimite);
@@ -443,15 +444,12 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Direccion de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		
     		long proveedor = Long.parseLong(JOptionPane.showInputDialog (this, "Código del proveedor asociado?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Código del producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long precioCompraProducto = Long.parseLong(JOptionPane.showInputDialog (this, "¨Precio de compra acordado para el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long precioVentaProducto = Long.parseLong(JOptionPane.showInputDialog (this, "Precio al que se va a vender el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long nivelReorden = Long.parseLong(JOptionPane.showInputDialog (this, "Nivel de reorden del producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (ciudadSucursal != null && direccionSucursal != null && proveedor != 0 && producto != 0 && precioCompraProducto != 0 && precioVentaProducto != 0 && nivelReorden != 0)
+    		if (ciudadSucursal != null && direccionSucursal != null && proveedor != 0 && producto != 0 && precioCompraProducto != 0 && precioVentaProducto != 0 && nivelReorden != 0 && rol == "gs")
     		{
         		VOAcuerdoCompra tb = parranderos.adicionarAcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
         		if (tb == null)
@@ -516,12 +514,9 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Dirección de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		
     		long cliente = Long.parseLong(JOptionPane.showInputDialog (this, "Número de documento del cliente?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		    		
-    		if (cliente != 0 && ciudadSucursal != null && direccionSucursal != null)
+    		if (cliente != 0 && ciudadSucursal != null && direccionSucursal != null && rol == "gs")
     		{
         		VOClienteSucursal tb = parranderos.registrarClienteSucursal(ciudadSucursal, direccionSucursal, cliente);
         		if (tb == null)
@@ -556,7 +551,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		if (numDocumento != 0 && clave != null)
     		{
     			System.out.println("PrimerPunto");
-        		List<Usuarios> tb = parranderos.obtenerUsuario(numDocumento, clave);
+        		Usuarios tb = parranderos.obtenerUsuario(numDocumento, clave).get(0);
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo iniciar sesion");
@@ -565,7 +560,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		resultado += "Sesion exitosamente iniciada: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
-    			System.out.println(tb);
+    			ciudadSucursal = tb.getCiudadSucursal();
+    			direccionSucursal = tb.getDireccionSucursal();
     		}
     		else
     		{
