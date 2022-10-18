@@ -27,7 +27,7 @@ class SQLProducto {
 	 * Constructor
 	 * @param pp - El Manejador de persistencia de la aplicación
 	 */
-	public SQLProducto (PersistenciaParranderos pp)
+	public SQLProducto (PersistenciaParranderos pp)	
 	{
 		this.pp = pp;
 	}

@@ -81,7 +81,6 @@
 					}
 				]
 		},
-<<<<<<< HEAD
 		{ "menuTitle": "Usuarios",
 			  "options":
 				[
@@ -92,8 +91,6 @@
 				]
 		},
 		
-=======
->>>>>>> b1e9481395ffadd5055b3523cce89825d153463c
 		{ "menuTitle": "Documentación",
 		  "options":
 			[
