@@ -562,6 +562,36 @@ public class PersistenciaParranderos
         }
 	}
 	
+	public Usuarios registrarUsuario(long numDocumento, String nombre, String correoElectronico, String clave, String rol, String ciudadSucursal, String direccionSucursal) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            System.out.println("Antes de long");
+            long tuplasInsertadas = sqlUsuarios.registrarUsuario(pm, numDocumento, nombre, correoElectronico, clave, rol, ciudadSucursal, direccionSucursal);
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
+            return new Usuarios(numDocumento, nombre, correoElectronico, clave, rol, ciudadSucursal, direccionSucursal);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}

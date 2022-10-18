@@ -19,6 +19,8 @@ import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.jdo.PersistenceManager;
+
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
@@ -157,12 +159,21 @@ public class SuperAndes
 		return resp;
 	}
 	
+	public VOUsuarios registrarUsuario(long numDocumento, String nombre, String correoElectronico, String clave, String rol, String ciudadSucursal, String direccionSucursal){
+		log.info("Registrando Usuario ["+numDocumento+"]");
+		Usuarios resp = pp.registrarUsuario(numDocumento, nombre, correoElectronico, clave, rol, ciudadSucursal, direccionSucursal);
+		log.info ("Registrado cliente: " + resp + " tuplas insertadas");
+		return resp;
+	}
+	
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
 		log.info("Iniciando sesión del usuario ["+numDocumento+"]");
 		List<Usuarios> resp = pp.obtenerUsuario(numDocumento, clave);
 		log.info ("Obtenido usuario: " + resp);
 		return resp;
 	}
+	
+	
 	
 
 	/* ****************************************************************

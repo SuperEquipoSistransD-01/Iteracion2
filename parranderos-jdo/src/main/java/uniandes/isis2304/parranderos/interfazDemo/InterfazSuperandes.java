@@ -550,7 +550,6 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		    		
     		if (numDocumento != 0 && clave != null)
     		{
-    			System.out.println("PrimerPunto");
         		Usuarios tb = parranderos.obtenerUsuario(numDocumento, clave).get(0);
         		if (tb == null)
         		{    		
@@ -575,6 +574,44 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+    
+    public void registrarUsuario( )
+    {
+    	try 
+    	{
+    		long numDocumento = Long.parseLong(JOptionPane.showInputDialog (this, "Ingrése el número de documento del usuario", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String nombre = JOptionPane.showInputDialog (this, "Ingrese el nombre del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String correoElectronico = JOptionPane.showInputDialog (this, "Ingrese el correo electrónico del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String clave = JOptionPane.showInputDialog (this, "Ingrese su contraseña", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String rol = JOptionPane.showInputDialog (this, "Ingrese el rol del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String ciudadSucursal1 = JOptionPane.showInputDialog (this, "Ingrese la ciudad de la sucursal del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal1 = JOptionPane.showInputDialog (this, "Ingrese la dirección de la sucursal del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		
+    		if (numDocumento != 0 && clave != null && nombre != null && correoElectronico != null && rol != null && ciudadSucursal1 != null && direccionSucursal1 != null)
+    		{
+    			VOUsuarios tb = parranderos.registrarUsuario(numDocumento, nombre, correoElectronico, clave, rol, ciudadSucursal1, direccionSucursal1);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo crear el acuerdo de compra");
+        		}
+        		String resultado = "En adicionarAcuerdoCompra\n\n";
+        		resultado += "cliente registrado exitosamente en sucursal: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
     
     
     

@@ -335,3 +335,6 @@ ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
 19:08:36,201 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Obtenido usuario: [uniandes.isis2304.parranderos.negocio.Usuarios@36c65079]
 19:09:19,364 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando bodegavolumenLimite [5]
 19:09:21,898 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando Bodega: uniandes.isis2304.parranderos.negocio.Estante@2222055a tuplas insertadas
+19:47:36,677 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+19:47:36,678 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+19:47:36,709 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
