@@ -275,7 +275,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		String direccionSucursal1 = JOptionPane.showInputDialog (this, "Direccion de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long areaSucursal = Long.parseLong(JOptionPane.showInputDialog (this, "Area de la sucursal?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
-    		if (nombreSucursal != null && ciudadSucursal1 != null && direccionSucursal1 != null && areaSucursal != 0 && rol == "a")
+    		if (nombreSucursal != null && ciudadSucursal1 != null && direccionSucursal1 != null && areaSucursal != 0 && rol.equals("a"))
     		{
         		VOSucursal tb = parranderos.adicionarSucursal(nombreSucursal, direccionSucursal1, ciudadSucursal1, areaSucursal);
         		if (tb == null)
@@ -317,7 +317,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long pesoEmpaque = Long.parseLong(JOptionPane.showInputDialog (this, "Peso empaque?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
     		if (nombre != null && marca != null && presentacion != null && unidadMedida != null && tipoProducto!=null && categoriaAlmacenamiento!=null
-    				&& precioUnitario != 0 && precioUnidadMedida != 0 && cantidadPresentacion != 0 && volumenEmpaque != 0 && pesoEmpaque != 0 && rol == "gs")
+    				&& precioUnitario != 0 && precioUnidadMedida != 0 && cantidadPresentacion != 0 && volumenEmpaque != 0 && pesoEmpaque != 0 && rol.equals("gs"))
     		{
         		VOProductos tb = parranderos.adicionarProducto(nombre, marca, presentacion, unidadMedida, tipoProducto, categoriaAlmacenamiento,
         				precioUnitario, precioUnidadMedida, cantidadPresentacion, volumenEmpaque, pesoEmpaque);
@@ -351,7 +351,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long nit = Long.parseLong(JOptionPane.showInputDialog (this, "Nit del proveedor?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long calificacion = Long.parseLong(JOptionPane.showInputDialog (this, "Calificacion del proveedor?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
-    		if (nombre != null && nit != 0 && calificacion != 0 && rol == "gs")
+    		if (nombre != null && nit != 0 && calificacion != 0 && rol.equals("gs"))
     		{
         		VOProveedores tb = parranderos.adicionarProveedor(nit, nombre, calificacion);
         		if (tb == null)
@@ -382,7 +382,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	{
     		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Categoría Almacenamiento?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long capacidad = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica de la Bodega?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (ciudadSucursal != null && capacidad != 0 && direccionSucursal != null && rol == "gs")
+    		if (ciudadSucursal != null && capacidad != 0 && direccionSucursal != null && rol.equals("gs"))
     		{
         		VOBodega tb = parranderos.adicionarBodega(ciudadSucursal, direccionSucursal, categoriaAlmacenamiento,capacidad);
         		if (tb == null)
@@ -415,7 +415,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		
     		long volumenLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica del Estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long pesoLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Peso Límite del estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (ciudadSucursal != null && direccionSucursal != null && volumenLimite != 0 && pesoLimite != 0 && rol == "gs")
+    		if (ciudadSucursal != null && direccionSucursal != null && volumenLimite != 0 && pesoLimite != 0 && rol.equals("gs"))
     		{
         		VOEstante tb = parranderos.adicionarEstante(ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, categoriaAlmacenamiento);
         		if (tb == null)
@@ -449,7 +449,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long precioCompraProducto = Long.parseLong(JOptionPane.showInputDialog (this, "¨Precio de compra acordado para el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long precioVentaProducto = Long.parseLong(JOptionPane.showInputDialog (this, "Precio al que se va a vender el producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		long nivelReorden = Long.parseLong(JOptionPane.showInputDialog (this, "Nivel de reorden del producto?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (ciudadSucursal != null && direccionSucursal != null && proveedor != 0 && producto != 0 && precioCompraProducto != 0 && precioVentaProducto != 0 && nivelReorden != 0 && rol == "gs")
+    		if (ciudadSucursal != null && direccionSucursal != null && proveedor != 0 && producto != 0 && precioCompraProducto != 0 && precioVentaProducto != 0 && nivelReorden != 0 && rol.equals("gs"))
     		{
         		VOAcuerdoCompra tb = parranderos.adicionarAcuerdoCompra(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden);
         		if (tb == null)
@@ -485,7 +485,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		String correoElectronico = JOptionPane.showInputDialog (this, "Correo electronico del cliente?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String clave = JOptionPane.showInputDialog (this, "Clave del cliente?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		    		
-    		if (numDocumento != 0 && tipoDocumento != null && nombre != null && correoElectronico != null && clave != null)
+    		if (numDocumento != 0 && tipoDocumento != null && nombre != null && correoElectronico != null && clave != null && rol.equals("gs"))
     		{
         		VOClientes tb = parranderos.registrarCliente(numDocumento, tipoDocumento, nombre, correoElectronico, clave);
         		if (tb == null)
@@ -516,7 +516,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	{
     		long cliente = Long.parseLong(JOptionPane.showInputDialog (this, "Número de documento del cliente?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		    		
-    		if (cliente != 0 && ciudadSucursal != null && direccionSucursal != null && rol == "gs")
+    		if (cliente != 0 && ciudadSucursal != null && direccionSucursal != null && rol.equals("gs"))
     		{
         		VOClienteSucursal tb = parranderos.registrarClienteSucursal(ciudadSucursal, direccionSucursal, cliente);
         		if (tb == null)
@@ -561,6 +561,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     			panelDatos.actualizarInterfaz(resultado);
     			ciudadSucursal = tb.getCiudadSucursal();
     			direccionSucursal = tb.getDireccionSucursal();
+    			rol = tb.getRol();
+    			System.out.print(rol);
     		}
     		else
     		{
@@ -583,13 +585,13 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		String nombre = JOptionPane.showInputDialog (this, "Ingrese el nombre del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String correoElectronico = JOptionPane.showInputDialog (this, "Ingrese el correo electrónico del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String clave = JOptionPane.showInputDialog (this, "Ingrese su contraseña", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String rol = JOptionPane.showInputDialog (this, "Ingrese el rol del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String rol1 = JOptionPane.showInputDialog (this, "Ingrese el rol del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String ciudadSucursal1 = JOptionPane.showInputDialog (this, "Ingrese la ciudad de la sucursal del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String direccionSucursal1 = JOptionPane.showInputDialog (this, "Ingrese la dirección de la sucursal del usuario", "Ok", JOptionPane.QUESTION_MESSAGE);
     		
-    		if (numDocumento != 0 && clave != null && nombre != null && correoElectronico != null && rol != null && ciudadSucursal1 != null && direccionSucursal1 != null)
+    		if (numDocumento != 0 && clave != null && nombre != null && correoElectronico != null && rol1 != null && ciudadSucursal1 != null && direccionSucursal1 != null  && rol.equals("a"))
     		{
-    			VOUsuarios tb = parranderos.registrarUsuario(numDocumento, nombre, correoElectronico, clave, rol, ciudadSucursal1, direccionSucursal1);
+    			VOUsuarios tb = parranderos.registrarUsuario(numDocumento, nombre, correoElectronico, clave, rol1, ciudadSucursal1, direccionSucursal1);
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo crear el acuerdo de compra");

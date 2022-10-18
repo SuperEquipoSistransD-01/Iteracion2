@@ -39,7 +39,6 @@ class SQLUsuarios {
 	public List<Usuarios> obtenerUsuario(PersistenceManager pm, long numDocumento, String clave)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM Usuarios WHERE numDocumento = ? and clave = ?");
-		System.out.println("segundoPunto");
 		q.setResultClass(Usuarios.class);
 		q.setParameters(numDocumento, clave);
 		return (List<Usuarios>) q.executeList();
