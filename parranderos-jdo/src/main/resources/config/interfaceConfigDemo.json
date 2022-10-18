@@ -32,6 +32,15 @@
 				}
 			]
 		},
+		{ "menuTitle": "Promociones",
+		  "options":
+			[
+				{
+					"label": "Adicionar Promocion",
+					"event": "adicionarPromocion" 
+				}
+			]
+		},
 			{ "menuTitle": "Bodegas",
 		  "options":
 			[

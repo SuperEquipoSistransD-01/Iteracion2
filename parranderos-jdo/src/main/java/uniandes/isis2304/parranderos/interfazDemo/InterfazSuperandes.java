@@ -55,6 +55,7 @@ import uniandes.isis2304.parranderos.negocio.VOClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.VOClientes;
 import uniandes.isis2304.parranderos.negocio.VOEstante;
 import uniandes.isis2304.parranderos.negocio.VOProductos;
+import uniandes.isis2304.parranderos.negocio.VOPromociones;
 import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
@@ -360,6 +361,46 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		}
         		String resultado = "En adicionarProveedor\n\n";
         		resultado += "Proveedor adicionada exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    
+    public void adicionarPromocion( )
+    {
+    	try 
+    	{
+    		String nombrePromocion = JOptionPane.showInputDialog (this, "Nombre de la Promocion?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String ciudadSucursal1 = JOptionPane.showInputDialog (this, "Ciudad de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal1 = JOptionPane.showInputDialog (this, "Direccion de la sucursal asociada?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String descripcion = JOptionPane.showInputDialog (this, "Descripcion?", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String tipo = JOptionPane.showInputDialog (this, "Tipo? Este puede ser 1,2,3,4,5", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		long diasDuracion = Long.parseLong(JOptionPane.showInputDialog (this, "Dias duracion de la promo?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long finalizada = Long.parseLong(JOptionPane.showInputDialog (this, "Está finalizada? Escriba 1 si sí, 2 si no", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Codigo del producto", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		Timestamp fechaInicio = Timestamp.valueOf(JOptionPane.showInputDialog (this, "Fecha de inicio? Formato DD/MM/YYYY", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		
+    		if (nombrePromocion != null && ciudadSucursal1 != null && direccionSucursal1 != null && descripcion != null && tipo != null&& producto != 0 && diasDuracion != 0 && finalizada != 0 && rol.equals("gs"))
+    		{
+        		VOPromociones tb = parranderos.adicionarPromocion(nombrePromocion, fechaInicio, diasDuracion, descripcion, tipo, finalizada, ciudadSucursal, direccionSucursal, producto);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo crear una sucursal con nombre, ciudad, direccion y area : " + nombrePromocion);
+        		}
+        		String resultado = "En adicionarSucursal\n\n";
+        		resultado += "Sucursal adicionada exitosamente: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}

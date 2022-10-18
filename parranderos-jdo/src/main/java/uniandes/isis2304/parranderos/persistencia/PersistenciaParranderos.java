@@ -38,6 +38,7 @@ import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Clientes;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
+import uniandes.isis2304.parranderos.negocio.Promociones;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
@@ -116,6 +117,8 @@ public class PersistenciaParranderos
 	private SQLClienteSucursal sqlClienteSucursal;
 	
 	private SQLUsuarios sqlUsuarios;
+	
+	private SQLPromociones sqlPromociones;
 	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
@@ -594,5 +597,36 @@ public class PersistenciaParranderos
 	
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
+	}
+
+	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
+			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,
+			long producto) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            System.out.println("Antes de long");
+            long tuplasInsertadas = sqlPromociones.adicionarPromociones(pm, nombrePromocion, fechaInicio, diasDuracion, descripcion, tipo, finalizada, ciudadSucursal, direccionSucursal, producto);
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
+            return new Promociones(nombrePromocion, fechaInicio, diasDuracion, descripcion, tipo, finalizada, ciudadSucursal, direccionSucursal, producto) ;       }
+        catch (Exception e)
+        {
+        	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
 	}
  }

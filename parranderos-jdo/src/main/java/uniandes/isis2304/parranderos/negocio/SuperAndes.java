@@ -193,6 +193,16 @@ public class SuperAndes
         return borrrados;
 	}
 
+	public VOPromociones adicionarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
+			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,
+			long producto) {
+		log.info("Registrando numDocumento ["+nombrePromocion+"]");
+		Promociones resp = pp.registrarPromocion(nombrePromocion, fechaInicio, diasDuracion, descripcion, tipo, finalizada, ciudadSucursal, direccionSucursal, producto);
+		log.info ("Registrado cliente: " + resp + " tuplas insertadas");
+		return resp;
+		
+	}
+
 
 
 
