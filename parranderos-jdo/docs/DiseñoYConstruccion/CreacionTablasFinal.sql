@@ -273,12 +273,11 @@ commit;
 
 create table estaEnCarrito
 (
-idCarrito,
-codigo,
+estante REFERENCES Estantes,
+idCarrito references carritos,
+codigo references productos,
 cantidad numeric(10),
 primary key (idCarrito, codigo)
-foreign key (idCarrito) references  carritos,
-foreign key (codigo) references prodcutos,
 check (cantidad >=1)
 );
 commit;
