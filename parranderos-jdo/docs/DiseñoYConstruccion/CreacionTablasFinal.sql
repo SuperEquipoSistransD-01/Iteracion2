@@ -1,5 +1,4 @@
---Falta conectar Sucursal
---OK
+
 
 CREATE TABLE Productos
 (
@@ -30,8 +29,7 @@ CREATE TABLE Productos
     CHECK (categoriaAlmacenamiento is not null)
 );
 
---Listo
---OK
+
 CREATE TABLE Sucursales
 (
     ciudad varchar(20),
@@ -45,8 +43,7 @@ CREATE TABLE Sucursales
 );
 COMMIT;
 
---FaltaConectarSucursal
---OK
+
 CREATE TABLE Proveedores
 (
     nit numeric(10),
@@ -59,7 +56,7 @@ CREATE TABLE Proveedores
 );
 COMMIT;
 
---OK
+
 CREATE TABLE AcuerdosCompra
 ( 
     ciudadSucursal, direccionSucursal,
@@ -76,7 +73,7 @@ CREATE TABLE AcuerdosCompra
 );
 COMMIT;
 
---OK
+
 CREATE TABLE Pedidos
 (
     codigo numeric(10),
@@ -101,8 +98,7 @@ CREATE TABLE Pedidos
 );
 COMMIT;
 
---Listo
---OK
+
 CREATE TABLE Bodegas
 (
     codigo numeric(10),
@@ -117,8 +113,7 @@ CREATE TABLE Bodegas
 );
 COMMIT;
 
---Listo
---OK
+
 CREATE TABLE Estantes
 (
     codigo numeric(10),
@@ -135,8 +130,7 @@ CREATE TABLE Estantes
 );
 COMMIT;
 
---TODO Trombilu
---OK
+
 CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
@@ -152,7 +146,7 @@ CREATE TABLE EnDisplay
 );
 COMMIT;
 
---OK
+
 CREATE TABLE StockDisponible
 (
     producto REFERENCES Productos,
@@ -166,8 +160,7 @@ CREATE TABLE StockDisponible
 );
 COMMIT;
 
---TODO David
---OK
+
 
 CREATE TABLE Clientes
 (
@@ -185,8 +178,7 @@ CREATE TABLE Clientes
 );
 COMMIT;
 
---TODO Trombilu
---OK
+
 CREATE TABLE ClientesSucursales
 (
    ciudadSucursal, direccionSucursal,
@@ -197,8 +189,7 @@ CREATE TABLE ClientesSucursales
 );
 COMMIT;
 
---TODO David
---OK
+
 CREATE TABLE Usuarios
 (
    numDocumento numeric(10),
@@ -217,8 +208,7 @@ CREATE TABLE Usuarios
 );
 COMMIT;
 
---TODO David
---OK
+
 
 CREATE TABLE Compras
 (
@@ -236,8 +226,7 @@ CREATE TABLE Compras
 );
 COMMIT;
 
---TODO Trombilu
---OK
+
 CREATE TABLE CantProductosComprados
 (
    compra REFERENCES Compras,
@@ -264,4 +253,19 @@ foreign key (producto) references productos,
 primary key (nombre, fechaInicio, diasDuracion),
  CHECK (tipo is not null and tipo in  ('1', '2', '3', '4', '5')),
  check (finalizada is not null and finalizada in  (0,1))
-)
+);
+
+commit;
+
+create table carritos
+(
+clienteCC numeric(10),
+ciudadSucursal, direccionSucursal,
+abandono numeric(3),
+  
+PRIMARY KEY (clienteCC, ciudadSucursal,direccionSucursal),
+FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
+check (abandono is not null and abandono in (0,1))
+);
+
+commit;

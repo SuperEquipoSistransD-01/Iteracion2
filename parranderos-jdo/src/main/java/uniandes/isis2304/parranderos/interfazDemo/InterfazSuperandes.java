@@ -392,7 +392,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Codigo del producto", "Ok", JOptionPane.QUESTION_MESSAGE));
     		Timestamp fechaInicio = Timestamp.valueOf(JOptionPane.showInputDialog (this, "Fecha de inicio? Formato DD/MM/YYYY", "Ok", JOptionPane.QUESTION_MESSAGE));
     		
-    		if (nombrePromocion != null && ciudadSucursal1 != null && direccionSucursal1 != null && descripcion != null && tipo != null&& producto != 0 && diasDuracion != 0 && finalizada != 0 && rol.equals("gs"))
+    		if (nombrePromocion != null && ciudadSucursal1 != null && direccionSucursal1 != null && descripcion != null && tipo != null&& producto != 0 && diasDuracion != 0 && finalizada != 0)
     		{
         		VOPromociones tb = parranderos.adicionarPromocion(nombrePromocion, fechaInicio, diasDuracion, descripcion, tipo, finalizada, ciudadSucursal, direccionSucursal, producto);
         		if (tb == null)
