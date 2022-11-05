@@ -1,3 +1,5 @@
+drop table carrito;
+drop table estaEnCarrito;
 drop table usuarios;
 drop table clientesSucursales;
 drop table cantProductosComprados;

@@ -258,14 +258,28 @@ primary key (nombre, fechaInicio, diasDuracion),
 commit;
 
 create table carritos
-(
+(	
+idCarrito numeric(10),
 clienteCC numeric(10),
 ciudadSucursal, direccionSucursal,
 abandono numeric(3),
   
-PRIMARY KEY (clienteCC, ciudadSucursal,direccionSucursal),
+PRIMARY KEY (idCarrito),
 FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
 check (abandono is not null and abandono in (0,1))
 );
 
 commit;
+
+create table estaEnCarrito
+(
+idCarrito,
+codigo,
+cantidad numeric(10),
+primary key (idCarrito, codigo)
+foreign key (idCarrito) references  carritos,
+foreign key (codigo) references prodcutos,
+check (cantidad >=1)
+);
+commit;
+
