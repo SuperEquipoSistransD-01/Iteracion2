@@ -486,3 +486,8 @@ ORA-00904: "DIRECCIONSUCURSAL": identificador no válido
 22:18:51,561 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
 22:19:06,045 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando sucursal [12345, Bogota, Calle 140, 0]
 22:19:06,312 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: uniandes.isis2304.parranderos.negocio.Carrito@2c72774 tuplas insertadas
+11:02:29,695 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+11:02:29,697 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+11:02:29,738 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+11:02:44,555 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando sucursal [12345, Bogota, Calle 140, 0]
+11:02:45,360 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando visitan: uniandes.isis2304.parranderos.negocio.Carrito@28a67ad1 tuplas insertadas

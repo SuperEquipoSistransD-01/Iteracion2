@@ -29,6 +29,10 @@
 				{
 					"label": "Solicitar Carrito",
 					"event": "solicitarCarrito"
+				},
+				{
+					"label": "Abandonar un Carrito",
+					"event": "abandonarCarrito" 
 				}
 			]
 		},

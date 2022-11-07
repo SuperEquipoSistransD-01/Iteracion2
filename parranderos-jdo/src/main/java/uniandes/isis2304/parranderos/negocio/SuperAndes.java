@@ -213,11 +213,19 @@ public class SuperAndes
 	//ITERACION 3 :)
 	
 	public VOCarrito solicitarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
-		log.info ("Adicionando sucursal [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+abandono+ "]");
+		log.info ("Adicionando carrito [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+abandono+ "]");
         Carrito resp = pp.solicitarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
-        log.info ("Adicionando visitan: " + resp + " tuplas insertadas");
+        log.info ("Adicionando carrito: " + resp + " tuplas insertadas");
         return resp;
 	}
+	
+	public VOCarrito abandonarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
+		log.info ("Abanadonando carrito [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+abandono+ "]");
+        Carrito resp = pp.abandonarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
+        log.info ("Abandonando carrito: " + resp + " tuplas insertadas");
+        return resp;
+	}
+
 
 
 

@@ -267,7 +267,7 @@ clienteCC references clientes,
 ciudadSucursal, direccionSucursal,
 abandono numeric(3),
   
-PRIMARY KEY (clienteCC, ciudadSucursal, direccionSucursal),
+PRIMARY KEY (clienteCC, ciudadSucursal, direccionSucursal, abandono),
 FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
 check (abandono is not null and abandono in (0,1))
 );
@@ -276,12 +276,11 @@ commit;
 
 create table estaEnCarrito
 (
-estante REFERENCES Estantes,
-clienteCC, ciudadSucursal, direccionSucursal,
+clienteCC, ciudadSucursal, direccionSucursal, abandono,
 codigo references productos,
 cantidad numeric(10),
-primary key (clienteCC, ciudadSucursal, direccionSucursal, codigo),
-foreign key (clienteCC, ciudadSucursal, direccionSucursal) references carritos,
+primary key (clienteCC, ciudadSucursal, direccionSucursal, abandono, codigo),
+foreign key (clienteCC, ciudadSucursal, direccionSucursal, abandono) references carritos,
 check (cantidad >0)
 );
 commit;

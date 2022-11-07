@@ -336,6 +336,35 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+	
+	public Carrito abandonarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            tx.commit();
+            
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Carrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	/**
 	 * Elimina todas las tuplas de todas las tablas de la base de datos de Parranderos

@@ -75,5 +75,14 @@ class SQLCarrito
         q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         return (long) q.executeUnique();
 	}
+	
+	public long abandonarCarrito(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) 
+	{
+		
+        Query q = pm.newQuery(SQL, "update carritos" + 
+        "set abandono = ?" + "where clientecc = ? and ciudadSucursal = ? and direccionSucursal = ?");
+        q.setParameters(abandono,clienteCC, ciudadSucursal, direccionSucursal);
+        return (long) q.executeUnique();
+	}
 
 }
