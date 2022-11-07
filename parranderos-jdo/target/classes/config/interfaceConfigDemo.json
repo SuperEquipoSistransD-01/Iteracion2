@@ -23,6 +23,15 @@
 				}
 			]
 		},
+		{ "menuTitle": "Carrito",
+		  "options":
+			[
+				{
+					"label": "Solicitar Carrito",
+					"event": "solicitarCarrito"
+				}
+			]
+		},
 		{ "menuTitle": "Productos",
 		  "options":
 			[
