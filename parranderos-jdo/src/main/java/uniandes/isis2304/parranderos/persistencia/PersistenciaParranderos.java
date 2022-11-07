@@ -234,6 +234,7 @@ public class PersistenciaParranderos
 		sqlClientes = new SQLClientes(this);
 		sqlClienteSucursal = new SQLClienteSucursal(this);
 		sqlUsuarios = new SQLUsuarios(this);
+		sqlCarrito = new SQLCarrito(this);
 	}
 
 	/**
