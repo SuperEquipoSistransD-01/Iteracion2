@@ -51,6 +51,7 @@ import uniandes.isis2304.parranderos.interfazApp.PanelDatos;
 import uniandes.isis2304.parranderos.negocio.SuperAndes;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.VOBodega;
+import uniandes.isis2304.parranderos.negocio.VOCarrito;
 import uniandes.isis2304.parranderos.negocio.VOClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.VOClientes;
 import uniandes.isis2304.parranderos.negocio.VOEstante;
@@ -639,6 +640,40 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		}
         		String resultado = "En adicionarAcuerdoCompra\n\n";
         		resultado += "cliente registrado exitosamente en sucursal: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    
+    public void solicitarCarrito( )
+    {
+    	try 
+    	{
+    		long clienteCC  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido usuario, por favor digite su cedula", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal. Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursal. Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		long abandono = 0;
+    		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
+    		{
+        		VOCarrito tb = parranderos.solicitarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo crear el carrito para el cliente de cedula"+clienteCC);
+        		}
+        		String resultado = "En adicionarSucursal\n\n";
+        		resultado += "Sucursal adicionada exitosamente: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}

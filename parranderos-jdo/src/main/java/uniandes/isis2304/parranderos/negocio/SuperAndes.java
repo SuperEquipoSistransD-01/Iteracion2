@@ -100,6 +100,9 @@ public class SuperAndes
         return resp;
 	}
 	
+
+
+	
 	/* ****************************************************************
 	 * 			Métodos para manejar la relación PRODUCTOS
 	 *****************************************************************/
@@ -206,6 +209,16 @@ public class SuperAndes
 		return resp;
 		
 	}
+	
+	//ITERACION 3 :)
+	
+	public VOCarrito solicitarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
+		log.info ("Adicionando sucursal [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+abandono+ "]");
+        Carrito resp = pp.solicitarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
+        log.info ("Adicionando visitan: " + resp + " tuplas insertadas");
+        return resp;
+	}
+
 
 
 

@@ -280,7 +280,7 @@ estante REFERENCES Estantes,
 clienteCC, ciudadSucursal, direccionSucursal,
 codigo references productos,
 cantidad numeric(10),
-primary key (idCarrito, codigo),
+primary key (clienteCC, ciudadSucursal, direccionSucursal, codigo),
 foreign key (clienteCC, ciudadSucursal, direccionSucursal) references carritos,
 check (cantidad >0)
 );

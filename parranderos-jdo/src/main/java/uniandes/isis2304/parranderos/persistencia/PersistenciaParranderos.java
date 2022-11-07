@@ -35,6 +35,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import uniandes.isis2304.parranderos.negocio.Bodega;
+import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Clientes;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
@@ -101,6 +102,8 @@ public class PersistenciaParranderos
 
 	
 	private SQLSucursal sqlSucursal;
+	
+	private SQLCarrito sqlCarrito;
 	
 	private SQLProducto sqlProducto;
 	
@@ -286,6 +289,35 @@ public class PersistenciaParranderos
             
             log.trace ("Sucursal: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             return new Sucursal(nombre, direccion, ciudad, area);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public Carrito solicitarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlCarrito.solicitarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            tx.commit();
+            
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Carrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         }
         catch (Exception e)
         {
@@ -629,4 +661,6 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+
+
  }
