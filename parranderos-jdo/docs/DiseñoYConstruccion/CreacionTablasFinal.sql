@@ -138,9 +138,11 @@ CREATE TABLE EnDisplay
     volumenEnEstante numeric(20,2),
     pesoEnEstante numeric(20,2),
     nivelAbastecimiento numeric(20,2),
+    cantidad numeric(20,2),
     
     PRIMARY KEY (producto, estante),
     CHECK(volumenEnEstante is not null and volumenEnEstante >= 0),
+    CHECK(cantidad is not null and cantidad >= 0),
     CHECK(pesoEnEstante is not null and pesoEnEstante >= 0),
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
 );
@@ -153,9 +155,11 @@ CREATE TABLE StockDisponible
     bodega REFERENCES Bodegas,
     volumenEnBodega numeric(20,2),
     pesoEnBodega numeric(20,2),
+    cantidad numeric(20,2),
     
     PRIMARY KEY (producto, bodega),
     CHECK(volumenEnBodega is not null and volumenEnBodega >= 0),
+    CHECK(cantidad is not null and cantidad >= 0),
     CHECK(pesoEnBodega is not null and pesoEnBodega >= 0)
 );
 COMMIT;
@@ -259,12 +263,11 @@ commit;
 
 create table carritos
 (	
-idCarrito numeric(10),
-clienteCC numeric(10),
+clienteCC references clientes,
 ciudadSucursal, direccionSucursal,
 abandono numeric(3),
   
-PRIMARY KEY (idCarrito),
+PRIMARY KEY (clienteCC, ciudadSucursal, direccionSucursal),
 FOREIGN KEY (ciudadSucursal, direccionSucursal) REFERENCES Sucursales,
 check (abandono is not null and abandono in (0,1))
 );
@@ -274,11 +277,12 @@ commit;
 create table estaEnCarrito
 (
 estante REFERENCES Estantes,
-idCarrito references carritos,
+clienteCC, ciudadSucursal, direccionSucursal,
 codigo references productos,
 cantidad numeric(10),
-primary key (idCarrito, codigo)
-check (cantidad >=1)
+primary key (idCarrito, codigo),
+foreign key (clienteCC, ciudadSucursal, direccionSucursal) references carritos,
+check (cantidad >0)
 );
 commit;
 
