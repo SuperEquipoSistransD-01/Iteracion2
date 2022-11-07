@@ -81,7 +81,7 @@ class SQLCarrito
         Query q = pm.newQuery(SQL, "update carritos " + 
         "set abandono = ?" + " where clientecc = ? and ciudadSucursal = ? and direccionSucursal = ?");
         q.setParameters(abandono,clienteCC, ciudadSucursal, direccionSucursal);
-        //System.out.println((long) q.executeUnique());
+        
         return (long) q.executeUnique();
 	}
 
