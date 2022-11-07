@@ -695,8 +695,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	try 
     	{
     		long clienteCC  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido usuario, por favor digite su cedula", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal. Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursal. Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal de la cual quiere abandonar su carrito. \n Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursalde la cual quiere abandonar su carrito. \n Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long abandono = 1;
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
