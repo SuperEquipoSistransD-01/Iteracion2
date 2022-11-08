@@ -226,6 +226,14 @@ public class SuperAndes
         return resp;
 	}
 
+	public VOEnDisplay productoALCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long producto,
+			long cantidad) {
+		log.info ("Adicionando producto [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+producto+ "]");
+        EnDisplay resp = pp.productoAlCarrito(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+        log.info ("Abandonando carrito: " + resp + " tuplas insertadas");
+		return resp;
+	}
+
 
 
 

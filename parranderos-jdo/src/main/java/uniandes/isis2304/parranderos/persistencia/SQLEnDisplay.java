@@ -68,13 +68,10 @@ class SQLEnDisplay
 	 * @param idBebida - El identificador de la bebida
 	 * @return EL número de tuplas insertadas
 	 */
-	public long productoAlCarritoD(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long cantidad, long producto) 
+	public long productoAlCarritoD(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long producto, long cantidad) 
 	{
 		
-        Query q = pm.newQuery(SQL, "update enDisplay "
-        		+ "set endisplay.cantidad = endisplay.cantidad - ? "
-        		+ "where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal "
-        		+ "and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = 0 and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?);");
+        Query q = pm.newQuery(SQL, "update enDisplay set endisplay.cantidad = endisplay.cantidad - ? where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = 0 and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?)");
         q.setParameters(cantidad, producto, clienteCC, ciudadSucursal, direccionSucursal);
         return (long) q.executeUnique();
 	}

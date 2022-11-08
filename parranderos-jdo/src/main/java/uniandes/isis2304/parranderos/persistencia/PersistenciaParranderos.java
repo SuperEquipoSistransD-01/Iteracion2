@@ -37,6 +37,7 @@ import com.google.gson.JsonObject;
 import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Clientes;
+import uniandes.isis2304.parranderos.negocio.EnDisplay;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
@@ -102,6 +103,8 @@ public class PersistenciaParranderos
 
 	
 	private SQLSucursal sqlSucursal;
+	
+	private SQLEnDisplay sqlEnDisplay;
 	
 	private SQLCarrito sqlCarrito;
 	
@@ -235,6 +238,7 @@ public class PersistenciaParranderos
 		sqlClienteSucursal = new SQLClienteSucursal(this);
 		sqlUsuarios = new SQLUsuarios(this);
 		sqlCarrito = new SQLCarrito(this);
+		sqlEnDisplay = new SQLEnDisplay(this);
 	}
 
 	/**
@@ -678,6 +682,36 @@ public class PersistenciaParranderos
         catch (Exception e)
         {
         	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	public EnDisplay productoAlCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long producto,
+			long cantidad) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlEnDisplay.productoAlCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+            tx.commit();
+            
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new EnDisplay(producto,	0, 0, 0, 0, cantidad);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
 //        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
         	return null;
