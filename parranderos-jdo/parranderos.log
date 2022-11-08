@@ -580,3 +580,10 @@ ORA-00933: comando SQL no terminado correctamente
 21:33:15,359 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@74d8927e tuplas insertadas
 21:33:15,359 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
 21:33:15,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@68513f79 tuplas insertadas
+21:52:12,233 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+21:52:12,233 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+21:52:12,252 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+21:52:31,174 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:52:31,470 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@4f6fc8b9 tuplas insertadas
+21:52:31,470 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:52:31,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@74b53748 tuplas insertadas
