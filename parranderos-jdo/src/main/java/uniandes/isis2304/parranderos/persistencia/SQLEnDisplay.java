@@ -76,6 +76,18 @@ class SQLEnDisplay
         return (long) q.executeUnique();
 	}
 	
+	public long devolverProductoCarritoD(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long producto) 
+	{
+		System.out.println("Estoy en sql");
+        Query q = pm.newQuery(SQL, "update enDisplay "
+        		+ "set endisplay.cantidad = endisplay.cantidad + (select c.cantidad from estaEnCarrito c where c.clienteCC = ? and c.abandono = 0 and c.ciudadSucursal = ? and c.direccionSucursal = ?) "
+        		+ "where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal "
+        		+ "and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = 0 and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?)");
+        q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, producto, clienteCC, ciudadSucursal, direccionSucursal);
+        return (long) q.executeUnique();
+	}
+	
+	
 	
 
 }

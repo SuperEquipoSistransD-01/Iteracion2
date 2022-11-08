@@ -733,7 +733,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal de la cual es su carrito. \n Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursalde la cual es su carrito. \n Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
     		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite el codigo del producto que desea adicionar al carrito. \n Por ejemplo, 169 para el cereal Zucaritas", "Ok", JOptionPane.QUESTION_MESSAGE));;
-    		long cantidad = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite la cantidad de producto que desea llevar. \n Por ejemplo, 2", "Ok", JOptionPane.QUESTION_MESSAGE));;
+    		long cantidad = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite la cantidad de producto que desea llevar. \n Por ejemplo, 2", "Ok", JOptionPane.QUESTION_MESSAGE));
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
         		VOEnDisplay tb = parranderos.productoALCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
@@ -767,12 +767,11 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long clienteCC  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido usuario, por favor digite su cedula", "Ok", JOptionPane.QUESTION_MESSAGE));
     		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal de la cual es su carrito. \n Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
     		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursalde la cual es su carrito. \n Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite el codigo del producto que desea adicionar al carrito. \n Por ejemplo, 169 para el cereal Zucaritas", "Ok", JOptionPane.QUESTION_MESSAGE));;
-    		long cantidad = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite la cantidad de producto que desea llevar. \n Por ejemplo, 2", "Ok", JOptionPane.QUESTION_MESSAGE));;
+    		long producto = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite el codigo del producto que desea devolver. \n Por ejemplo, 169 para el cereal Zucaritas. \n Recuerde que se devolveran todas las unidades de este producto que estén en su carrito", "Ok", JOptionPane.QUESTION_MESSAGE));
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
-        		VOEnDisplay tb = parranderos.productoALCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
-        		VOEstaEnCarrito tc = parranderos.productosAlCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+        		VOEnDisplay tb = parranderos.devolverProductoCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto);
+        		VOEstaEnCarrito tc = parranderos.devolverProductoCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto);
         		if (tb == null || tc == null)
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);

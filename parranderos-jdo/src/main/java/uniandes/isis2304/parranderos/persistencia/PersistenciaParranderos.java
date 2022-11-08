@@ -760,5 +760,35 @@ public class PersistenciaParranderos
         }
 	}
 
+	public EnDisplay devolverProductoCarritoD(long clienteCC, String ciudadSucursal, String direccionSucursal,
+			long producto) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto);
+            tx.commit();
+            
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new EnDisplay(producto,	0, 0, 0, 0, 0);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
 
  }

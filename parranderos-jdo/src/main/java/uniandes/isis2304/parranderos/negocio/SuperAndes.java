@@ -242,6 +242,20 @@ public class SuperAndes
 		return resp;
 	}
 
+	public VOEnDisplay devolverProductoCarritoD(long clienteCC, String ciudadSucursal, String direccionSucursal,
+			long producto) {
+		log.info ("Devolviendo producto [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+producto+ "]");
+        EnDisplay resp = pp.devolverProductoCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto);
+        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+		return resp;
+	}
+
+	public VOEstaEnCarrito devolverProductoCarritoC(long clienteCC, String ciudadSucursal, String direccionSucursal,
+			long producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 
