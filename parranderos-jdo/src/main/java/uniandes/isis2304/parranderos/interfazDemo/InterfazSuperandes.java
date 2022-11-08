@@ -55,6 +55,7 @@ import uniandes.isis2304.parranderos.negocio.VOCarrito;
 import uniandes.isis2304.parranderos.negocio.VOClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.VOClientes;
 import uniandes.isis2304.parranderos.negocio.VOEnDisplay;
+import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.VOEstante;
 import uniandes.isis2304.parranderos.negocio.VOProductos;
 import uniandes.isis2304.parranderos.negocio.VOPromociones;
@@ -735,8 +736,9 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long cantidad = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite la cantidad de producto que desea llevar. \n Por ejemplo, 2", "Ok", JOptionPane.QUESTION_MESSAGE));;
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
-        		VOEnDisplay tb = parranderos.productoALCarrito(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
-        		if (tb == null)
+        		VOEnDisplay tb = parranderos.productoALCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+        		VOEstaEnCarrito tc = parranderos.productosAlCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+        		if (tb == null || tc == null)
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
         		}

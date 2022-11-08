@@ -564,3 +564,19 @@ ORA-00933: comando SQL no terminado correctamente
 20:56:12,694 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
 20:56:30,543 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
 20:56:31,017 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@1a0089d8 tuplas insertadas
+21:30:44,552 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+21:30:44,552 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+21:30:44,570 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+21:31:11,568 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:31:11,818 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@52050631 tuplas insertadas
+21:31:11,818 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:31:11,832 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : SQL query tiene parametro "5" pero no existe en el query : insert into EstaEnCarrito (clienteCC, ciudadSucursal, direccionSucursal, abandono, codigo, cantidad) values (?, ?, ?, ?, ?, ?)
+
+21:31:11,832 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: null tuplas insertadas
+21:33:00,166 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+21:33:00,167 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+21:33:00,183 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+21:33:15,092 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:33:15,359 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@74d8927e tuplas insertadas
+21:33:15,359 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+21:33:15,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@68513f79 tuplas insertadas

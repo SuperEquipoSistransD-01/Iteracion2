@@ -5,6 +5,8 @@ public class EstaEnCarrito implements VOEstaEnCarrito {
 	private String ciudadSucursalAsociada;
 	private String direccionSucursalAsociada;
 	private long abandono;
+	private long codigo;
+	private long cantidad;
 
 	
 	public EstaEnCarrito() {
@@ -12,15 +14,19 @@ public class EstaEnCarrito implements VOEstaEnCarrito {
 		this.setCiudadSucursalAsociada("");
 		this.setClienteCC(0);
 		this.setDireccionSucursalAsociada("");
+		this.setCodigo(0);
+		this.setCantidad(0);
 
 		
 	}
 	public EstaEnCarrito(long clienteCC, String ciudadSucursalAsociada, String direccionSucursalAsociada,
-	long abandono) {
+	long abandono, long codigo, long cantidad) {
 		this.setAbandono(abandono);
 		this.setCiudadSucursalAsociada(ciudadSucursalAsociada);
 		this.setClienteCC(clienteCC);
 		this.setDireccionSucursalAsociada(direccionSucursalAsociada);
+		this.setCodigo(codigo);
+		this.setCantidad(cantidad);
 		
 
 	}
@@ -47,6 +53,18 @@ public class EstaEnCarrito implements VOEstaEnCarrito {
 	}
 	public void setAbandono(long abandono) {
 		this.abandono = abandono;
+	}
+	public long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+	public long getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(long cantidad) {
+		this.cantidad = cantidad;
 	}
 	
 

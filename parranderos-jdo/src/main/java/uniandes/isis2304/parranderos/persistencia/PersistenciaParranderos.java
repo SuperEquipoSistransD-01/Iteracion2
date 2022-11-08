@@ -38,6 +38,7 @@ import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Clientes;
 import uniandes.isis2304.parranderos.negocio.EnDisplay;
+import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
@@ -107,6 +108,8 @@ public class PersistenciaParranderos
 	private SQLEnDisplay sqlEnDisplay;
 	
 	private SQLCarrito sqlCarrito;
+	
+	private SQLEstaEnCarrito sqlEstaEnCarrito;
 	
 	private SQLProducto sqlProducto;
 	
@@ -239,6 +242,7 @@ public class PersistenciaParranderos
 		sqlUsuarios = new SQLUsuarios(this);
 		sqlCarrito = new SQLCarrito(this);
 		sqlEnDisplay = new SQLEnDisplay(this);
+		sqlEstaEnCarrito = new SQLEstaEnCarrito(this);
 	}
 
 	/**
@@ -696,7 +700,7 @@ public class PersistenciaParranderos
         }
 	}
 
-	public EnDisplay productoAlCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long producto,
+	public EnDisplay productoAlCarritoD(long clienteCC, String ciudadSucursal, String direccionSucursal, long producto,
 			long cantidad) {
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -708,6 +712,36 @@ public class PersistenciaParranderos
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
             return new EnDisplay(producto,	0, 0, 0, 0, cantidad);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	public EstaEnCarrito productoAlCarritoC(long clienteCC, String ciudadSucursal, String direccionSucursal,
+			long producto, long cantidad) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlEstaEnCarrito.productoAlCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, 0, producto, cantidad);
+            tx.commit();
+            
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new EstaEnCarrito(clienteCC, ciudadSucursal, direccionSucursal, 0, producto, cantidad);
         }
         catch (Exception e)
         {
