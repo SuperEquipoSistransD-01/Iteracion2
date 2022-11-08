@@ -723,6 +723,39 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 		}
     }
     
+    public void productoAlCarrito( )
+    {
+    	try 
+    	{
+    		long clienteCC  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido usuario, por favor digite su cedula", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal de la cual quiere abandonar su carrito. \n Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursalde la cual quiere abandonar su carrito. \n Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		long codigo = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite el codigo del producto que desea adicionar al carrito. \n Por ejemplo, 169 para el cereal Zucaritas", "Ok", JOptionPane.QUESTION_MESSAGE));;
+    		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
+    		{
+        		VOCarrito tb = parranderos.abandonarCarrito(clienteCC, ciudadSucursal, direccionSucursal, codigo);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
+        		}
+        		String resultado = "En abandonarCarrito\n\n";
+        		resultado += "Carrito abandonado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
     
     
     

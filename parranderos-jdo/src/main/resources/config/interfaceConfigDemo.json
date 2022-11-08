@@ -33,6 +33,10 @@
 				{
 					"label": "Abandonar un Carrito",
 					"event": "abandonarCarrito" 
+				},
+				{
+					"label": "Adicionar Producto(s) al Carrito",
+					"event": "productoAlCarrito" 
 				}
 			]
 		},
