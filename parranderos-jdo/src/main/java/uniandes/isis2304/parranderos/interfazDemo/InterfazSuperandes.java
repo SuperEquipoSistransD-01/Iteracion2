@@ -737,8 +737,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
         		VOEnDisplay tb = parranderos.productoALCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
-        		VOEstaEnCarrito tc = parranderos.productosAlCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
-        		if (tb == null || tc == null)
+        		//VOEstaEnCarrito tc = parranderos.productosAlCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+        		if (tb == null /*|| tc == null*/)
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
         		}
@@ -771,8 +771,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
         		VOEnDisplay tb = parranderos.devolverProductoCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto);
-        		VOEstaEnCarrito tc = parranderos.devolverProductoCarritoC(clienteCC, ciudadSucursal, direccionSucursal, producto);
-        		if (tb == null || tc == null)
+        		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
         		}

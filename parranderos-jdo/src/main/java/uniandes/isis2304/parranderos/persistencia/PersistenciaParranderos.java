@@ -708,9 +708,10 @@ public class PersistenciaParranderos
         {
             tx.begin();            
             long tuplasInsertadas = sqlEnDisplay.productoAlCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
+            long tuplasInsertadas1 = sqlEstaEnCarrito.productoAlCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, 0, producto, cantidad);
             tx.commit();
             
-            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas" + tuplasInsertadas1);
             return new EnDisplay(producto,	0, 0, 0, 0, cantidad);
         }
         catch (Exception e)
@@ -768,9 +769,10 @@ public class PersistenciaParranderos
         {
             tx.begin();            
             long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto);
+            long tuplasInsertadas1 = sqlEstaEnCarrito.devolverProductoCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, producto);
             tx.commit();
             
-            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
             return new EnDisplay(producto,	0, 0, 0, 0, 0);
         }
         catch (Exception e)

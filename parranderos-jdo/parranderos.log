@@ -602,3 +602,29 @@ ORA-00933: comando SQL no terminado correctamente
 22:33:48,167 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
 22:34:03,499 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12345, Bogota, Calle 140, 169]
 22:34:03,752 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EnDisplay@a1d1767 tuplas insertadas
+22:37:22,504 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:37:22,504 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:37:22,521 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:37:39,072 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+22:37:39,378 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "insert into EstaEnCarrito (clienteCC, ciudadSucursal, direccionSucursal, abandono, codigo, cantidad) values (?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304D14202220.SYS_C00811048) violada
+
+22:37:39,392 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: null tuplas insertadas
+22:40:32,602 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:40:32,603 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:40:32,620 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:40:53,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+22:40:53,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@2d8f4b05 tuplas insertadas
+22:46:36,381 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:46:36,381 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:46:36,397 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:46:52,116 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12345, Bogota, Calle 140, 169]
+22:46:52,403 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "delete from estaEnCarrito where clienteCC = ?, ciudadSucursal = ?, direccionSucursal = ?, codigo = ?".
+ORA-00933: comando SQL no terminado correctamente
+
+22:46:52,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: null tuplas insertadas
+22:48:15,747 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:48:15,747 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:48:15,763 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:48:30,502 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12345, Bogota, Calle 140, 169]
+22:48:30,885 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EnDisplay@28ad4225 tuplas insertadas
