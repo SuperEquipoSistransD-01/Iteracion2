@@ -44,6 +44,15 @@
 				}
 			]
 		},
+		{ "menuTitle": "Compras",
+		  "options":
+			[
+				{
+					"label": "Pagar Compra",
+					"event": "pagarCompra" 
+				}
+			]
+		},
 		{ "menuTitle": "Productos",
 		  "options":
 			[

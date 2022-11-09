@@ -47,6 +47,7 @@ import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
+import uniandes.isis2304.parranderos.negocio.Compras;
 
 
 /**
@@ -128,6 +129,8 @@ public class PersistenciaParranderos
 	private SQLUsuarios sqlUsuarios;
 	
 	private SQLPromociones sqlPromociones;
+	
+	private SQLCompras sqlCompras;
 	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
@@ -668,6 +671,10 @@ public class PersistenciaParranderos
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
+	
+	public List<EstaEnCarrito> obtenerProductosCarrito(long numDocumento, String clave) {
+		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), numDocumento, clave);
+	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
 			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,
@@ -774,6 +781,35 @@ public class PersistenciaParranderos
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
             return new EnDisplay(producto,	0, 0, 0, 0, 0);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public Compras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            tx.commit();
+            
+            //log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
+            return new Compras();
         }
         catch (Exception e)
         {

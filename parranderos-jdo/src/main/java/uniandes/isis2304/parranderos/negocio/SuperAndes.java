@@ -255,6 +255,14 @@ public class SuperAndes
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
+	{
+		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
+        Compras resp = pp.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
+        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+		return resp;
+	}
 
 
 

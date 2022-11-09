@@ -63,6 +63,7 @@ import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
+import uniandes.isis2304.parranderos.negocio.VOCompras;
 
 
 /**
@@ -771,6 +772,39 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
         		VOEnDisplay tb = parranderos.devolverProductoCarritoD(clienteCC, ciudadSucursal, direccionSucursal, producto);
+        		if (tb == null)
+        		{    		
+        			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
+        		}
+        		String resultado = "En productoAlCarrito\n\n";
+        		resultado += "Producto adicionado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    public void pagarCompra( )
+    {
+    	try 
+    	{
+    		long clienteCC  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido usuario, por favor digite su cedula", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String ciudadSucursal = JOptionPane.showInputDialog (this, "Elija la ciudad de la sucursal de la cual es su carrito. \n Por ejemplo, Bogota", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		String direccionSucursal = JOptionPane.showInputDialog (this, "Elija la direccion de la sucursalde la cual es su carrito. \n Por ejemplo, Calle 140", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		
+    		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
+    		{
+        		VOCompras tb = parranderos.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
         		if (tb == null)
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
