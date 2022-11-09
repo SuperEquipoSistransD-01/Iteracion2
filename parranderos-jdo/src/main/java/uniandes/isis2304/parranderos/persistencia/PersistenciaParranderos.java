@@ -672,8 +672,8 @@ public class PersistenciaParranderos
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
 	
-	public List<EstaEnCarrito> obtenerProductosCarrito(long numDocumento, String clave) {
-		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), numDocumento, clave);
+	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
+		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
 	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
@@ -805,6 +805,9 @@ public class PersistenciaParranderos
         Transaction tx=pm.currentTransaction();
         try
         {
+        	System.out.println("corre");
+        	List<EstaEnCarrito> productosCarrito = obtenerProductosCarrito(clienteCC, ciudadSucursal, direccionSucursal);
+        	System.out.println(productosCarrito);
             tx.begin();            
             tx.commit();
             
