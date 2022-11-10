@@ -354,10 +354,12 @@ public class PersistenciaParranderos
         try
         {
             tx.begin();            
-            long tuplasInsertadas = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            long tuplasInsertadas1 = sqlCarrito.nuevoAbandono(pm, clienteCC, ciudadSucursal, direccionSucursal);
+            long tuplasInsertadas2 = sqlEstaEnCarrito.abandonarCarrito1(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            long tuplasInsertadas3 = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal);
             tx.commit();
             
-            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Carrito abandono: " + clienteCC + ": " + tuplasInsertadas1 + " tuplas insertadas"+tuplasInsertadas2+tuplasInsertadas3);
             return new Carrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         }
         catch (Exception e)
