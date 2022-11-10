@@ -1,4 +1,4 @@
-drop table carrito;
+drop table carritos;
 drop table estaEnCarrito;
 drop table usuarios;
 drop table clientesSucursales;
