@@ -418,11 +418,11 @@ public class PersistenciaParranderos
 	
 	public List<EstaEnCarrito> darCarritosAbandonados ()
 	{
-		for (EstaEnCarrito tb : sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager()))
-        {
-			System.out.println("holiwis");
-        	System.out.println(tb.toString());
-        }
+//		for (EstaEnCarrito tb : sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager()))
+//        {
+//			System.out.println("holiwis");
+//        	System.out.println(tb.toString());
+//        }
 		return sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager());
 	}
 

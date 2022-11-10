@@ -802,6 +802,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	try 
     	{
 			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito();
+			listarCarritosAbandonados(lista);
 
 			String resultado = "En listarTipoBebida";
 			resultado +=  "\n" + listarCarritosAbandonados(lista);

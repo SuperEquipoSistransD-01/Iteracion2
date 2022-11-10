@@ -110,11 +110,11 @@ class SQLEstaEnCarrito
 		q.setResultClass(EstaEnCarrito.class);
 		System.out.println("HolaMundo");
 		
-		for (EstaEnCarrito tb : (List<EstaEnCarrito>) q.executeList())
-        {
-			System.out.println("holiwis1");
-        	System.out.println(tb.toString());
-        }
+//		for (EstaEnCarrito tb : (List<EstaEnCarrito>) q.executeList())
+//        {
+//			System.out.println("holiwis1");
+//        	System.out.println(tb.toString());
+//        }
 		//System.out.print(q.setResultClass(EstaEnCarrito.class));
 		return (List<EstaEnCarrito>) q.executeList();
 	}
