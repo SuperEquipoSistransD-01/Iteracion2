@@ -683,6 +683,11 @@ public class PersistenciaParranderos
 	}
 	
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
+		for (Usuarios tb : sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave))
+      {
+			System.out.println("holiwis");
+      	System.out.println(tb.toString());
+      }
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
 	
