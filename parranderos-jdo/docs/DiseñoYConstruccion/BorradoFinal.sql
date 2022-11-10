@@ -1,5 +1,5 @@
-drop table carritos;
 drop table estaEnCarrito;
+drop table carritos;
 drop table usuarios;
 drop table clientesSucursales;
 drop table cantProductosComprados;
@@ -12,8 +12,7 @@ drop table bodegas;
 drop table pedidos;
 drop table acuerdosCompra;
 drop table proveedores;
-drop table productos;
 drop table promociones;
+drop table productos;
 drop table sucursales;
 commit;
-

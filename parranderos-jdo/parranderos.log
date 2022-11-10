@@ -650,3 +650,6 @@ ORA-00933: comando SQL no terminado correctamente
 02:14:35,102 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
 02:14:35,102 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
 02:14:35,121 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+20:53:21,699 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+20:53:21,699 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+20:53:21,717 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
