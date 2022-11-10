@@ -19,6 +19,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import java.math.BigDecimal;
 
 
+
 import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,6 +45,7 @@ import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
+//import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
@@ -412,6 +414,16 @@ public class PersistenciaParranderos
             pm.close();
         }
 		
+	}
+	
+	public List<EstaEnCarrito> darCarritosAbandonados ()
+	{
+		for (EstaEnCarrito tb : sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager()))
+        {
+			System.out.println("holiwis");
+        	System.out.println(tb.toString());
+        }
+		return sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager());
 	}
 
 	public Productos adicionarProducto(String nombre, String marca, String presentacion, String unidadMedida,

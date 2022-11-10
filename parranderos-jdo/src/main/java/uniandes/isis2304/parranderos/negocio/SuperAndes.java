@@ -256,6 +256,19 @@ public class SuperAndes
 		return null;
 	}
 	
+	public List<VOEstaEnCarrito> darVOEstaEnCarrito ()
+	{
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOEstaEnCarrito> voTipos = new LinkedList<VOEstaEnCarrito> ();
+        for (EstaEnCarrito tb : pp.darCarritosAbandonados ())
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
 	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");

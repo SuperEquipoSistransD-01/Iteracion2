@@ -19,11 +19,13 @@ import java.util.List;
 
 
 
+
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
+//import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 
 /**
@@ -98,6 +100,22 @@ class SQLEstaEnCarrito
 		Query q = pm.newQuery(SQL, "SELECT * FROM EstaEnCarrito WHERE clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ?");
 		q.setResultClass(Usuarios.class);
 		q.setParameters(clienteCC, ciudadSucursal, direccionSucursal);
+		return (List<EstaEnCarrito>) q.executeList();
+	}
+	
+	public List<EstaEnCarrito> darCarritosAbandonados (PersistenceManager pm)
+	{
+		System.out.println("Estoy en SQLCARRITO");
+		Query q = pm.newQuery(SQL, "SELECT * FROM estaEnCarrito where abandono = 1 and ciudadSucursal = 'Bogota' and direccionSucursal = 'Calle 140'");
+		q.setResultClass(EstaEnCarrito.class);
+		System.out.println("HolaMundo");
+		
+		for (EstaEnCarrito tb : (List<EstaEnCarrito>) q.executeList())
+        {
+			System.out.println("holiwis1");
+        	System.out.println(tb.toString());
+        }
+		//System.out.print(q.setResultClass(EstaEnCarrito.class));
 		return (List<EstaEnCarrito>) q.executeList();
 	}
 

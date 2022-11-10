@@ -41,6 +41,10 @@
 				{
 					"label": "Devolver Productos al Estante",
 					"event": "devolverProductoCarrito" 
+				},
+				{
+					"label": "Mostrar Carritos abandonados en sucursal",
+					"event": "mostrarAbandono" 
 				}
 			]
 		},

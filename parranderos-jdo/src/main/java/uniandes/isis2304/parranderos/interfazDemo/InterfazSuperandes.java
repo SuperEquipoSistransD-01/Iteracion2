@@ -17,6 +17,7 @@ package uniandes.isis2304.parranderos.interfazDemo;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -61,6 +62,7 @@ import uniandes.isis2304.parranderos.negocio.VOProductos;
 import uniandes.isis2304.parranderos.negocio.VOPromociones;
 import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
+//import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.VOCompras;
@@ -793,6 +795,37 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+    
+    
+    public void mostrarAbandono( )
+    {
+    	try 
+    	{
+			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito();
+
+			String resultado = "En listarTipoBebida";
+			resultado +=  "\n" + listarCarritosAbandonados(lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
+    {
+    	String resp = "Los tipos de bebida existentes son:\n";
+    	int i = 1;
+        for (VOEstaEnCarrito tb : lista)
+        {
+        	resp += i++ + ". " + tb.toString() + "\n";
+        }
+        return resp;
+	}
     
     public void pagarCompra( )
     {
