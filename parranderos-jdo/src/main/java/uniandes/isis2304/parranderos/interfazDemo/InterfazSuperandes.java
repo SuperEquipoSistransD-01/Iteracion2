@@ -871,7 +871,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
 	    		if (documento != 0 && clave != 0)
 	    		{
-	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesSucursal(documento, clave);
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesGeneral(documento, clave);
 	    			
 	        		if (lista.size() == 0)
 	        		{    		
