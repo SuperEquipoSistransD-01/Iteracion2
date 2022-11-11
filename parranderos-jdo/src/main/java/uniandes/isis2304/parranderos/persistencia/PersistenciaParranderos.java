@@ -861,7 +861,7 @@ public class PersistenciaParranderos
             
             for (VOEstaEnCarrito tb : lista)
             {
-            	System.out.println(tb.getClienteCC()+ "," + tb.getCiudadSucursal()+"," + tb.getDireccionSucursal()+"," + tb.getCodigo());
+            	//System.out.println(tb.getClienteCC()+ "," + tb.getCiudadSucursal()+"," + tb.getDireccionSucursal()+"," + tb.getCodigo());
             	sqlEnDisplay.devolverProductoCarritoD(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             	sqlEstaEnCarrito.devolverProductoCarritoC(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             }

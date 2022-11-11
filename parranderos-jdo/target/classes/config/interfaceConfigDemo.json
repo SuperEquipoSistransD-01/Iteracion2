@@ -43,7 +43,7 @@
 					"event": "devolverProductoCarrito" 
 				},
 				{
-					"label": "Mostrar Carritos abandonados en sucursal",
+					"label": "Recuperar Productos de Carritos Abandonados",
 					"event": "mostrarAbandono" 
 				}
 			]

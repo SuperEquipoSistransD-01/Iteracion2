@@ -814,8 +814,11 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		VOEstaEnCarrito tb = parranderos.devolverProductosAbandono(lista, documento, clave);
         		String resultado = "En recuperarProductosCarritoAbandonado";
     			resultado +=  "\n" + listarCarritosAbandonados(lista);
+    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
+    			
+    			
     			
     		}
     		else
@@ -834,7 +837,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     
     private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
     {
-    	String resp = "Los tipos de bebida existentes son:\n";
+    	String resp = "Los Carritos Abandonados son:\n";
     	int i = 1;
         for (VOEstaEnCarrito tb : lista)
         {
