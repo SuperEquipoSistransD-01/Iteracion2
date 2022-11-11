@@ -103,11 +103,12 @@ class SQLEstaEnCarrito
 		return (List<EstaEnCarrito>) q.executeList();
 	}
 	
-	public List<EstaEnCarrito> darCarritosAbandonados (PersistenceManager pm)
+	public List<EstaEnCarrito> darCarritosAbandonados (PersistenceManager pm, long documento, long clave)
 	{
 		System.out.println("Estoy en SQLCARRITO");
-		Query q = pm.newQuery(SQL, "SELECT * FROM estaEnCarrito where abandono = 1 and ciudadSucursal = 'Bogota' and direccionSucursal = 'Calle 140'");
+		Query q = pm.newQuery(SQL, "SELECT estaEnCarrito.* FROM estaEnCarrito, usuarios where usuarios.numdocumento = ? and usuarios.clave = ? and usuarios.ciudadSucursal = estaEnCarrito.ciudadSucursal and estaEnCarrito.abandono = 1 and estaEnCarrito.direccionSucursal = usuarios.direccionsucursal");
 		q.setResultClass(EstaEnCarrito.class);
+		q.setParameters(documento, clave);
 		System.out.println("HolaMundo");
 		
 //		for (EstaEnCarrito tb : (List<EstaEnCarrito>) q.executeList())

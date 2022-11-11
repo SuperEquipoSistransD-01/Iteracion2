@@ -416,14 +416,14 @@ public class PersistenciaParranderos
 		
 	}
 	
-	public List<EstaEnCarrito> darCarritosAbandonados ()
+	public List<EstaEnCarrito> darCarritosAbandonados (long documento, long clave)
 	{
 //		for (EstaEnCarrito tb : sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager()))
 //        {
 //			System.out.println("holiwis");
 //        	System.out.println(tb.toString());
 //        }
-		return sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager());
+		return sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager(), documento, clave);
 	}
 
 	public Productos adicionarProducto(String nombre, String marca, String presentacion, String unidadMedida,

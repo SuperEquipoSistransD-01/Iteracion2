@@ -256,11 +256,11 @@ public class SuperAndes
 		return null;
 	}
 	
-	public List<VOEstaEnCarrito> darVOEstaEnCarrito ()
+	public List<VOEstaEnCarrito> darVOEstaEnCarrito (long documento, long clave)
 	{
 		log.info ("Generando los VO de Tipos de bebida");        
         List<VOEstaEnCarrito> voTipos = new LinkedList<VOEstaEnCarrito> ();
-        for (EstaEnCarrito tb : pp.darCarritosAbandonados ())
+        for (EstaEnCarrito tb : pp.darCarritosAbandonados (documento, clave))
         {
         	System.out.println(tb.toString());
         	voTipos.add (tb);

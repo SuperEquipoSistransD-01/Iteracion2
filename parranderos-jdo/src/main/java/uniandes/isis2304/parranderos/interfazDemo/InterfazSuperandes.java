@@ -801,13 +801,25 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     {
     	try 
     	{
-    		System.out.println("Paso1");
-			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito();
-
-			String resultado = "En listarTipoBebida";
-			resultado +=  "\n" + listarCarritosAbandonados(lista);
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
+    		long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido operador, por favor digite su numero de documento", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite su clave", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (documento != 0 && clave != 0)
+    		{
+    			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito(documento, clave);
+        		if (lista.size() == 0)
+        		{    		
+        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+        		}
+        		String resultado = "En recuperarProductosCarritoAbandonado";
+    			resultado +=  "\n" + listarCarritosAbandonados(lista);
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    			
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
 		} 
     	catch (Exception e) 
     	{
@@ -815,6 +827,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
+    	
     }
     
     private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
