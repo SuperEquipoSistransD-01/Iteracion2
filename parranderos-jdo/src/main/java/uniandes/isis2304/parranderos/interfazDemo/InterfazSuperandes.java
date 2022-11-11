@@ -842,11 +842,13 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	{
     		long tipo  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente, por favor indique si es gerente general o gerente de sucursal. \nSi es gerente de sucursal, digite 1. \nSi es gerente general, digite 0. ", "Ok", JOptionPane.QUESTION_MESSAGE));
     		if (tipo == 1) {
+    			System.out.println("Tipo es 1");
     			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
         		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
 	    		if (documento != 0 && clave != 0)
 	    		{
 	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesSucursal(documento, clave);
+	    			//System.out.println(lista.get(0).getMes());
 	    			
 	        		if (lista.size() == 0)
 	        		{    		
@@ -866,7 +868,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
 	    		}
     		}
-    		if (tipo == 0) {
+    		else if (tipo == 0) {
     			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
         		String clave = JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE);
 	    		if (documento != 0 && clave != "")
@@ -884,7 +886,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
 	        		}
 	        		String resultado = "En recuperarProductosCarritoAbandonado";
-	    			resultado +=  "\n" + listarClientesFrecuentesSucursal(lista);
+	    			resultado +=  "\n" + listarClientesFrecuentesGeneral(lista);
 	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
 	    			resultado += "\n Operación terminada";
 	    			panelDatos.actualizarInterfaz(resultado);
@@ -900,7 +902,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		}
     		else
     		{
-    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    			panelDatos.actualizarInterfaz("Elija entre 1 y 0");
     		}
 		} 
     	catch (Exception e) 
@@ -914,7 +916,18 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     
     private String listarClientesFrecuentesSucursal(List<VOConsultaFrecuentes> lista) 
     {
-    	String resp = "Los Clientes Frecuentes para tu sucursal fueron:\n";
+    	String resp = "Los Clientes Frecuentes para tu sucursal son:\n";
+    	int i = 1;
+        for (VOConsultaFrecuentes tb : lista)
+        {
+        	resp += i++ + ". Cliente: " + tb.getCliente() + "\n";
+        }
+        return resp;
+	}
+    
+    private String listarClientesFrecuentesGeneral(List<VOConsultaFrecuentes> lista) 
+    {
+    	String resp = "Los Clientes Frecuentes para todas las sucursales son:\n";
     	int i = 1;
         for (VOConsultaFrecuentes tb : lista)
         {
