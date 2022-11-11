@@ -23,6 +23,8 @@ import javax.jdo.PersistenceManager;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
+
+import uniandes.isis2304.parranderos.interfazDemo.VOConsultaFrecuentes;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 
 /**
@@ -269,6 +271,18 @@ public class SuperAndes
         return voTipos;
 	}
 	
+	public List<VOConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOConsultaFrecuentes> voTipos = new LinkedList<VOConsultaFrecuentes> ();
+        for (ConsultaFrecuentes tb : pp.darFrecuentesSucursal(documento, clave))
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add(tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
 	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
@@ -283,6 +297,8 @@ public class SuperAndes
         log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
 		return resp;
 	}
+
+
 
 
 

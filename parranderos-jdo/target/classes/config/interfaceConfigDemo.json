@@ -133,7 +133,15 @@
 					}
 				]
 		},
-		
+		{ "menuTitle": "Consultas",
+			  "options":
+				[
+					{
+						"label": "Consultar Clientes Frecuentes",
+						"event": "consultarFrecuentes" 
+					}
+				]
+		},		
 		{ "menuTitle": "Documentación",
 		  "options":
 			[

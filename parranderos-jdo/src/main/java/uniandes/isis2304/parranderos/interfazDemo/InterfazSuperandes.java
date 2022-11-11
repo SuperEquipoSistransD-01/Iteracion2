@@ -835,6 +835,47 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	
     }
     
+    public void consultarFrecuentes( )
+    {
+    	try 
+    	{
+    		long tipo  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente, por favor indique si es gerente general o gerente de sucursal. \nSi es gerente de sucursal, digite 1. \nSi es gerente general, digite 0. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (tipo == 1) {
+    			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+        		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+	    		if (documento != 0 && clave != 0)
+	    		{
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesSucursal(documento, clave);
+	    			
+	        		if (lista.size() == 0)
+	        		{    		
+	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+	        		}
+	        		VOEstaEnCarrito tb = parranderos.devolverProductosAbandono(lista, documento, clave);
+	        		String resultado = "En recuperarProductosCarritoAbandonado";
+	    			resultado +=  "\n" + listarCarritosAbandonados(lista);
+	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+	    			resultado += "\n Operación terminada";
+	    			panelDatos.actualizarInterfaz(resultado);
+	    			
+	    			
+	    			
+	    		}
+	    		else
+	    		{
+	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+	    		}
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
     private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
     {
     	String resp = "Los Carritos Abandonados son:\n";
