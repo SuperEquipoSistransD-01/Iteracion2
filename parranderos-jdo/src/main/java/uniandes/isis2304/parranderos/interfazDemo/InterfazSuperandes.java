@@ -868,10 +868,16 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		}
     		if (tipo == 0) {
     			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
-        		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
-	    		if (documento != 0 && clave != 0)
+        		String clave = JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE);
+	    		if (documento != 0 && clave != "")
 	    		{
-	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesGeneral(documento, clave);
+	    			Usuarios tb = parranderos.obtenerUsuario(documento, clave).get(0);
+	    			rol = tb.getRol();
+	        		if (!"gg".equals(rol))
+	        		{    		
+	        			throw new Exception ("No se pudo iniciar sesion");
+	        		}
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesGeneral();
 	    			
 	        		if (lista.size() == 0)
 	        		{    		

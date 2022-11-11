@@ -283,15 +283,16 @@ public class SuperAndes
         return voTipos;
 	}
 	
-	public List<VOConsultaFrecuentes> darFrecuentesGeneral(long documento, long clave) {
-		log.info ("Generando frecuentes general");        
+	public List <VOConsultaFrecuentes> darFrecuentesGeneral() {
+		log.info ("Generando los VO de Tipos de bebida");        
         List<VOConsultaFrecuentes> voTipos = new LinkedList<VOConsultaFrecuentes> ();
-        for (ConsultaFrecuentes tb : pp.darFrecuentesGeneral(documento, clave))
+        for (ConsultaFrecuentes tb : pp.darFrecuentesGeneral())
         {
         	System.out.println(tb.toString());
         	voTipos.add(tb);
         }
         log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        
         return voTipos;
 		
 	}

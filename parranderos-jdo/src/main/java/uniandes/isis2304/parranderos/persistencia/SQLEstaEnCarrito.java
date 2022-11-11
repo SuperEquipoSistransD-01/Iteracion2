@@ -28,6 +28,7 @@ import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
 //import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
+import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto GUSTAN de Parranderos
@@ -122,10 +123,11 @@ class SQLEstaEnCarrito
 		return (List<ConsultaFrecuentes>) q.executeList();
 	}
 
-	public List<ConsultaFrecuentes> darFrecuentesGeneral(PersistenceManager pm, long documento,
-			long clave) {
+	public List <ConsultaFrecuentes> darFrecuentesGeneral(PersistenceManager pm) {
 		// TODO Revisar si es gerente general (quizás deba hacer esto antes). Si sí lo es, ejecuto sql que ya hice, el general
-		return null;
+		Query q = pm.newQuery(SQL, "select distinct to_char(c1.fecha, 'Month') as mes, c1.cliente from compras c1, compras c2 where c1.cliente = c2.cliente and to_char(c1.fecha, 'Month') = to_char(c2.fecha, 'Month') and c1.codigo != c2.codigo");
+		q.setResultClass(ConsultaFrecuentes.class);
+		return (List<ConsultaFrecuentes>) q.executeList();
 	}
 
 }
