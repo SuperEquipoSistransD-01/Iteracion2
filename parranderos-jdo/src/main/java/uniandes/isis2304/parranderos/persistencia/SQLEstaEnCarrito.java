@@ -23,6 +23,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
 //import uniandes.isis2304.parranderos.negocio.TipoBebida;
@@ -109,6 +110,16 @@ class SQLEstaEnCarrito
 		q.setResultClass(EstaEnCarrito.class);
 		q.setParameters(documento, clave);
 		return (List<EstaEnCarrito>) q.executeList();
+	}
+
+	
+	//Consultar Clientes Frecuentes
+	public List<ConsultaFrecuentes> darFrecuentesSucursal(PersistenceManager pm, long documento,
+			long clave) {
+		Query q = pm.newQuery(SQL, "select distinct to_char(c1.fecha, 'Month') as mes, c1.cliente from compras c1, compras c2, usuarios where usuarios.rol = 'gs' and usuarios.numdocumento = ? and clave = ? and c1.ciudadSucursal = c2.ciudadSucursal and c1.ciudadSucursal = usuarios.ciudadSucursal and c1.direccionSucursal = c2.direccionSucursal and c1.direccionSucursal = usuarios.direccionSucursal and c1.cliente = c2.cliente and to_char(c1.fecha, 'Month') = to_char(c2.fecha, 'Month') and c1.codigo != c2.codigo");
+		q.setResultClass(ConsultaFrecuentes.class);
+		q.setParameters(documento, clave);
+		return (List<ConsultaFrecuentes>) q.executeList();
 	}
 
 }

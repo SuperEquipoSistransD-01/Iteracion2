@@ -66,6 +66,7 @@ import uniandes.isis2304.parranderos.negocio.VOSucursal;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.VOCompras;
+import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 
 
 /**
@@ -851,9 +852,8 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 	        		{    		
 	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
 	        		}
-	        		VOEstaEnCarrito tb = parranderos.devolverProductosAbandono(lista, documento, clave);
 	        		String resultado = "En recuperarProductosCarritoAbandonado";
-	    			resultado +=  "\n" + listarCarritosAbandonados(lista);
+	    			resultado +=  "\n" + listarClientesFrecuentesSucursal(lista);
 	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
 	    			resultado += "\n Operación terminada";
 	    			panelDatos.actualizarInterfaz(resultado);
@@ -875,6 +875,17 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 		}
     	
     }
+    
+    private String listarClientesFrecuentesSucursal(List<VOConsultaFrecuentes> lista) 
+    {
+    	String resp = "Los Clientes Frecuentes:\n";
+    	int i = 1;
+        for (VOConsultaFrecuentes tb : lista)
+        {
+        	resp += i++ + ". Cliente:" + tb.getCliente() + "\n";
+        }
+        return resp;
+	}
     
     private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
     {

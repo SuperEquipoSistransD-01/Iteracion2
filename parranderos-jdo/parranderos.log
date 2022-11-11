@@ -900,3 +900,8 @@ ORA-02292: restricción de integridad (ISIS2304D02202220.SYS_C00815177) violada 
 23:01:26,463 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 4 existentes
 23:01:26,463 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [124444, 1234]
 23:01:27,210 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@6402b8bd tuplas insertadas
+17:16:49,813 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:16:49,814 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:16:49,831 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:17:21,229 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida
+17:17:21,413 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 1 existentes

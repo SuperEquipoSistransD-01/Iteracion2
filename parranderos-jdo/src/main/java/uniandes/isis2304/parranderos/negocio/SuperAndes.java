@@ -16,6 +16,7 @@
 package uniandes.isis2304.parranderos.negocio;
 
 import java.sql.Timestamp;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,7 +25,6 @@ import javax.jdo.PersistenceManager;
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
 
-import uniandes.isis2304.parranderos.interfazDemo.VOConsultaFrecuentes;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 
 /**

@@ -51,6 +51,7 @@ import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.Compras;
+import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 
 
 /**
@@ -695,6 +696,10 @@ public class PersistenciaParranderos
 	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
 	}
+	
+	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
+		return sqlEstaEnCarrito.darFrecuentesSucursal (pmf.getPersistenceManager(), documento, clave);
+	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
 			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,
@@ -889,6 +894,8 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+
+
 
 
  }
