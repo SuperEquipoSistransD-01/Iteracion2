@@ -806,10 +806,12 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		if (documento != 0 && clave != 0)
     		{
     			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito(documento, clave);
+    			listarCarritosAbandonados(lista);
         		if (lista.size() == 0)
         		{    		
         			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
         		}
+        		VOEstaEnCarrito tb = parranderos.devolverProductosAbandono(lista, documento, clave);
         		String resultado = "En recuperarProductosCarritoAbandonado";
     			resultado +=  "\n" + listarCarritosAbandonados(lista);
     			resultado += "\n Operación terminada";

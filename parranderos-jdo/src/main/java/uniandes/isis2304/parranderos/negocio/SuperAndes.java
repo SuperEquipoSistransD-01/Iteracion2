@@ -277,6 +277,13 @@ public class SuperAndes
 		return resp;
 	}
 
+	public VOEstaEnCarrito devolverProductosAbandono(List<VOEstaEnCarrito> lista, long documento, long clave) {
+		log.info ("Devolviendo producto [" + documento + ", " + clave+ "]");
+        EstaEnCarrito resp = pp.devolverProductosAbandono(lista, documento, clave);
+        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+		return resp;
+	}
+
 
 
 

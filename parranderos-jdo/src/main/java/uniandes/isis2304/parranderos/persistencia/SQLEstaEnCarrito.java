@@ -81,9 +81,9 @@ class SQLEstaEnCarrito
 	}
 
 	public long devolverProductoCarritoC(PersistenceManager pm, long clienteCC, String ciudadSucursal,
-			String direccionSucursal, long producto) {
-		 Query q = pm.newQuery(SQL, "delete from estaEnCarrito where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and codigo = ? ");
-	     q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, producto);
+			String direccionSucursal, long producto, long abandono) {
+		 Query q = pm.newQuery(SQL, "delete from estaEnCarrito where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and codigo = ? and abandono = ?");
+	     q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
 	     return (long) q.executeUnique();
 	}
 	
