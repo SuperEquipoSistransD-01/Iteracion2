@@ -283,6 +283,19 @@ public class SuperAndes
         return voTipos;
 	}
 	
+	public List<VOConsultaFrecuentes> darFrecuentesGeneral(long documento, long clave) {
+		log.info ("Generando frecuentes general");        
+        List<VOConsultaFrecuentes> voTipos = new LinkedList<VOConsultaFrecuentes> ();
+        for (ConsultaFrecuentes tb : pp.darFrecuentesGeneral(documento, clave))
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add(tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        return voTipos;
+		
+	}
+	
 	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
@@ -297,6 +310,8 @@ public class SuperAndes
         log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
 		return resp;
 	}
+
+
 
 
 

@@ -700,6 +700,10 @@ public class PersistenciaParranderos
 	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
 		return sqlEstaEnCarrito.darFrecuentesSucursal (pmf.getPersistenceManager(), documento, clave);
 	}
+	
+	public List<ConsultaFrecuentes> darFrecuentesGeneral(long documento, long clave) {
+		return sqlEstaEnCarrito.darFrecuentesGeneral (pmf.getPersistenceManager(), documento, clave);
+	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
 			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,
@@ -894,6 +898,8 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+
+
 
 
 

@@ -866,6 +866,36 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
 	    		}
     		}
+    		if (tipo == 0) {
+    			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+        		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+	    		if (documento != 0 && clave != 0)
+	    		{
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesSucursal(documento, clave);
+	    			
+	        		if (lista.size() == 0)
+	        		{    		
+	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+	        		}
+	        		String resultado = "En recuperarProductosCarritoAbandonado";
+	    			resultado +=  "\n" + listarClientesFrecuentesSucursal(lista);
+	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+	    			resultado += "\n Operación terminada";
+	    			panelDatos.actualizarInterfaz(resultado);
+	    			
+	    			
+	    			
+	    		}
+	    		else
+	    		{
+	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+	    		}
+    			
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
 		} 
     	catch (Exception e) 
     	{
@@ -878,11 +908,11 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     
     private String listarClientesFrecuentesSucursal(List<VOConsultaFrecuentes> lista) 
     {
-    	String resp = "Los Clientes Frecuentes:\n";
+    	String resp = "Los Clientes Frecuentes para tu sucursal fueron:\n";
     	int i = 1;
         for (VOConsultaFrecuentes tb : lista)
         {
-        	resp += i++ + ". Cliente:" + tb.getCliente() + "\n";
+        	resp += i++ + ". Cliente: " + tb.getCliente() + "\n";
         }
         return resp;
 	}

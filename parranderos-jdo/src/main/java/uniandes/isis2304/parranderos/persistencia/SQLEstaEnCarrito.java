@@ -122,4 +122,10 @@ class SQLEstaEnCarrito
 		return (List<ConsultaFrecuentes>) q.executeList();
 	}
 
+	public List<ConsultaFrecuentes> darFrecuentesGeneral(PersistenceManager pm, long documento,
+			long clave) {
+		// TODO Revisar si es gerente general (quizás deba hacer esto antes). Si sí lo es, ejecuto sql que ya hice, el general
+		return null;
+	}
+
 }
