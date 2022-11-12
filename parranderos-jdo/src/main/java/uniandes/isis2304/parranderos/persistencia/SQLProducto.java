@@ -7,6 +7,9 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import com.google.gson.JsonArray;
+
+import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Productos;
 
 class SQLProducto {
@@ -41,6 +44,13 @@ class SQLProducto {
         System.out.println(q);
         q.setParameters(codigo, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, unidadMedida, volumenEmpaque, pesoEmpaque, tipoProducto, categoriaAlmacenamiento);
         return (long) q.executeUnique();
+	}
+
+	public List<Productos> obtenerProducto(PersistenceManager pm, long codigo) {
+		Query q = pm.newQuery(SQL, "SELECT * FROM Productos WHERE codigo = ?");
+		q.setResultClass(Productos.class);
+		q.setParameters(codigo);
+		return (List<Productos>) q.executeList();
 	}
 
 }

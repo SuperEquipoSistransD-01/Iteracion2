@@ -957,15 +957,12 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
-        		VOCompras tb = parranderos.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
+        		String tb = parranderos.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
         		if (tb == null)
         		{    		
-        			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
+        			throw new Exception ("No se pudo realizar la compra para el cliente de cedula "+clienteCC);
         		}
-        		String resultado = "En productoAlCarrito\n\n";
-        		resultado += "Producto adicionado exitosamente: " + tb;
-    			resultado += "\n Operación terminada";
-    			panelDatos.actualizarInterfaz(resultado);
+    			panelDatos.actualizarInterfaz(tb);
     		}
     		else
     		{

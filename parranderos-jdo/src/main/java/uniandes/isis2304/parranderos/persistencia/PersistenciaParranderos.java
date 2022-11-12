@@ -694,6 +694,11 @@ public class PersistenciaParranderos
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
 	
+	public Productos obtenerProducto(long codigo)
+	{
+		return sqlProducto.obtenerProducto(pmf.getPersistenceManager(), codigo).get(0);
+	}
+	
 	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
 	}
@@ -830,20 +835,40 @@ public class PersistenciaParranderos
         }
 	}
 	
-	public Compras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
+	public String pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
         	List<EstaEnCarrito> productosCarrito = obtenerProductosCarrito(clienteCC, ciudadSucursal, direccionSucursal);
-        	System.out.println("corrió");
-        	System.out.println(productosCarrito.size());
+        	Productos producto = null;
+        	int cantidad = 0;
+        	long precio = 0;
+        	long total = 0;
+        	
+        	String textoFactura = "Factura:\n"
+        			+ "Cédula del Cliente: " + Long.toString(clienteCC) + "\n"
+        			+ "Producto:\tCantidad:\tPrecio:\n";
+        	
+        	for (int i = 0; i < productosCarrito.size(); i++)
+        	{
+        		cantidad = (int) productosCarrito.get(i).getCantidad();
+        		producto = obtenerProducto(productosCarrito.get(i).getCodigo());
+        		precio = cantidad * producto.getPrecioUnitario();
+        		total = total + precio;
+        		
+        		textoFactura = textoFactura + 
+        				producto.getNombre() + "\tX" + String.valueOf(cantidad) + "\t$" + String.valueOf(precio) + "\n";
+        	}
+        	
+        	textoFactura = textoFactura +
+        			"Total: \t\t$" + String.valueOf(total);
+        	System.out.println(textoFactura);        	
             tx.begin();           
             tx.commit();
             
-            //log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
-            return new Compras();
+            return textoFactura;
         }
         catch (Exception e)
         {

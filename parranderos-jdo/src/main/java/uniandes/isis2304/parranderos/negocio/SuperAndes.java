@@ -297,11 +297,11 @@ public class SuperAndes
 		
 	}
 	
-	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
+	public String pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
-        Compras resp = pp.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
-        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+        String resp = pp.pagarCompra(clienteCC, ciudadSucursal, direccionSucursal);
+        log.info ("Compra Facturada: \n" + resp);
 		return resp;
 	}
 
