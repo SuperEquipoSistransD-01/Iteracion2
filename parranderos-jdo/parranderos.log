@@ -1574,3 +1574,14 @@ Producto:	Cantidad:	Precio:
 Zucaritas	X2	$20000
 Don Pacho	X3	$24000
 Total: 		$44000
+14:48:41,711 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:48:41,712 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:48:41,733 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:49:00,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+14:49:01,609 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 14:49:00.663
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000

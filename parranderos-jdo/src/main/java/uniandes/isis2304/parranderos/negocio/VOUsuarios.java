@@ -1,7 +1,7 @@
 package uniandes.isis2304.parranderos.negocio;
 
 public interface VOUsuarios {
-	long getNumDocumento();
+	public long getNumDocumento();
 	public String getNombre();
 	public String getCorreoElectronico();
 	public String getClave();

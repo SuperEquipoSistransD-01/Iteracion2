@@ -45,13 +45,13 @@ import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
-//import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.Compras;
+import uniandes.isis2304.parranderos.negocio.CantProductoComprado;
 import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 
 
@@ -136,6 +136,8 @@ public class PersistenciaParranderos
 	private SQLPromociones sqlPromociones;
 	
 	private SQLCompras sqlCompras;
+	
+	private SQLCantProductoComprado sqlCantProductoComprado;
 	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
@@ -252,6 +254,7 @@ public class PersistenciaParranderos
 		sqlEnDisplay = new SQLEnDisplay(this);
 		sqlEstaEnCarrito = new SQLEstaEnCarrito(this);
 		sqlCompras = new SQLCompras(this);
+		sqlCantProductoComprado = new SQLCantProductoComprado(this);
 	}
 
 	/**
@@ -572,11 +575,39 @@ public class PersistenciaParranderos
         {
             tx.begin();            
             long codigo = nextval ();
-            System.out.println(codigo);
             long tuplasInsertadas = sqlCompras.adicionarCompra(pm, codigo, fecha, ciudadSucursal, direccionSucursal, cliente);
             tx.commit();
             log.trace ("Compra: " + codigo + ": " + tuplasInsertadas + " tuplas insertadas");
             return new Compras(codigo, fecha, ciudadSucursal, direccionSucursal, cliente);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("falla");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public CantProductoComprado adicionarCantProductoComprado(long compra, long producto, long cantProductos) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long tuplasInsertadas = sqlCantProductoComprado.adicionarCantProductoComprado(pm, compra, producto, cantProductos);
+            tx.commit();
+            log.trace ("CantProductoComprado: " + compra + "-" + producto + ": "  + tuplasInsertadas + " tuplas insertadas");
+            return new CantProductoComprado(compra, producto, cantProductos);
         }
         catch (Exception e)
         {
@@ -886,14 +917,16 @@ public class PersistenciaParranderos
         	long total = 0;
         	Timestamp fechaActual = obtenerFechaActual();
         	
-        	Compras compra = adicionarCompra(fechaActual, ciudadSucursal, direccionSucursal, clienteCC);
-        	
         	String textoFactura = "Fecha: " + fechaActual.toString() + "\n"
         			+ "Cédula del Cliente: " + Long.toString(clienteCC) + "\n"
         			+ "Producto:\tCantidad:\tPrecio:\n";
         	
+        	tx.begin();
+        	
+        	Compras compra = adicionarCompra(fechaActual, ciudadSucursal, direccionSucursal, clienteCC);
+        	
         	for (int i = 0; i < productosCarrito.size(); i++)
-        	{
+        	{		
         		cantidad = (int) productosCarrito.get(i).getCantidad();
         		producto = obtenerProducto(productosCarrito.get(i).getCodigo());
         		precio = cantidad * producto.getPrecioUnitario();
@@ -901,12 +934,12 @@ public class PersistenciaParranderos
         		
         		textoFactura = textoFactura + 
         				producto.getNombre() + "\tX" + String.valueOf(cantidad) + "\t$" + String.valueOf(precio) + "\n";
+        	
+        		adicionarCantProductoComprado(compra.getCodigo(), producto.getCodigo(), cantidad);
         	}
         	
         	textoFactura = textoFactura +
         			"Total: \t\t$" + String.valueOf(total);
-            	
-            tx.begin();    
             
             tx.commit();
             
