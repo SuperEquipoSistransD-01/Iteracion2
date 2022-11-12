@@ -17,6 +17,7 @@ package uniandes.isis2304.parranderos.interfazDemo;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -61,9 +62,11 @@ import uniandes.isis2304.parranderos.negocio.VOProductos;
 import uniandes.isis2304.parranderos.negocio.VOPromociones;
 import uniandes.isis2304.parranderos.negocio.VOProveedores;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
+//import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.VOCompras;
+import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 
 
 /**
@@ -793,6 +796,156 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+    
+    
+    public void mostrarAbandono( )
+    {
+    	try 
+    	{
+    		long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido operador, por favor digite su numero de documento", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Por favor digite su clave", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (documento != 0 && clave != 0)
+    		{
+    			List <VOEstaEnCarrito> lista = parranderos.darVOEstaEnCarrito(documento, clave);
+    			listarCarritosAbandonados(lista);
+        		if (lista.size() == 0)
+        		{    		
+        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+        		}
+        		VOEstaEnCarrito tb = parranderos.devolverProductosAbandono(lista, documento, clave);
+        		String resultado = "En recuperarProductosCarritoAbandonado";
+    			resultado +=  "\n" + listarCarritosAbandonados(lista);
+    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    			
+    			
+    			
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
+    public void consultarFrecuentes( )
+    {
+    	try 
+    	{
+    		long tipo  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente, por favor indique si es gerente general o gerente de sucursal. \nSi es gerente de sucursal, digite 1. \nSi es gerente general, digite 0. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (tipo == 1) {
+    			System.out.println("Tipo es 1");
+    			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+        		long clave = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+	    		if (documento != 0 && clave != 0)
+	    		{
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesSucursal(documento, clave);
+	    			//System.out.println(lista.get(0).getMes());
+	    			
+	        		if (lista.size() == 0)
+	        		{    		
+	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+	        		}
+	        		String resultado = "En recuperarProductosCarritoAbandonado";
+	    			resultado +=  "\n" + listarClientesFrecuentesSucursal(lista);
+	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+	    			resultado += "\n Operación terminada";
+	    			panelDatos.actualizarInterfaz(resultado);
+	    			
+	    			
+	    			
+	    		}
+	    		else
+	    		{
+	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+	    		}
+    		}
+    		else if (tipo == 0) {
+    			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+        		String clave = JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE);
+	    		if (documento != 0 && clave != "")
+	    		{
+	    			Usuarios tb = parranderos.obtenerUsuario(documento, clave).get(0);
+	    			rol = tb.getRol();
+	        		if (!"gg".equals(rol))
+	        		{    		
+	        			throw new Exception ("No se pudo iniciar sesion");
+	        		}
+	    			List <VOConsultaFrecuentes> lista = parranderos.darFrecuentesGeneral();
+	    			
+	        		if (lista.size() == 0)
+	        		{    		
+	        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+	        		}
+	        		String resultado = "En recuperarProductosCarritoAbandonado";
+	    			resultado +=  "\n" + listarClientesFrecuentesGeneral(lista);
+	    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+	    			resultado += "\n Operación terminada";
+	    			panelDatos.actualizarInterfaz(resultado);
+	    			
+	    			
+	    			
+	    		}
+	    		else
+	    		{
+	    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+	    		}
+    			
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Elija entre 1 y 0");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
+    private String listarClientesFrecuentesSucursal(List<VOConsultaFrecuentes> lista) 
+    {
+    	String resp = "Los Clientes Frecuentes para tu sucursal son:\n";
+    	int i = 1;
+        for (VOConsultaFrecuentes tb : lista)
+        {
+        	resp += i++ + ". Cliente: " + tb.getCliente() + "\n";
+        }
+        return resp;
+	}
+    
+    private String listarClientesFrecuentesGeneral(List<VOConsultaFrecuentes> lista) 
+    {
+    	String resp = "Los Clientes Frecuentes para todas las sucursales son:\n";
+    	int i = 1;
+        for (VOConsultaFrecuentes tb : lista)
+        {
+        	resp += i++ + ". Cliente: " + tb.getCliente() + "\n";
+        }
+        return resp;
+	}
+    
+    private String listarCarritosAbandonados(List<VOEstaEnCarrito> lista) 
+    {
+    	String resp = "Los Carritos Abandonados son:\n";
+    	int i = 1;
+        for (VOEstaEnCarrito tb : lista)
+        {
+        	resp += i++ + ". " + tb.toString() + "\n";
+        }
+        return resp;
+	}
     
     public void pagarCompra( )
     {

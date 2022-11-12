@@ -19,6 +19,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import java.math.BigDecimal;
 
 
+
 import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,10 +45,14 @@ import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
+//import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
+import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
+import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.Compras;
+import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 
 
 /**
@@ -354,10 +359,12 @@ public class PersistenciaParranderos
         try
         {
             tx.begin();            
-            long tuplasInsertadas = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            long tuplasInsertadas1 = sqlCarrito.nuevoAbandono(pm, clienteCC, ciudadSucursal, direccionSucursal);
+            long tuplasInsertadas2 = sqlEstaEnCarrito.abandonarCarrito1(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            long tuplasInsertadas3 = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, 0);
             tx.commit();
             
-            log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Carrito abandono: " + clienteCC + ": " + tuplasInsertadas1 + " tuplas insertadas"+tuplasInsertadas2+tuplasInsertadas3);
             return new Carrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         }
         catch (Exception e)
@@ -410,6 +417,16 @@ public class PersistenciaParranderos
             pm.close();
         }
 		
+	}
+	
+	public List<EstaEnCarrito> darCarritosAbandonados (long documento, long clave)
+	{
+//		for (EstaEnCarrito tb : sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager()))
+//        {
+//			System.out.println("holiwis");
+//        	System.out.println(tb.toString());
+//        }
+		return sqlEstaEnCarrito.darCarritosAbandonados (pmf.getPersistenceManager(), documento, clave);
 	}
 
 	public Productos adicionarProducto(String nombre, String marca, String presentacion, String unidadMedida,
@@ -669,11 +686,24 @@ public class PersistenciaParranderos
 	}
 	
 	public List<Usuarios> obtenerUsuario(long numDocumento, String clave) {
+		for (Usuarios tb : sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave))
+      {
+			System.out.println("holiwis");
+      	System.out.println(tb.toString());
+      }
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
 	
 	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
+	}
+	
+	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
+		return sqlEstaEnCarrito.darFrecuentesSucursal (pmf.getPersistenceManager(), documento, clave);
+	}
+	
+	public List <ConsultaFrecuentes> darFrecuentesGeneral() {
+		return sqlEstaEnCarrito.darFrecuentesGeneral (pmf.getPersistenceManager());
 	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
@@ -775,8 +805,9 @@ public class PersistenciaParranderos
         try
         {
             tx.begin();            
-            long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto);
-            long tuplasInsertadas1 = sqlEstaEnCarrito.devolverProductoCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, producto);
+            long abandono = 0;
+            long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
+            long tuplasInsertadas1 = sqlEstaEnCarrito.devolverProductoCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
             tx.commit();
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
@@ -831,6 +862,48 @@ public class PersistenciaParranderos
         }
         
 	}
+
+	public EstaEnCarrito devolverProductosAbandono(List<VOEstaEnCarrito> lista, long documento, long clave) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            
+            for (VOEstaEnCarrito tb : lista)
+            {
+            	//System.out.println(tb.getClienteCC()+ "," + tb.getCiudadSucursal()+"," + tb.getDireccionSucursal()+"," + tb.getCodigo());
+            	sqlEnDisplay.devolverProductoCarritoD(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
+            	sqlEstaEnCarrito.devolverProductoCarritoC(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
+            }
+            
+            sqlCarrito.eliminarAbandonados(pm, documento, clave);
+            
+            tx.commit();
+            
+            //log.trace ("Recogiendo Carritos Abandonados: " + documento + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
+            return new EstaEnCarrito();
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+
+
 
 
  }

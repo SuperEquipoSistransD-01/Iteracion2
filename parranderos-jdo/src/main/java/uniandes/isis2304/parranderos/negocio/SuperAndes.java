@@ -16,6 +16,7 @@
 package uniandes.isis2304.parranderos.negocio;
 
 import java.sql.Timestamp;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import javax.jdo.PersistenceManager;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
+
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 
 /**
@@ -256,6 +258,45 @@ public class SuperAndes
 		return null;
 	}
 	
+	public List<VOEstaEnCarrito> darVOEstaEnCarrito (long documento, long clave)
+	{
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOEstaEnCarrito> voTipos = new LinkedList<VOEstaEnCarrito> ();
+        for (EstaEnCarrito tb : pp.darCarritosAbandonados (documento, clave))
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
+	public List<VOConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOConsultaFrecuentes> voTipos = new LinkedList<VOConsultaFrecuentes> ();
+        for (ConsultaFrecuentes tb : pp.darFrecuentesSucursal(documento, clave))
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add(tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
+	public List <VOConsultaFrecuentes> darFrecuentesGeneral() {
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOConsultaFrecuentes> voTipos = new LinkedList<VOConsultaFrecuentes> ();
+        for (ConsultaFrecuentes tb : pp.darFrecuentesGeneral())
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add(tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        
+        return voTipos;
+		
+	}
+	
 	public VOCompras pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
@@ -263,6 +304,17 @@ public class SuperAndes
         log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
 		return resp;
 	}
+
+	public VOEstaEnCarrito devolverProductosAbandono(List<VOEstaEnCarrito> lista, long documento, long clave) {
+		log.info ("Devolviendo producto [" + documento + ", " + clave+ "]");
+        EstaEnCarrito resp = pp.devolverProductosAbandono(lista, documento, clave);
+        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+		return resp;
+	}
+
+
+
+
 
 
 

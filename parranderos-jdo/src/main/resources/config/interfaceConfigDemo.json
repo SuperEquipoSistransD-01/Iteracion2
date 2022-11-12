@@ -41,6 +41,10 @@
 				{
 					"label": "Devolver Productos al Estante",
 					"event": "devolverProductoCarrito" 
+				},
+				{
+					"label": "Recuperar Productos de Carritos Abandonados",
+					"event": "mostrarAbandono" 
 				}
 			]
 		},
@@ -129,7 +133,15 @@
 					}
 				]
 		},
-		
+		{ "menuTitle": "Consultas",
+			  "options":
+				[
+					{
+						"label": "Consultar Clientes Frecuentes",
+						"event": "consultarFrecuentes" 
+					}
+				]
+		},		
 		{ "menuTitle": "Documentación",
 		  "options":
 			[

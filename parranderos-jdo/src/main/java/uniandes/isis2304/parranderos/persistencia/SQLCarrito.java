@@ -76,13 +76,31 @@ class SQLCarrito
         return (long) q.executeUnique();
 	}
 	
+	public long nuevoAbandono(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal) 
+	{
+		
+        Query q = pm.newQuery(SQL, "INSERT INTO " + "carritos" + "(clienteCC, ciudadSucursal, direccionSucursal, abandono) values (?, ?, ?, 1)");
+        q.setParameters(clienteCC, ciudadSucursal, direccionSucursal);
+        return (long) q.executeUnique();
+	}
+	
 	public long abandonarCarrito(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) 
 	{
-        Query q = pm.newQuery(SQL, "update carritos " + 
-        "set abandono = ?" + " where clientecc = ? and ciudadSucursal = ? and direccionSucursal = ?");
-        q.setParameters(abandono,clienteCC, ciudadSucursal, direccionSucursal);
+        Query q = pm.newQuery(SQL, "delete from carritos " + 
+         " where clientecc = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = ?");
+        q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         
         return (long) q.executeUnique();
 	}
+
+	public long eliminarAbandonados(PersistenceManager pm, long documento, long clave) {
+		Query q = pm.newQuery(SQL, "delete from carritos where abandono = 1 and ciudadSucursal = (select ciudadSucursal from usuarios where numDocumento = ? and clave = ?) and direccionSucursal = (select direccionSucursal from usuarios where numDocumento = ? and clave = ?)");
+		q.setParameters(documento, clave, documento, clave);
+		        
+		return (long) q.executeUnique();
+		
+	}
+
+
 
 }

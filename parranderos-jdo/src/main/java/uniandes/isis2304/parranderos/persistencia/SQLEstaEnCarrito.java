@@ -19,10 +19,16 @@ import java.util.List;
 
 
 
+
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
+import uniandes.isis2304.parranderos.negocio.Sucursal;
+//import uniandes.isis2304.parranderos.negocio.TipoBebida;
+import uniandes.isis2304.parranderos.negocio.Usuarios;
+import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto GUSTAN de Parranderos
@@ -77,10 +83,18 @@ class SQLEstaEnCarrito
 	}
 
 	public long devolverProductoCarritoC(PersistenceManager pm, long clienteCC, String ciudadSucursal,
-			String direccionSucursal, long producto) {
-		 Query q = pm.newQuery(SQL, "delete from estaEnCarrito where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and codigo = ? ");
-	     q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, producto);
+			String direccionSucursal, long producto, long abandono) {
+		 Query q = pm.newQuery(SQL, "delete from estaEnCarrito where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and codigo = ? and abandono = ?");
+	     q.setParameters(clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
 	     return (long) q.executeUnique();
+	}
+	
+	public long abandonarCarrito1(PersistenceManager pm, long clienteCC, String ciudadSucursal,
+			String direccionSucursal, long abandono) {
+		Query q = pm.newQuery(SQL, "update estaEnCarrito " + 
+		        "set abandono = ?" + " where clientecc = ? and ciudadSucursal = ? and direccionSucursal = ?");
+		q.setParameters(abandono,clienteCC, ciudadSucursal, direccionSucursal);
+	    return (long) q.executeUnique();
 	}
 
 	public List<EstaEnCarrito> obtenerProductosCarrito(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal) 
@@ -89,6 +103,31 @@ class SQLEstaEnCarrito
 		q.setResultClass(EstaEnCarrito.class);
 		q.setParameters(clienteCC, ciudadSucursal, direccionSucursal);
 		return (List<EstaEnCarrito>) q.executeList();
+	}
+	
+	public List<EstaEnCarrito> darCarritosAbandonados (PersistenceManager pm, long documento, long clave)
+	{
+		Query q = pm.newQuery(SQL, "SELECT estaEnCarrito.* FROM estaEnCarrito, usuarios where usuarios.numdocumento = ? and usuarios.clave = ? and usuarios.ciudadSucursal = estaEnCarrito.ciudadSucursal and estaEnCarrito.abandono = 1 and estaEnCarrito.direccionSucursal = usuarios.direccionsucursal");
+		q.setResultClass(EstaEnCarrito.class);
+		q.setParameters(documento, clave);
+		return (List<EstaEnCarrito>) q.executeList();
+	}
+
+	
+	//Consultar Clientes Frecuentes
+	public List<ConsultaFrecuentes> darFrecuentesSucursal(PersistenceManager pm, long documento,
+			long clave) {
+		Query q = pm.newQuery(SQL, "select distinct to_char(c1.fecha, 'Month') as mes, c1.cliente from compras c1, compras c2, usuarios where usuarios.rol = 'gs' and usuarios.numdocumento = ? and clave = ? and c1.ciudadSucursal = c2.ciudadSucursal and c1.ciudadSucursal = usuarios.ciudadSucursal and c1.direccionSucursal = c2.direccionSucursal and c1.direccionSucursal = usuarios.direccionSucursal and c1.cliente = c2.cliente and to_char(c1.fecha, 'Month') = to_char(c2.fecha, 'Month') and c1.codigo != c2.codigo");
+		q.setResultClass(ConsultaFrecuentes.class);
+		q.setParameters(documento, clave);
+		return (List<ConsultaFrecuentes>) q.executeList();
+	}
+
+	public List <ConsultaFrecuentes> darFrecuentesGeneral(PersistenceManager pm) {
+		// TODO Revisar si es gerente general (quizás deba hacer esto antes). Si sí lo es, ejecuto sql que ya hice, el general
+		Query q = pm.newQuery(SQL, "select distinct to_char(c1.fecha, 'Month') as mes, c1.cliente from compras c1, compras c2 where c1.cliente = c2.cliente and to_char(c1.fecha, 'Month') = to_char(c2.fecha, 'Month') and c1.codigo != c2.codigo");
+		q.setResultClass(ConsultaFrecuentes.class);
+		return (List<ConsultaFrecuentes>) q.executeList();
 	}
 
 }
