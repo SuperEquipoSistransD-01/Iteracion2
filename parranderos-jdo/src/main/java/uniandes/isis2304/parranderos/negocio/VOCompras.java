@@ -8,5 +8,11 @@ public interface VOCompras {
 	public long getCodigo();
 	
 	public Timestamp getFecha();
+	
+	public String getCiudadSucursal();
+	
+	public String getDireccionSucursal();
+	
+	public long getCliente();
  
 }

@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 
 import java.sql.Timestamp;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.List; 
 
 import javax.jdo.JDODataStoreException;
 import javax.jdo.JDOHelper;
@@ -251,6 +251,7 @@ public class PersistenciaParranderos
 		sqlCarrito = new SQLCarrito(this);
 		sqlEnDisplay = new SQLEnDisplay(this);
 		sqlEstaEnCarrito = new SQLEstaEnCarrito(this);
+		sqlCompras = new SQLCompras(this);
 	}
 
 	/**
@@ -563,6 +564,37 @@ public class PersistenciaParranderos
         }
 	}
 	
+	public Compras adicionarCompra(Timestamp fecha, String ciudadSucursal, String direccionSucursal, long cliente) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long codigo = nextval ();
+            System.out.println(codigo);
+            long tuplasInsertadas = sqlCompras.adicionarCompra(pm, codigo, fecha, ciudadSucursal, direccionSucursal, cliente);
+            tx.commit();
+            log.trace ("Compra: " + codigo + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Compras(codigo, fecha, ciudadSucursal, direccionSucursal, cliente);
+        }
+        catch (Exception e)
+        {
+        	System.out.println("falla");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
 	public AcuerdoCompra adicionarAcuerdoCompra(String ciudadSucursal, String direccionSucursal, long proveedor,
 			long producto, long precioCompraProducto, long precioVentaProducto, long nivelReorden) {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -692,6 +724,12 @@ public class PersistenciaParranderos
       	System.out.println(tb.toString());
       }
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
+	}
+	
+	public Timestamp obtenerFechaActual()
+	{
+		Timestamp fechaActual = new Timestamp(System.currentTimeMillis());
+		return fechaActual;
 	}
 	
 	public Productos obtenerProducto(long codigo)
@@ -846,8 +884,11 @@ public class PersistenciaParranderos
         	int cantidad = 0;
         	long precio = 0;
         	long total = 0;
+        	Timestamp fechaActual = obtenerFechaActual();
         	
-        	String textoFactura = "Factura:\n"
+        	Compras compra = adicionarCompra(fechaActual, ciudadSucursal, direccionSucursal, clienteCC);
+        	
+        	String textoFactura = "Fecha: " + fechaActual.toString() + "\n"
         			+ "Cédula del Cliente: " + Long.toString(clienteCC) + "\n"
         			+ "Producto:\tCantidad:\tPrecio:\n";
         	
@@ -864,8 +905,9 @@ public class PersistenciaParranderos
         	
         	textoFactura = textoFactura +
         			"Total: \t\t$" + String.valueOf(total);
-        	System.out.println(textoFactura);        	
-            tx.begin();           
+            	
+            tx.begin();    
+            
             tx.commit();
             
             return textoFactura;

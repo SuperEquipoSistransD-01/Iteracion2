@@ -1258,3 +1258,319 @@ Producto:		Precio
 Zucaritas	X2	$20000
 Don Pacho	X3	$24000
 Total: 		$44000
+00:13:25,252 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+00:13:25,252 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+00:13:25,273 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+00:13:36,584 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+00:13:36,730 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Factura:
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+01:47:02,851 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:47:02,852 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:47:02,874 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:47:17,526 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+01:47:17,638 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+01:47:17,731 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 01:47:17.595Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+01:49:52,354 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:49:52,355 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:49:52,373 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:50:04,565 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+01:50:04,675 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+01:50:04,741 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 01:50:04.649
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+01:51:14,420 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:51:14,421 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:51:14,441 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:51:28,033 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+01:51:28,131 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+01:51:28,196 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 01:51:28.105
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+01:52:11,584 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:52:11,585 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:52:11,609 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:52:25,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+01:52:25,512 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+01:52:25,581 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 01:52:25.487
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+01:53:20,693 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+01:53:20,693 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+01:53:20,713 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+01:53:31,861 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+01:53:31,970 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+01:53:32,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 01:53:31.939
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:05:14,913 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:05:14,914 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:05:14,934 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:05:35,257 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:05:35,370 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:05:35,430 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:05:35.334
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:16:09,255 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:16:09,256 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:16:09,284 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:16:21,097 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:16:21,224 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:16:21,225 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+02:16:37,752 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:16:37,753 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:16:37,772 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:16:49,504 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:16:49,611 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:16:49,685 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:16:49.582
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:17:37,569 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:17:37,570 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:17:37,590 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:17:50,602 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:17:50,758 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:17:50.678
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:19:32,560 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:19:32,560 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:19:32,581 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:19:44,393 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:19:44,485 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, String, String, long)" because "this.sqlCompras" is null
+
+02:19:44,541 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:19:44.461
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:26:03,592 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:26:03,592 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:26:03,613 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:26:17,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:26:17,166 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:26:17,233 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:26:17.144
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:27:52,564 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:27:52,565 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:27:52,592 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:28:02,735 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:28:02,933 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:28:02.814
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:33:14,288 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:33:14,289 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:33:14,309 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:33:26,861 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:33:26,979 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:33:27,104 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:33:26.953
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:34:49,686 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:34:49,686 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:34:49,706 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:35:00,772 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:35:00,868 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:35:00,868 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+02:35:37,073 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:35:37,074 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:35:37,096 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:35:50,653 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:36:19,433 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:38:02,696 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:38:02,697 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:38:02,718 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:38:22,570 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:38:22,675 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:38:22,739 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:38:22.645
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:42:33,151 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:42:33,152 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:42:33,176 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:42:43,664 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:42:43,776 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompras" is null
+
+02:42:43,836 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:42:43.745
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:46:01,912 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:46:01,912 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:46:01,931 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:46:12,969 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:46:13,457 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:46:13.373
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:50:55,604 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:50:55,604 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:50:55,630 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:51:07,953 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:51:08,057 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "Object.hashCode()" because "this.sqlCompras" is null
+
+02:51:08,157 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:51:08.026
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:52:20,977 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:52:20,978 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:52:20,998 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:52:43,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:52:44,115 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "Object.getClass()" because "this.sqlCompras" is null
+
+02:52:44,192 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:52:44.087
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:53:08,327 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:53:08,327 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:53:08,358 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:53:24,098 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:53:24,255 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:53:24.171
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:56:26,744 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:56:26,745 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:56:26,764 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:56:38,772 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:56:39,470 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:56:38.842
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:58:11,404 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:58:11,404 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:58:11,424 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:58:24,433 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:58:24,532 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "Object.equals(Object)" because "this.sqlCompras" is null
+
+02:58:24,593 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:58:24.504
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+02:58:39,525 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+02:58:39,525 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+02:58:39,545 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+02:58:52,532 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+02:58:53,017 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 02:58:52.616
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+03:00:41,129 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:00:41,129 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:00:41,150 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:01:06,580 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+03:01:06,683 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Cannot invoke "uniandes.isis2304.parranderos.persistencia.SQLCompras.adicionarCompra(javax.jdo.PersistenceManager, long, java.sql.Timestamp, String, String, long)" because "this.sqlCompra" is null
+
+03:01:06,748 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 03:01:06.653
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+03:10:02,766 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+03:10:02,766 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+03:10:02,787 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+03:10:15,458 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+03:10:15,971 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 03:10:15.533
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
