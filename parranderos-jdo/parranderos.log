@@ -1585,3 +1585,244 @@ Producto:	Cantidad:	Precio:
 Zucaritas	X2	$20000
 Don Pacho	X3	$24000
 Total: 		$44000
+17:14:45,789 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:14:45,790 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:14:45,809 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:14:58,372 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:14:59,458 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:14:59,459 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:15:14,072 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:15:14,293 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:15:14,294 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:15:33,415 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:15:33,415 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:15:33,444 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:15:45,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:15:46,411 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 17:15:45.345
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+17:17:13,544 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:17:13,750 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 17:17:13.573
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+17:17:35,570 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:17:35,571 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:17:35,590 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:17:47,104 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:17:48,149 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 17:17:47.177
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+17:18:29,486 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:18:29,487 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:18:29,505 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:18:42,009 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:18:42,981 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:18:42,981 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:29:45,110 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:29:45,110 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:29:45,129 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:29:57,885 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:29:58,879 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:29:58,880 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:34:15,631 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:34:15,632 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:34:15,651 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:34:34,127 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:34:35,240 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:34:35,241 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:39:57,747 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:39:57,747 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:39:57,769 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:40:11,676 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:40:12,654 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 17:40:11.754
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+17:40:42,883 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:40:42,884 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:40:42,904 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:40:55,284 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:40:56,215 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:40:56,215 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:45:02,766 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:45:02,767 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:45:02,786 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:45:21,124 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:45:22,472 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:45:22,474 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:45:49,155 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:45:49,155 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:45:49,175 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:45:59,737 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:46:00,715 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:46:00,716 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:51:10,436 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:51:10,436 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:51:10,455 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:51:23,817 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:51:24,811 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:51:24,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:51:56,401 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:51:56,402 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:51:56,421 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:52:07,554 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:52:08,598 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:52:08,598 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:52:20,741 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:52:20,742 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:52:20,760 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:52:36,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:52:37,559 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:52:37,560 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+17:53:01,806 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:53:01,807 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:53:01,826 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:53:12,903 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:53:13,881 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+17:53:13,882 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+18:13:02,267 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:13:02,268 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:13:02,295 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:13:16,852 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:13:17,886 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+18:13:17,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+18:16:40,534 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:16:40,535 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:16:40,554 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:16:54,903 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:16:55,927 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:16:54.972
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:17:24,703 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:17:24,703 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:17:24,722 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:17:36,554 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:17:37,615 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT SUM(cantidad)FROM((SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoBodegaFROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM StockDisponibleWHERE producto = 169)ON codigoBodega = bodega))UNION ALL(SELECT cantidadFROM((SELECT ciudad, direccion, codigo as codigoEstanteFROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal)WHERE ciudad = ? and direccion = ?)INNER JOIN(SELECT *FROM EnDisplayWHERE producto = 169)ON codigoEstante = estante)))".
+ORA-00923: palabra clave FROM no encontrada donde se esperaba
+
+18:17:37,616 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+18:35:37,627 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:35:37,628 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:35:37,649 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:35:49,210 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:35:50,361 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:35:49.295
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:36:08,029 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:36:08,030 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:36:08,051 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:36:19,385 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:36:20,447 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:36:19.46
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:36:35,514 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:36:35,514 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:36:35,535 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:36:49,686 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:36:50,881 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:36:49.806
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:41:58,670 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:41:58,671 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:41:58,691 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:42:11,975 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:42:13,142 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:42:12.059
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:44:23,571 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:44:23,571 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:44:23,590 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:44:34,723 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:44:35,822 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:44:34.799
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000
+18:46:24,913 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:46:24,914 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:46:24,933 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:46:36,105 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:46:37,269 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-12 18:46:36.186
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Don Pacho	X3	$24000
+Total: 		$44000

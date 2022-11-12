@@ -575,6 +575,7 @@ public class PersistenciaParranderos
         {
             tx.begin();            
             long codigo = nextval ();
+            System.out.println(codigo);
             long tuplasInsertadas = sqlCompras.adicionarCompra(pm, codigo, fecha, ciudadSucursal, direccionSucursal, cliente);
             tx.commit();
             log.trace ("Compra: " + codigo + ": " + tuplasInsertadas + " tuplas insertadas");
@@ -606,7 +607,7 @@ public class PersistenciaParranderos
             tx.begin();            
             long tuplasInsertadas = sqlCantProductoComprado.adicionarCantProductoComprado(pm, compra, producto, cantProductos);
             tx.commit();
-            log.trace ("CantProductoComprado: " + compra + "-" + producto + ": "  + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("CantProductoComprado: " + compra + "-" + producto + ": " + tuplasInsertadas + " tuplas insertadas");
             return new CantProductoComprado(compra, producto, cantProductos);
         }
         catch (Exception e)
@@ -770,6 +771,11 @@ public class PersistenciaParranderos
 	
 	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
+	}
+	
+	public long obtenerNumProductoEnSucursal(long producto, String ciudadSucursal, String direccionSucursal)
+	{
+		return sqlProducto.obtenerNumProductoEnSucursal(pmf.getPersistenceManager(), producto, ciudadSucursal, direccionSucursal);
 	}
 	
 	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
@@ -936,6 +942,8 @@ public class PersistenciaParranderos
         				producto.getNombre() + "\tX" + String.valueOf(cantidad) + "\t$" + String.valueOf(precio) + "\n";
         	
         		adicionarCantProductoComprado(compra.getCodigo(), producto.getCodigo(), cantidad);
+        		
+        		System.out.println(obtenerNumProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal));
         	}
         	
         	textoFactura = textoFactura +
