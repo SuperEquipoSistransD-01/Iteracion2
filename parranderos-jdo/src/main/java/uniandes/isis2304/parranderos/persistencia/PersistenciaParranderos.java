@@ -805,10 +805,10 @@ public class PersistenciaParranderos
         Transaction tx=pm.currentTransaction();
         try
         {
-        	System.out.println("corre");
         	List<EstaEnCarrito> productosCarrito = obtenerProductosCarrito(clienteCC, ciudadSucursal, direccionSucursal);
-        	System.out.println(productosCarrito);
-            tx.begin();            
+        	System.out.println("corrió");
+        	System.out.println(productosCarrito.size());
+            tx.begin();           
             tx.commit();
             
             //log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
@@ -829,6 +829,7 @@ public class PersistenciaParranderos
             }
             pm.close();
         }
+        
 	}
 
 

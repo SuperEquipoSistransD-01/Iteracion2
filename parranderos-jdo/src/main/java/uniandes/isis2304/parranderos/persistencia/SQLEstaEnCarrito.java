@@ -23,8 +23,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
-import uniandes.isis2304.parranderos.negocio.Sucursal;
-import uniandes.isis2304.parranderos.negocio.Usuarios;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto GUSTAN de Parranderos
@@ -87,8 +85,8 @@ class SQLEstaEnCarrito
 
 	public List<EstaEnCarrito> obtenerProductosCarrito(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM EstaEnCarrito WHERE clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ?");
-		q.setResultClass(Usuarios.class);
+		Query q = pm.newQuery(SQL, "SELECT * FROM EstaEnCarrito WHERE clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0");
+		q.setResultClass(EstaEnCarrito.class);
 		q.setParameters(clienteCC, ciudadSucursal, direccionSucursal);
 		return (List<EstaEnCarrito>) q.executeList();
 	}
