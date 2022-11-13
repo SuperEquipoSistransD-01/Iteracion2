@@ -7,6 +7,8 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
+
 
 class SQLAcuerdosCompra {
 	
@@ -44,6 +46,14 @@ class SQLAcuerdosCompra {
         Query q = pm.newQuery(SQL, "INSERT INTO AcuerdosCompra (ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden) VALUES (?,?,?,?,?,?,?");
         q.setParameters(ciudadSucursal, direccionSucursal, proveedor, producto, precioCompraProducto, precioVentaProducto, nivelReorden, ciudadSucursal, direccionSucursal, proveedor, producto);
         return (long) q.executeUnique();
+	}
+
+	public List<AcuerdoCompra> obtenerAcuerdosCompra(PersistenceManager pm, long producto, String ciudadSucursal, String direccionSucursal) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM AcuerdosCompra WHERE producto = ? and ciudadSucursal = ? and direccionSucursal = ?");
+		q.setResultClass(AcuerdoCompra.class);
+		q.setParameters(producto, ciudadSucursal, direccionSucursal);
+		return (List<AcuerdoCompra>) q.executeList();
 	}
 
 }
