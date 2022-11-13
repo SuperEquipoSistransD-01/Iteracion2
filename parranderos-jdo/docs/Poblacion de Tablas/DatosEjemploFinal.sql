@@ -55,47 +55,47 @@ values (212,	'Bogota',	'Calle 140',	189,	169,	TO_DATE('16/10/2022', 'DD/MM/YYYY'
 
 --pedidos OK
 
-insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	volumenLimite)
+insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	capacidad)
 values (310,	'Bogota',	'Salitre',	'Aseo',	170);
 
-insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	volumenLimite)
+insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	capacidad)
 values (311,	'Cali',	'La 14',	'Perecederos',	170);
 
-insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	volumenLimite)
+insert into bodegas (codigo,	ciudadSucursal,	direccionSucursal,	categoriaAlmacenamiento,	capacidad)
 values (312,	'Bogota',	'Calle 140',	'Perecederos',	170);
 
 --Bodegas OK
 
-insert into StockDisponible (producto,	bodega,	volumenEnBodega,	pesoEnBodega, cantidad)
-values (170,	311,	36,	48, 4);
+insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
+values (170,	311,	48, 4, 30);
 
-insert into StockDisponible (producto,	bodega,	volumenEnBodega,	pesoEnBodega, cantidad)
-values (169,	312,	45,	50,4);
+insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
+values (169,	312,	50,4, 30);
 
-insert into StockDisponible (producto,	bodega,	volumenEnBodega,	pesoEnBodega, cantidad)
-values (171,	310,	51,	60,4);
+insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
+values (171,	310,	60,4, 30);
 
 --StockDisponible OK
 
-insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	volumenLimite,	pesoLimite)
-values (410,	'Bogota',	'Calle 140',	'Cereal',	170,	200);
+insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	capacidad)
+values (410,	'Bogota',	'Calle 140',	'Cereal',	200);
 
-insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	volumenLimite,	pesoLimite)
-values (411,	'Cali',	'La 14',	'Granos',	170,	200);
+insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	capacidad)
+values (411,	'Cali',	'La 14',	'Granos',	200);
 
-insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	volumenLimite,	pesoLimite)
-values (412,	'Bogota',	'Salitre',	'Jabon',	170,	200);   
+insert into estantes (codigo,	ciudadSucursal,	direccionSucursal,	tipoProducto,	capacidad)
+values (412,	'Bogota',	'Salitre',	'Jabon',	200);   
 
 --Estantes OK
 
-insert into enDisplay (producto,	estante,	volumenEnEstante,	pesoEnEstante,	nivelAbastecimiento, cantidad)
-values (170,	411,	200,	100,	150, 4);
+insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (170,	411,	100,	150, 4, 20);
 
-insert into enDisplay (producto,	estante,	volumenEnEstante,	pesoEnEstante,	nivelAbastecimiento, cantidad)
-values (169,	410,	200,	100,	150, 4);
+insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (169,	410,	100,	150, 4, 20);
 
-insert into enDisplay (producto,	estante,	volumenEnEstante,	pesoEnEstante,	nivelAbastecimiento, cantidad)
-values (171,	412,	200,	100,	150, 4);
+insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (171,	412,	100,	150, 4, 20);
 
 --EnDisplay OK
 
@@ -175,10 +175,10 @@ insert into compras (codigo,	fecha,	CiudadSucursal,	DireccionSucursal, cliente)
 values (712,	TO_DATE('15/11/2022', 'DD/MM/YYYY'),	'Bogota',	'Salitre', 12347);
 
 insert into compras (codigo,	fecha,	CiudadSucursal,	DireccionSucursal, cliente)
-values (740,	TO_DATE('15/11/2022', 'DD/MM/YYYY'),	'Bogot',	'Salite', 123);
+values (740,	TO_DATE('15/11/2022', 'DD/MM/YYYY'),	'Bogota',	'Salite', 123);
 
 insert into proveedores (nit,	nombre,	calificacion)
-values (197	,'JabonCO',	6666);
+values (197	,'JabonCO',	6);
 
  --Casos Prueba OK
  

@@ -104,12 +104,12 @@ CREATE TABLE Bodegas
     codigo numeric(10),
     ciudadSucursal,direccionSucursal,
     categoriaAlmacenamiento varchar(20),
-    volumenLimite numeric(20,2),
+    capacidad numeric(20,2),
     
     PRIMARY KEY (codigo),
     FOREIGN KEY (ciudadSucursal,direccionSucursal) REFERENCES Sucursales,
     CHECK (categoriaAlmacenamiento is not null),
-    CHECK (volumenLimite is not null and volumenLimite > 0)
+    CHECK (capacidad is not null and capacidad > 0)
 );
 COMMIT;
 
@@ -119,14 +119,12 @@ CREATE TABLE Estantes
     codigo numeric(10),
     ciudadSucursal,direccionSucursal,
     tipoProducto varchar(20),
-    volumenLimite numeric(20,2),
-    pesoLimite numeric(20,2),
+    capacidad numeric(20,2),
     
     PRIMARY KEY (codigo),
     FOREIGN KEY (ciudadSucursal,direccionSucursal) REFERENCES Sucursales,
     CHECK (tipoProducto is not null),
-    CHECK (volumenLimite is not null and volumenLimite > 0),
-    CHECK (pesoLimite is not null and pesoLimite > 0)
+    CHECK (capacidad is not null and capacidad > 0)
 );
 COMMIT;
 
@@ -135,16 +133,16 @@ CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
     estante REFERENCES Estantes,
-    volumenEnEstante numeric(20,2),
-    pesoEnEstante numeric(20,2),
+    numEnEstante numeric(20,2),
     nivelAbastecimiento numeric(20,2),
     cantidad numeric(20,2),
+    espacioDisponible numeric(20, 2),
     
     PRIMARY KEY (producto, estante),
-    CHECK(volumenEnEstante is not null and volumenEnEstante >= 0),
+    CHECK(numEnEstante is not null and numEnEstante >= 0),
     CHECK(cantidad is not null and cantidad >= 0),
-    CHECK(pesoEnEstante is not null and pesoEnEstante >= 0),
-    CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0)
+    CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0),
+    CHECK(espacioDisponible is not null and espacioDisponible >= 0)
 );
 COMMIT;
 
@@ -153,14 +151,14 @@ CREATE TABLE StockDisponible
 (
     producto REFERENCES Productos,
     bodega REFERENCES Bodegas,
-    volumenEnBodega numeric(20,2),
-    pesoEnBodega numeric(20,2),
+    numEnBodega numeric(20,2),
     cantidad numeric(20,2),
+    espacioDisponible numeric(20, 2),
     
     PRIMARY KEY (producto, bodega),
-    CHECK(volumenEnBodega is not null and volumenEnBodega >= 0),
+    CHECK(numEnBodega is not null and numEnBodega >= 0),
     CHECK(cantidad is not null and cantidad >= 0),
-    CHECK(pesoEnBodega is not null and pesoEnBodega >= 0)
+    CHECK(espacioDisponible is not null and espacioDisponible >= 0)
 );
 COMMIT;
 
