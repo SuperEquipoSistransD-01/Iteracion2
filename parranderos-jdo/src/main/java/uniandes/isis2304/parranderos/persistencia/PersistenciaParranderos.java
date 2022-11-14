@@ -898,6 +898,7 @@ public class PersistenciaParranderos
             tx.begin();            
             long abandono = 0;
             long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
+            long tuplasInsertadas2 = sqlEnDisplay.devolverProductoCarritoEspDis(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
             long tuplasInsertadas1 = sqlEstaEnCarrito.devolverProductoCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
             tx.commit();
             
