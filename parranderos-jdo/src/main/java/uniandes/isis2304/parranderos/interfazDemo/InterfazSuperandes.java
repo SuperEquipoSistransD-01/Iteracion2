@@ -66,6 +66,7 @@ import uniandes.isis2304.parranderos.negocio.VOSucursal;
 import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 import uniandes.isis2304.parranderos.negocio.VOAcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.VOCompras;
+import uniandes.isis2304.parranderos.negocio.VOConsultaDemanda;
 import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 
 
@@ -943,6 +944,61 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         for (VOEstaEnCarrito tb : lista)
         {
         	resp += i++ + ". " + tb.toString() + "\n";
+        }
+        return resp;
+	}
+    
+    public void consultarDemanda( )
+    {
+    	try 
+    	{
+			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal o gerente general, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String clave = JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		if (documento != 0 && clave != "")
+    		{
+    			Usuarios tb = parranderos.obtenerUsuario(documento, clave).get(0);
+    			rol = tb.getRol();
+    			System.out.println(rol);
+        		if (!"gg".equals(rol) && !"gs".equals(rol))
+        		{    		
+        			throw new Exception ("No se pudo iniciar sesion");
+        		}
+    			List <VOConsultaDemanda> lista = parranderos.darDemanda();
+    			
+        		if (lista.size() == 0)
+        		{    		
+        			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
+        		}
+        		String resultado = "En recuperarProductosCarritoAbandonado";
+    			resultado +=  "\n" + listarProductosBajaDemanda(lista);
+    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    			
+    			
+    			
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+	} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
+    private String listarProductosBajaDemanda(List<VOConsultaDemanda> lista) 
+    {
+    	String resp = "Los Productos de Baja demanda son:\n";
+    	int i = 1;
+        for (VOConsultaDemanda tb : lista)
+        {
+        	resp += i++ + ". Producto: " + tb.getProducto() + "\n";
         }
         return resp;
 	}

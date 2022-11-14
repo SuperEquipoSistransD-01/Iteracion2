@@ -139,6 +139,10 @@
 					{
 						"label": "Consultar Clientes Frecuentes",
 						"event": "consultarFrecuentes" 
+					},
+					{
+						"label": "Consultar Productos de Baja Demanda",
+						"event": "consultarDemanda" 
 					}
 				]
 		},		

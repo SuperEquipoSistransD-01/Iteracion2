@@ -57,6 +57,7 @@ import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.Compras;
+import uniandes.isis2304.parranderos.negocio.ConsultaDemanda;
 import uniandes.isis2304.parranderos.negocio.CantProductoComprado;
 import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
 
@@ -804,7 +805,7 @@ public class PersistenciaParranderos
 		for (Usuarios tb : sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave))
       {
 			System.out.println("holiwis");
-      	System.out.println(tb.toString());
+      	//System.out.println(tb.toString());
       }
 		return sqlUsuarios.obtenerUsuario(pmf.getPersistenceManager(), numDocumento, clave);
 	}
@@ -845,6 +846,10 @@ public class PersistenciaParranderos
 	
 	public List <ConsultaFrecuentes> darFrecuentesGeneral() {
 		return sqlEstaEnCarrito.darFrecuentesGeneral (pmf.getPersistenceManager());
+	}
+	
+	public List <ConsultaDemanda> darConsultaDemanda() {
+		return sqlPedido.darConsultaDemanda(pmf.getPersistenceManager());
 	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
