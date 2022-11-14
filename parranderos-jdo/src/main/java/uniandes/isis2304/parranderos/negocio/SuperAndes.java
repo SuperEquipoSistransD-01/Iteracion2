@@ -297,6 +297,20 @@ public class SuperAndes
 		
 	}
 	
+	public List <VOConsultaDemanda> darDemanda() {
+		log.info ("Generando los VO de Tipos de bebida");        
+        List<VOConsultaDemanda> voTipos = new LinkedList<VOConsultaDemanda> ();
+        for (ConsultaDemanda tb : pp.darConsultaDemanda())
+        {
+        	System.out.println(tb.toString());
+        	voTipos.add(tb);
+        }
+        log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+        
+        return voTipos;
+		
+	}
+	
 	public String pagarCompra(long clienteCC, String ciudadSucursal, String direccionSucursal) 
 	{
 		log.info ("Pagando Compra [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ "]");
