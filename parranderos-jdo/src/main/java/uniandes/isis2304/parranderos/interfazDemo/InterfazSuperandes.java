@@ -705,6 +705,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     		long abandono = 1;
     		if (ciudadSucursal != null && direccionSucursal != null && clienteCC != 0)
     		{
+    			System.out.println("Estoy en Interfaz");
         		VOCarrito tb = parranderos.abandonarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         		if (tb == null)
         		{    		

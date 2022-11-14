@@ -363,9 +363,13 @@ public class PersistenciaParranderos
         try
         {
             tx.begin();            
+            System.out.println("Paso 1");
             long tuplasInsertadas1 = sqlCarrito.nuevoAbandono(pm, clienteCC, ciudadSucursal, direccionSucursal);
+            System.out.println("Paso 2");
             long tuplasInsertadas2 = sqlEstaEnCarrito.abandonarCarrito1(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
+            System.out.println("Paso 3");
             long tuplasInsertadas3 = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, 0);
+            System.out.println("Paso 4");
             tx.commit();
             
             log.trace ("Carrito abandono: " + clienteCC + ": " + tuplasInsertadas1 + " tuplas insertadas"+tuplasInsertadas2+tuplasInsertadas3);
@@ -997,6 +1001,7 @@ public class PersistenciaParranderos
             {
             	//System.out.println(tb.getClienteCC()+ "," + tb.getCiudadSucursal()+"," + tb.getDireccionSucursal()+"," + tb.getCodigo());
             	sqlEnDisplay.devolverProductoCarritoD(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
+            	sqlEnDisplay.devolverProductoCarritoEspDis(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             	sqlEstaEnCarrito.devolverProductoCarritoC(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             }
             
