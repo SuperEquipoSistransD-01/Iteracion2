@@ -851,6 +851,10 @@ public class PersistenciaParranderos
 	public List <ConsultaDemanda> darConsultaDemanda() {
 		return sqlPedido.darConsultaDemanda(pmf.getPersistenceManager());
 	}
+	
+	public List <ConsultaDemanda> darConsultaDemandaActual() {
+		return sqlPedido.darConsultaDemandaActual(pmf.getPersistenceManager());
+	}
 
 	public Promociones registrarPromocion(String nombrePromocion, Timestamp fechaInicio, long diasDuracion,
 			String descripcion, String tipo, long finalizada, String ciudadSucursal, String direccionSucursal,

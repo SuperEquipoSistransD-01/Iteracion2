@@ -41,16 +41,44 @@ class SQLPedido {
 	}
 
 	public List<ConsultaDemanda> darConsultaDemanda(PersistenceManager pm) {
-		System.out.println("En SQLA");
+		//System.out.println("En SQLA");
 		Query q = pm.newQuery(SQL, "select producto from (select producto, fechapedido, "
 				+ " cast( (fechapedido - lag(fechapedido) over (order by fechapedido)) as numeric) as diff "
 				+ "from (select producto, fechaPedido from pedidos order by producto, fechaPedido desc) "
 				+ "order by producto, fechaPedido desc) "
 				+ "where diff > 60");
+		//System.out.println("En SQL1");
+		q.setResultClass(ConsultaDemanda.class);
+		//System.out.println("En SQL2");
+		return (List<ConsultaDemanda>) q.executeList();
+	}
+	
+	public List<ConsultaDemanda> darConsultaDemandaActual(PersistenceManager pm) {
+		System.out.println("En SQLA");
+		Query q = pm.newQuery(SQL, "select producto from ("
+				+ "select t1.producto, t2.mxdate, current_date-t2.mxdate as diff1 "
+				+ "from (select producto, fechapedido, "
+				+ "       cast( (fechapedido - lag(fechapedido) over (order by fechapedido)) as numeric) as diff "
+				+ "from (select producto, fechaPedido from pedidos order by producto, fechaPedido desc) "
+				+ "order by producto, fechaPedido desc) t1 "
+				+ "inner join "
+				+ "("
+				+ "  select max(fechapedido) mxdate, producto "
+				+ "  from (select producto, fechapedido, "
+				+ "       cast( (fechapedido - lag(fechapedido) over (order by fechapedido)) as numeric) as diff "
+				+ "from (select producto, fechaPedido from pedidos order by producto, fechaPedido desc) "
+				+ "order by producto, fechaPedido desc) "
+				+ "  group by producto "
+				+ ") t2 "
+				+ "  on t1.producto = t2.producto "
+				+ "  and t1.fechapedido = t2.mxdate) where diff1 > 60");
+		//Query q = pm.newQuery(SQL, "select max(producto) as producto from pedidos");
 		System.out.println("En SQL1");
 		q.setResultClass(ConsultaDemanda.class);
 		System.out.println("En SQL2");
 		return (List<ConsultaDemanda>) q.executeList();
 	}
+	
+	
 
 }

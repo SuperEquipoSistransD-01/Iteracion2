@@ -94,12 +94,14 @@ class SQLCarrito
 	}
 
 	public long eliminarAbandonados(PersistenceManager pm, long documento, long clave) {
-		Query q = pm.newQuery(SQL, "delete from carritos where abandono = 1 and ciudadSucursal = (select ciudadSucursal from usuarios where numDocumento = ? and clave = ?) and direccionSucursal = (select direccionSucursal from usuarios where numDocumento = ? and clave = ?)");
+		Query q = pm.newQuery(SQL, "delete from carritos where abandono = ? and ciudadSucursal = (select ciudadSucursal from usuarios where numDocumento = ? and clave = ?) and direccionSucursal = (select direccionSucursal from usuarios where numDocumento = ? and clave = ?)");
 		q.setParameters(documento, clave, documento, clave);
 		        
 		return (long) q.executeUnique();
 		
 	}
+	
+
 
 
 
