@@ -964,14 +964,14 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         			throw new Exception ("No se pudo iniciar sesion");
         		}
     			List <VOConsultaDemanda> lista = parranderos.darDemanda();
-    			
+    			System.out.println(lista.size());
         		if (lista.size() == 0)
         		{    		
         			throw new Exception ("No se pudo recuperar elementos de carritos abandonados");
         		}
-        		String resultado = "En recuperarProductosCarritoAbandonado";
+        		String resultado = "En consultarProductos de baja demanda";
     			resultado +=  "\n" + listarProductosBajaDemanda(lista);
-    			resultado += "\n se han recuperado todos los productos. Se vaciaron los carritos y se dejaron disponibles para uso. \n Se actualizó  la cantidad de productos en estantes";
+    			resultado += "\n ";
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     			

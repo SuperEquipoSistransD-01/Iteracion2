@@ -300,11 +300,36 @@ public class SuperAndes
 	public List <VOConsultaDemanda> darDemanda() {
 		log.info ("Generando los VO de Tipos de bebida");        
         List<VOConsultaDemanda> voTipos = new LinkedList<VOConsultaDemanda> ();
+        List<Integer> listilla = new LinkedList<Integer> ();
+        if(pp.darConsultaDemanda().size() != 0) {
         for (ConsultaDemanda tb : pp.darConsultaDemanda())
         {
-        	System.out.println(tb.toString());
-        	voTipos.add(tb);
+        	//listilla.add(tb.getProducto());
+        	
+        	if(!listilla.contains((int) tb.getProducto())) {
+        		//System.out.println("Holiwis");
+        		System.out.println(tb.getProducto());
+        		voTipos.add(tb);
+        		listilla.add((int) tb.getProducto());
+        	}
+        	
         }
+        }
+        if(pp.darConsultaDemandaActual().size() != 0) {
+        	for (ConsultaDemanda tc : pp.darConsultaDemandaActual())
+            {
+        		System.out.println("Holiwis entra");
+        		//System.out.println(tc.getProducto());
+            	if(!listilla.contains((int) tc.getProducto())) {
+            		System.out.println(tc.getProducto());
+            		voTipos.add(tc);
+            		listilla.add((int) tc.getProducto());
+            	}
+            	
+            }
+        }
+
+        
         log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
         
         return voTipos;
