@@ -836,6 +836,7 @@ public class PersistenciaParranderos
             tx.begin();            
             long tuplasInsertadas = sqlEnDisplay.productoAlCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
             long tuplasInsertadas1 = sqlEstaEnCarrito.productoAlCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, 0, producto, cantidad);
+            long tuplasInsertadas2 = sqlEnDisplay.productoAlCarritoEspDis(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
             tx.commit();
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas" + tuplasInsertadas1);

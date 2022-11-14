@@ -778,7 +778,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         		{    		
         			throw new Exception ("No se pudo abandonar el carrito para el cliente de cedula"+clienteCC);
         		}
-        		String resultado = "En productoAlCarrito\n\n";
+        		String resultado = "En devolverproductoDelCarrito\n\n";
         		resultado += "Producto adicionado exitosamente: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);

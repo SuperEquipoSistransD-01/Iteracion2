@@ -1898,3 +1898,41 @@ Total: 		$72000
 20:28:49,449 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
 20:28:49,468 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
 20:29:02,340 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+22:34:17,075 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:34:17,084 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:34:17,126 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:34:50,082 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [12345, Bogota, Calle 140, 0]
+22:34:50,904 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: uniandes.isis2304.parranderos.negocio.Carrito@6973fe11 tuplas insertadas
+22:35:33,282 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+22:35:36,593 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@6b07aeb4 tuplas insertadas
+22:36:09,984 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12345, Bogota, Calle 140, 169]
+22:36:11,000 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EnDisplay@4c779b54 tuplas insertadas
+22:36:54,512 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 169]
+22:36:54,543 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@3a3335f tuplas insertadas
+22:37:13,363 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 174]
+22:37:13,394 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@483545a8 tuplas insertadas
+22:37:37,586 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12345, Bogota, Calle 140, 173]
+22:37:37,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@175c7fe7 tuplas insertadas
+22:38:33,022 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abanadonando carrito [12345, Bogota, Calle 140, 1]
+22:38:33,120 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.Carrito@7b4c6f5c tuplas insertadas
+22:41:01,386 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:41:01,387 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:41:01,426 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:41:24,381 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida
+22:41:24,621 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 7 existentes
+22:41:24,621 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [123455, 1234]
+22:41:26,457 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@76291c15 tuplas insertadas
+22:42:39,442 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+22:42:39,443 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+22:42:39,484 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+22:43:15,696 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Iniciando sesión del usuario [123459]
+22:43:15,894 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Obtenido usuario: [uniandes.isis2304.parranderos.negocio.Usuarios@143f9790]
+22:43:15,895 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida
+22:43:16,441 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 1 existentes
+22:44:54,790 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida
+22:44:54,860 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 1 existentes
+23:33:14,963 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+23:33:14,964 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+23:33:14,993 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+23:34:13,974 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12346, Bogota, Salitre, 169]
+23:34:18,862 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@3a910b3f tuplas insertadas
