@@ -12,7 +12,7 @@ public class Estante implements VOEstante {
 		this.setCiudadSucursal("");
 		this.setDireccionSucursal("");
 		this.setTipoProducto("");
-		this.setCapacidad(capacidad);
+		this.setCapacidad(0);
 		
 	}
 	public Estante(long codigo, String ciudadSucursal, String direccionSucursal, String tipoProducto, long capacidad) {

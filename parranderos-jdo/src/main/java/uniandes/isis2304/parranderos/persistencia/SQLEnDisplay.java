@@ -107,6 +107,13 @@ class SQLEnDisplay
         q.setParameters(clienteCC, abandono,ciudadSucursal, direccionSucursal, producto, producto, clienteCC, abandono,ciudadSucursal, direccionSucursal, ciudadSucursal, direccionSucursal, producto);
         return (long) q.executeUnique();
 	}
+
+	public long volver0EspacioDisponible(PersistenceManager pm, long estante, long producto) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE EnDisplay SET espacioDisponible = 0 WHERE producto = ? and estante = ?");
+		q.setParameters(producto, estante);
+        return (long) q.executeUnique();
+	}
 	
 	
 	

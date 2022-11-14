@@ -2369,3 +2369,360 @@ Zucaritas	X4	$40000
 Don Pacho	X4	$32000
 Axion	X2	$30000
 Total: 		$102000
+11:12:17,356 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+11:12:17,356 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+11:12:17,375 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+11:12:31,774 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+11:12:43,859 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 11:12:32.142
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+14:13:46,049 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:13:46,050 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:13:46,071 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:14:03,827 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [12347, Bogota, Calle 147, 0]
+14:14:06,318 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO carritos(clienteCC, ciudadSucursal, direccionSucursal, abandono) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846756) violada - clave principal no encontrada
+
+14:14:06,527 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: null tuplas insertadas
+14:15:29,661 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:15:29,661 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:15:29,683 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:15:56,126 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12346, Bogota, Calle 140, 169]
+14:16:01,681 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@51253683 tuplas insertadas
+14:17:05,180 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12346, Bogota, Calle 140]
+14:17:08,244 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:17:05.447
+Cédula del Cliente: 12346
+Producto:	Cantidad:	Precio:
+Zucaritas	X2	$20000
+Total: 		$20000
+14:19:09,472 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12346, Bogota, Calle 140, 169]
+14:19:10,689 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EnDisplay@6c6e508a tuplas insertadas
+14:19:33,234 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12346, Bogota, Calle 140, 170]
+14:19:33,597 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@3a7b8318 tuplas insertadas
+14:19:50,389 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12346, Bogota, Calle 140]
+14:19:52,025 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:19:50.62
+Cédula del Cliente: 12346
+Producto:	Cantidad:	Precio:
+Don Pacho	X2	$16000
+Total: 		$16000
+14:24:13,020 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:24:13,021 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:24:13,039 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:24:30,839 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12346, Bogota, Calle 146]
+14:24:32,984 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Compras (codigo, fecha, ciudadSucursal, direccionSucursal, cliente) values (?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846743) violada - clave principal no encontrada
+
+14:24:33,372 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:24:31.12
+Cédula del Cliente: 12346
+Producto:	Cantidad:	Precio:
+Total: 		$0
+14:27:21,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [123457, Bogota, Calle 140, 0]
+14:27:21,465 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO carritos(clienteCC, ciudadSucursal, direccionSucursal, abandono) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846755) violada - clave principal no encontrada
+
+14:27:21,639 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: null tuplas insertadas
+14:27:58,047 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [12347, Bogota, Calle 140, 0]
+14:27:58,295 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: uniandes.isis2304.parranderos.negocio.Carrito@7788de93 tuplas insertadas
+14:28:53,213 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12346, Bogota, Calle 140, 170]
+14:28:53,555 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "insert into EstaEnCarrito (clienteCC, ciudadSucursal, direccionSucursal, abandono, codigo, cantidad) values (?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304D14202220.SYS_C00846758) violada
+
+14:28:53,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: null tuplas insertadas
+14:29:45,480 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12347, Bogota, Calle 140, 170]
+14:29:45,840 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@81de220 tuplas insertadas
+14:30:14,365 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 170]
+14:30:15,010 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Compras (codigo, fecha, ciudadSucursal, direccionSucursal, cliente) values (?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846743) violada - clave principal no encontrada
+
+14:30:15,170 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:30:14.594
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Total: 		$0
+14:30:45,019 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+14:30:46,988 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:30:45.273
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+14:33:27,240 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:33:27,241 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:33:27,261 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:33:50,162 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+14:33:54,022 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:33:50.406
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+14:35:01,752 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:35:01,753 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:35:01,773 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+14:35:19,653 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12346, Bogota, Calle 140]
+14:35:28,745 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+14:35:28,894 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 14:35:19.962
+Cédula del Cliente: 12346
+Producto:	Cantidad:	Precio:
+Don Pacho	X2	$16000
+Total: 		$16000
+14:59:22,148 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+14:59:22,149 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+14:59:22,168 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:00:04,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:00:15,086 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:00:15,248 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:00:04.815
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:00:46,069 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:00:46,070 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:00:46,101 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:01:01,623 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 170]
+15:01:03,737 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Compras (codigo, fecha, ciudadSucursal, direccionSucursal, cliente) values (?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846743) violada - clave principal no encontrada
+
+15:01:03,943 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:01:01.907
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Total: 		$0
+15:01:17,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:01:25,956 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:01:26,159 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:01:17.672
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:03:24,040 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:03:24,041 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:03:24,063 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:03:46,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:04:00,120 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:04:06,319 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:04:06,320 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:03:47.207
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:04:43,262 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:04:43,262 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:04:43,281 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:04:58,193 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 147]
+15:05:00,355 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Compras (codigo, fecha, ciudadSucursal, direccionSucursal, cliente) values (?, ?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846743) violada - clave principal no encontrada
+
+15:05:00,513 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:04:58.486
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Total: 		$0
+15:05:13,987 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:05:19,233 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:05:19,363 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:05:14.205
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:06:03,126 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:06:03,127 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:06:03,149 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:06:19,952 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:06:27,869 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:06:28,038 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:06:20.231
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:11:44,531 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:11:44,531 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:11:44,551 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:12:59,562 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:13:05,384 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:13:05,525 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:12:59.822
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:25:34,672 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:25:34,673 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:25:34,693 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:25:51,073 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:25:59,729 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:25:59,986 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:25:51.414
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:28:34,402 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:28:34,403 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:28:34,424 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:28:51,057 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:28:57,638 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT *   FROM Bodegas inner join StockDispnible on codigo = bodega  WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?".
+ORA-00942: la tabla o vista no existe
+
+15:28:57,784 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:28:51.347
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:31:48,997 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:31:48,998 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:31:49,017 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:32:06,831 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+15:32:11,228 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:32:07.25
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Don Pacho	X3	$24000
+Total: 		$24000
+15:35:47,476 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:35:56,246 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad   FROM Bodegas inner join StockDispnible on codigo = bodega  WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?".
+ORA-00942: la tabla o vista no existe
+
+15:35:58,777 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad   FROM Bodegas inner join StockDispnible on codigo = bodega  WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?".
+ORA-00942: la tabla o vista no existe
+
+15:35:58,947 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:35:47.81
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:38:33,083 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:38:33,083 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:38:33,104 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:38:48,261 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:38:59,645 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad   FROM Bodegas inner join StockDispnible on codigo = bodega  WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?".
+ORA-00942: la tabla o vista no existe
+
+15:38:59,820 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:38:48.543
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:39:45,955 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:39:45,956 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:39:45,976 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:40:08,374 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:40:19,304 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad FROM Bodegas inner join StockDispnible on codigo = bodega WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?".
+ORA-00942: la tabla o vista no existe
+
+15:40:19,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:40:08.683
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:42:14,571 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:42:14,572 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:42:14,590 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:42:31,658 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:42:40,531 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:42:40,669 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:42:31.948
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:45:39,104 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+15:45:39,104 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+15:45:39,124 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+15:45:51,816 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:46:02,420 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:45:52.187
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:47:20,130 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+15:47:27,692 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+15:47:30,524 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 15:47:20.362
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+15:59:41,425 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [67890, Bogota, Calle 140, 0]
+15:59:41,434 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO carritos(clienteCC, ciudadSucursal, direccionSucursal, abandono) values (?, ?, ?, ?)".
+Conexión cerrada
+15:59:41,435 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: null tuplas insertadas
+16:00:04,866 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito [12348, Bogota, Calle 140, 0]
+16:00:06,604 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO carritos(clienteCC, ciudadSucursal, direccionSucursal, abandono) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304D14202220.SYS_C00846755) violada - clave principal no encontrada
+
+16:00:06,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando carrito: null tuplas insertadas
+16:01:34,465 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [12347, Bogota, Calle 140, 170]
+16:01:39,979 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EnDisplay@13aa51b2 tuplas insertadas
+16:02:05,287 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Adicionando producto [12347, Bogota, Calle 140, 171]
+16:02:05,603 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Abandonando carrito: uniandes.isis2304.parranderos.negocio.EnDisplay@5085615c tuplas insertadas
+16:02:37,125 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+16:02:37,126 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT * FROM EstaEnCarrito WHERE clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0".
+Conexión cerrada
+16:02:37,126 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+16:02:54,369 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12347, Bogota, Calle 140]
+16:03:02,469 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+16:03:02,699 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 16:02:56.363
+Cédula del Cliente: 12347
+Producto:	Cantidad:	Precio:
+Axion	X3	$45000
+Total: 		$45000
+16:09:15,460 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+16:09:15,461 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+16:09:15,482 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+16:10:34,146 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+16:10:56,040 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 16:10:34.42
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
