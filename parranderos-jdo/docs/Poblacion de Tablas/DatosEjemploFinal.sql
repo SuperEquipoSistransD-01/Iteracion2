@@ -44,14 +44,14 @@ values ('Bogota',	'Calle 140',	189,	169,	10000,	5000,	15);
 
 --acuerdos OK
 
-insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego)
-values (210,	'Bogota',	'Salitre',	191,	171,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	3,	51,	1,	0);
+insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego,	pedidoConsolidado)
+values (210,	'Bogota',	'Salitre',	191,	171,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	3,	51,	1,	0, 0);
 
-insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego)
-values (211,	'Cali',	'La 14',	189,	170,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	4,	36,	2,	0);
+insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego,	pedidoConsolidado)
+values (211,	'Cali',	'La 14',	189,	170,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	4,	36,	2,	0, 0);
 
-insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego)
-values (212,	'Bogota',	'Calle 140',	189,	169,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	5,	45,	3, 1);
+insert into pedidos (codigo,	ciudadSucursal,	direccionSucursal,	proveedor,	producto,	fechaPedido,	diasDesdePedido,	volumenProducto,	diasParaEntrega,	llego, pedidoConsolidado)
+values (212,	'Bogota',	'Calle 140',	189,	169,	TO_DATE('16/10/2022', 'DD/MM/YYYY'),	5,	45,	3, 1, 0);
 
 --pedidos OK
 

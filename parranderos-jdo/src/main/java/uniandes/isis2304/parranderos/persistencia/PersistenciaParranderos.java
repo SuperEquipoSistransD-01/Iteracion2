@@ -21,14 +21,20 @@ import java.math.BigDecimal;
 
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List; 
+import java.util.List;
+import java.util.Set;
 
 import javax.jdo.JDODataStoreException;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
@@ -659,6 +665,34 @@ public class PersistenciaParranderos
         }
 	}
 	
+	public void adicionarPedidoConsolidado(ArrayList<ArrayList<Long>> pedidos, long proveedor)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long diasParaEntrega = Long.parseLong(JOptionPane.showInputDialog (new JFrame(), "En cuantos días espera que llegue el pedido del proveedor de código " + proveedor + "?", "", JOptionPane.QUESTION_MESSAGE));
+            System.out.println(diasParaEntrega);
+            tx.commit();
+            log.trace ("Acuerdo de Compra: " + 1 + " tuplas modificadas");
+            }
+        catch (Exception e)
+        {
+        	System.out.println("Excepcion");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
 	public Clientes registrarCliente(long numDocumento, String tipoDocumento, String nombre, String correoElectronico, String clave) {
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -926,6 +960,7 @@ public class PersistenciaParranderos
         Transaction tx=pm.currentTransaction();
         try
         {
+        	//Información para registro de compra y facturacion
         	List<EstaEnCarrito> productosCarrito = obtenerProductosCarrito(clienteCC, ciudadSucursal, direccionSucursal);
         	Productos producto = null;
         	int cantidad = 0;
@@ -938,6 +973,17 @@ public class PersistenciaParranderos
         			+ "Producto:\tCantidad:\tPrecio:\n";
         	
         	tx.begin();
+        	
+        	//Información para determinar si debe realizarse pedido del producto
+        	long numEnSucursal = 0;
+        	long nivelReorden = 0;
+        	long espacioDisponible = 0;
+        	AcuerdoCompra acuerdoCompra = null;
+        	
+        	//Diccionario para agrupar pedidos de proveedores y hacerlos en conjunto
+        	HashMap<Long, ArrayList<ArrayList<Long>>> pedidosPorProveedor = new HashMap<Long, ArrayList<ArrayList<Long>>>();
+        	ArrayList<Long> numProductosPedidos = null;
+        	
         	
         	Compras compra = adicionarCompra(fechaActual, ciudadSucursal, direccionSucursal, clienteCC);
         	
@@ -953,14 +999,45 @@ public class PersistenciaParranderos
         	
         		adicionarCantProductoComprado(compra.getCodigo(), producto.getCodigo(), cantidad);
         		
-        		System.out.println(producto.getCodigo());
-        		System.out.println(obtenerNumProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal));
-        		System.out.println(obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal));
-        		System.out.println(obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal).getNivelReorden());
-        	}
+        		numEnSucursal = obtenerNumProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
+        		acuerdoCompra = obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal);
+        		nivelReorden = acuerdoCompra.getNivelReorden();
+        		
+        		if (numEnSucursal <= nivelReorden)
+        		{
+        			espacioDisponible = obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
+        			
+        			if (!pedidosPorProveedor.containsKey(acuerdoCompra.getProveedor()))
+        			{	
+        				numProductosPedidos = new ArrayList<Long>();
+            			numProductosPedidos.add(producto.getCodigo());
+            			numProductosPedidos.add(espacioDisponible);
+            			pedidosPorProveedor.put(acuerdoCompra.getProveedor(),new ArrayList<ArrayList<Long>>());
+            			pedidosPorProveedor.get(acuerdoCompra.getProveedor()).add(numProductosPedidos);
+        			}
+        			else
+        			{
+        				numProductosPedidos = new ArrayList<Long>();
+            			numProductosPedidos.add(producto.getCodigo());
+            			numProductosPedidos.add(espacioDisponible);
+            			pedidosPorProveedor.get(acuerdoCompra.getProveedor()).add(numProductosPedidos);
+        			}
+        		}	
+        	}        	
         	
+        	//Terminación de texto de factura de compra
         	textoFactura = textoFactura +
         			"Total: \t\t$" + String.valueOf(total);
+        	
+        	//Proceso de petición de pedidos del mismo proveedor en conjunto
+        	Iterator<Long> pedidos = pedidosPorProveedor.keySet().iterator();
+        	long proveedor = 0;
+        	
+        	while (pedidos.hasNext())
+        	{
+        		proveedor = pedidos.next();
+        		adicionarPedidoConsolidado(pedidosPorProveedor.get(proveedor), proveedor);
+        	}
             
             tx.commit();
             

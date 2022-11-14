@@ -14,4 +14,6 @@ public interface VOPedidos {
 	public long getVolumenProducto();
 	public long getDiasParaEntrega();
 	public Timestamp getFechaPedido();
+	public long getLlego();
+	public long getPedidoConsolidado();
 }

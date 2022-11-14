@@ -14,6 +14,8 @@ public class Pedidos implements VOPedidos{
     private long diasDesdePedido;
     private long volumenProducto;
     private long diasParaEntrega;
+    private long llego;
+    private long pedidoConsolidado;
     
     public Pedidos() {
     	this.setCiudadSucursal("");
@@ -25,6 +27,8 @@ public class Pedidos implements VOPedidos{
     	this.setProducto(0);
     	this.setProveedor(0);
     	this.setVolumenProducto(0);
+    	this.setPedidoConsolidado(0);
+    	this.setLlego(0);
     }
     
     public Pedidos(long codigo,
@@ -35,7 +39,8 @@ public class Pedidos implements VOPedidos{
     Timestamp fechaPedido,
     long diasDesdePedido,
     long volumenProducto,
-    long diasParaEntrega) {
+    long diasParaEntrega,
+    long pedidoConsolidado) {
     	this.setCiudadSucursal(ciudadSucursal);
     	this.setCodigo(codigo);
     	this.setDiasDesdePedido(diasDesdePedido);
@@ -45,6 +50,8 @@ public class Pedidos implements VOPedidos{
     	this.setProducto(volumenProducto);
     	this.setProveedor(proveedor);
     	this.setVolumenProducto(volumenProducto);
+    	this.setPedidoConsolidado(pedidoConsolidado);
+    	this.setLlego(0);
     }
     
 	public long getCodigo() {
@@ -100,6 +107,22 @@ public class Pedidos implements VOPedidos{
 	}
 	public void setFechaPedido(Timestamp fechaPedido) {
 		this.fechaPedido = fechaPedido;
+	}
+
+	public long getPedidoConsolidado() {
+		return pedidoConsolidado;
+	}
+
+	public void setPedidoConsolidado(long pedidoConsolidado) {
+		this.pedidoConsolidado = pedidoConsolidado;
+	}
+
+	public long getLlego() {
+		return llego;
+	}
+
+	public void setLlego(long llego) {
+		this.llego = llego;
 	}
 
 }
