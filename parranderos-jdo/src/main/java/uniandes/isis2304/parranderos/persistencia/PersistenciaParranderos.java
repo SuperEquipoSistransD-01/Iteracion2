@@ -515,7 +515,7 @@ public class PersistenciaParranderos
             tx.commit();
             System.out.println("Despues de commit");
             log.trace ("Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
-            return new Bodega(idBodega, nombreSucursal, direccionSucursal, capacidad, categoriaAlmacenamiento);
+            return new Bodega(idBodega, nombreSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad);
         }
         catch (Exception e)
         {
@@ -534,8 +534,8 @@ public class PersistenciaParranderos
         }
 	}
 
-	public Estante adicionarEstante(String nombreSucursal, String direccionSucursal, long volumenLimite, long pesoLimite,
-			String tipoProducto) {
+	public Estante adicionarEstante(String nombreSucursal, String direccionSucursal,
+			String tipoProducto, long capacidad) {
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
@@ -543,12 +543,12 @@ public class PersistenciaParranderos
             tx.begin();            
             System.out.println("Antes de long");
             long idEstante = nextval ();
-            long tuplasInsertadas = sqlEstante.adicionarEstante(pm, idEstante, nombreSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto);
+            long tuplasInsertadas = sqlEstante.adicionarEstante(pm, idEstante, nombreSucursal, direccionSucursal, tipoProducto, capacidad);
             System.out.println("Antes de commit");
             tx.commit();
             System.out.println("Despues de commit");
             log.trace ("Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
-            return new Estante(idEstante, nombreSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto);
+            return new Estante(idEstante, nombreSucursal, direccionSucursal, tipoProducto, capacidad);
         }
         catch (Exception e)
         {
@@ -834,7 +834,7 @@ public class PersistenciaParranderos
             tx.commit();
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas" + tuplasInsertadas1);
-            return new EnDisplay(producto,	0, 0, 0, 0, cantidad);
+            return new EnDisplay(producto,	0, 0, cantidad, 0);
         }
         catch (Exception e)
         {
@@ -896,7 +896,7 @@ public class PersistenciaParranderos
             tx.commit();
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas"+tuplasInsertadas1);
-            return new EnDisplay(producto,	0, 0, 0, 0, 0);
+            return new EnDisplay(producto,	0, 0, 0, 0);
         }
         catch (Exception e)
         {

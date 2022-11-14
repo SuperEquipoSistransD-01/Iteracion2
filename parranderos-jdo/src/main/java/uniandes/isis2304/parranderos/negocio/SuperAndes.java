@@ -134,10 +134,9 @@ public class SuperAndes
 		return resp;
 	}
 	
-	public VOEstante adicionarEstante(String nombreSucursal, String direccionSucursal, long volumenLimite,
-			long pesoLimite, String categoriaAlmacenamiento) {
-		log.info("Adicionando bodegavolumenLimite ["+volumenLimite+"]");
-		Estante resp = pp.adicionarEstante(nombreSucursal, direccionSucursal, volumenLimite, pesoLimite, categoriaAlmacenamiento);
+	public VOEstante adicionarEstante(String nombreSucursal, String direccionSucursal, long capacidad, String categoriaAlmacenamiento) {
+		log.info("Adicionando bodegavolumenLimite ["+capacidad+"]");
+		Estante resp = pp.adicionarEstante(nombreSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad);
 		log.info ("Adicionando Bodega: " + resp + " tuplas insertadas");
 		return resp;
 	}

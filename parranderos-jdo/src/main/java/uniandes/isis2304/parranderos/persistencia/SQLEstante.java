@@ -36,11 +36,11 @@ import javax.jdo.Query;
 			this.pp = pp;
 		}
 		
-		public long adicionarEstante (PersistenceManager pm, long idEstante, String nombreSucursalAsociada, String direccionSucursalAsociada, long volumenLimite, long pesoLimite, String tipoProducto) 
+		public long adicionarEstante (PersistenceManager pm, long idEstante, String nombreSucursalAsociada, String direccionSucursalAsociada, String tipoProducto, long capacidad) 
 		{
 			System.out.println("Segundo Punto");
-	        Query q = pm.newQuery(SQL, "INSERT INTO " + "ESTANTES" + "	(codigo, ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, tipoProducto) values (?, ?, ?, ?, ?, ?)");
-	        q.setParameters(idEstante, nombreSucursalAsociada, direccionSucursalAsociada, volumenLimite, pesoLimite, tipoProducto);
+	        Query q = pm.newQuery(SQL, "INSERT INTO " + "ESTANTES" + "	(codigo, ciudadSucursal, direccionSucursal, tipoProducto, capacidad) values (?, ?, ?, ?, ?)");
+	        q.setParameters(idEstante, nombreSucursalAsociada, direccionSucursalAsociada, tipoProducto, capacidad);
 	        return (long) q.executeUnique();            
 		}
 

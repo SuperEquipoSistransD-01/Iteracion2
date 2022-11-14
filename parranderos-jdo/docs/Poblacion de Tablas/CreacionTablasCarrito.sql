@@ -157,14 +157,14 @@ values (312,	'Bogota',	'Calle 140',	'Perecederos',	170);
 
 --Bodegas OK
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (170,	311,	48, 4, 30);
+insert into StockDisponible (producto,	bodega, cantidad, espacioDisponible)
+values (170,	311,	48, 30);
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (169,	312,	50, 4, 30);
+insert into StockDisponible (producto,	bodega,	cantidad, espacioDisponible)
+values (169,	312,	50, 30);
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (171,	310,	60, 4, 30);
+insert into StockDisponible (producto,	bodega,	cantidad, espacioDisponible)
+values (171,	310,	60, 30);
 
 --StockDisponible OK
 --Cereal
@@ -201,96 +201,96 @@ values (418,	'Cali',	'La 14',	'Jabon',	200);
 
 --Estantes OK
 --Cereales Bogota 140
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (169,	410,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (169,	410,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (170,	410,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (170,	410,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (171,	410,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (171,	410,	100, 20, 10);
 
 --Cereales Bogota Salitre
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (169,	411,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (169,	411,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (170,	411,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (170,	411,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (171,	411,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (171,	411,	100, 20, 10);
 
 --Cereales Cali La 14
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (169,	412,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (169,	412,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (170,	412,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (170,	412,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (171,	412,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (171,	412,	100, 20, 10);
 
 
 --Granos Cali 14
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (172,	413,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (172,	413,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (173,	413,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (173,	413,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (174,	413,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (174,	413,	100, 20, 10);
 
 --Granos Bogota 140
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (172,	414,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (172,	414,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (173,	414,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (173,	414,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (174,	414,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (174,	414,	100, 20, 10);
 
 --Granos Bogota Salitre
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (172,	415,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (172,	415,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (173,	415,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (173,	415,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (174,	415,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (174,	415,	100, 20, 10);
 
 
 --Jabon Bogota Salitre
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (175,	416,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (175,	416,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (176,	416,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (176,	416,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (177,	416,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (177,	416,	100, 20, 10);
 
 --Jabon Bogota 140
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (175,	417,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (175,	417,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (176,	417,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (176,	417,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (177,	417,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (177,	417,	100, 20, 10);
 
 --Jabon Cali 14
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (175,	418,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (175,	418,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (176,	418,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (176,	418,	100, 20, 10);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (177,	418,	100,	150, 20, 10);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (177,	418,	100, 20, 10);
 
 --EnDisplay OK
 

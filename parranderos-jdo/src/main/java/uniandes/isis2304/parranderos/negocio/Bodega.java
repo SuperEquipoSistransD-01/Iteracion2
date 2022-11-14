@@ -1,33 +1,33 @@
 package uniandes.isis2304.parranderos.negocio;
 
 public class Bodega implements VOBodega {
-	private long idBodega;
+	private long codigo;
 	private String ciudadSucursalAsociada;
 	private String direccionSucursalAsociada;
 	private long capacidad;
 	private String categoriaAlmacenamiento;
 	
 	public Bodega() {
-		this.setIdBodega(0);
+		this.setCodigo(0);
 		this.setCapacidad(0);
 		this.setCiudadSucursalAsociada("");
 		this.setDireccionSucursalAsociada("");
 		this.setCategoriaAlmacenamiento("");
 		
 	}
-	public Bodega(long idBodega, String nombreSucursalAsociada, String direccionSucursalAsociada, long capacidad, String categoriaAlmacenamiento) {
-		this.setIdBodega(idBodega);
+	public Bodega(long codigo, String nombreSucursalAsociada, String direccionSucursalAsociada, String categoriaAlmacenamiento, long capacidad) {
+		this.setCodigo(codigo);
 		this.setCapacidad(capacidad);
 		this.setCiudadSucursalAsociada(nombreSucursalAsociada);
 		this.setCategoriaAlmacenamiento(categoriaAlmacenamiento);
 		this.setDireccionSucursalAsociada(direccionSucursalAsociada);
 	}
 		
-	public long getIdBodega() {
-		return idBodega;
+	public long getCodigo() {
+		return codigo;
 	}
-	public void setIdBodega(long idBodega) {
-		this.idBodega = idBodega;
+	public void setCodigo(long idBodega) {
+		this.codigo = codigo;
 	}
 	public long getCapacidad() {
 		return capacidad;

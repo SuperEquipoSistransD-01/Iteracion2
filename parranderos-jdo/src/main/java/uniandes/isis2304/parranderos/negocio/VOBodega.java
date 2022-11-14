@@ -1,7 +1,7 @@
 package uniandes.isis2304.parranderos.negocio;
 
 public interface VOBodega {
-	public long getIdBodega();
+	public long getCodigo();
 	public long getCapacidad();
 	public String getCiudadSucursalAsociada();
 	public String getDireccionSucursalAsociada(); 

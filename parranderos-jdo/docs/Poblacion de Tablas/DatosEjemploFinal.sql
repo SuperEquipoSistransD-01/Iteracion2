@@ -66,14 +66,14 @@ values (312,	'Bogota',	'Calle 140',	'Perecederos',	170);
 
 --Bodegas OK
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (170,	311,	48, 4, 30);
+insert into StockDisponible (producto,	bodega, cantidad, espacioDisponible)
+values (170,	311,	48, 30);
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (169,	312,	50,4, 30);
+insert into StockDisponible (producto,	bodega, cantidad, espacioDisponible)
+values (169,	312,	50, 30);
 
-insert into StockDisponible (producto,	bodega,	numEnBodega, cantidad, espacioDisponible)
-values (171,	310,	60,4, 30);
+insert into StockDisponible (producto,	bodega, cantidad, espacioDisponible)
+values (171,	310,	60, 30);
 
 --StockDisponible OK
 
@@ -88,14 +88,14 @@ values (412,	'Bogota',	'Salitre',	'Jabon',	200);
 
 --Estantes OK
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (170,	411,	100,	150, 4, 20);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (170,	411,	5,	 4, 20);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (169,	410,	100,	150, 4, 20);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (169,	410,	5,	 4, 20);
 
-insert into enDisplay (producto,	estante,	numEnEstante,	nivelAbastecimiento, cantidad, espacioDisponible)
-values (171,	412,	100,	150, 4, 20);
+insert into enDisplay (producto,	estante,	nivelAbastecimiento, cantidad, espacioDisponible)
+values (171,	412,	5,	 4, 20);
 
 --EnDisplay OK
 

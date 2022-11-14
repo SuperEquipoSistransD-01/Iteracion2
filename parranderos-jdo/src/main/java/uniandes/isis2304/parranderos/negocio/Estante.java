@@ -1,62 +1,46 @@
 package uniandes.isis2304.parranderos.negocio;
 
 public class Estante implements VOEstante {
-	private long idEstante;
-	private String nombreSucursalAsociada;
-	private String direccionSucursalAsociada;
-	private long volumenLimite;
-	private long pesoLimite;
+	private long codigo;
+	private String ciudadSucursal;
+	private String direccionSucursal;
 	private String tipoProducto;
+	private long capacidad;
 	
 	public Estante() {
-		this.setIdEstante(0);
-		this.setNombreSucursalAsociada("");
-		this.setDireccionSucursalAsociada("");
-		this.setVolumenLimite(0);
-		this.setPesoLimite(0);
+		this.setCodigo(0);
+		this.setCiudadSucursal("");
+		this.setDireccionSucursal("");
 		this.setTipoProducto("");
+		this.setCapacidad(capacidad);
 		
 	}
-	public Estante(long idEstante, String nombreSucursalAsociada, String direccionSucursalAsociada, long volumenLimite,
-			long pesoLimite, String tipoProducto) {
-		this.setIdEstante(idEstante);
-		this.setNombreSucursalAsociada(nombreSucursalAsociada);
-		this.setDireccionSucursalAsociada(direccionSucursalAsociada);
-		this.setVolumenLimite(volumenLimite);
-		this.setPesoLimite(pesoLimite);
+	public Estante(long codigo, String ciudadSucursal, String direccionSucursal, String tipoProducto, long capacidad) {
+		this.setCodigo(codigo);
+		this.setCiudadSucursal(ciudadSucursal);
+		this.setDireccionSucursal(direccionSucursal);
 		this.setTipoProducto(tipoProducto);
+		this.setCapacidad(capacidad);
 	}
 		
 	
-	public String getNombreSucursalAsociada() {
-		return nombreSucursalAsociada;
+	public String getCiudadSucursal() {
+		return ciudadSucursal;
 	}
-	public void setNombreSucursalAsociada(String nombreSucursalAasociada) {
-		this.nombreSucursalAsociada = nombreSucursalAasociada;
+	public void setCiudadSucursal(String ciudadSucursal) {
+		this.ciudadSucursal = ciudadSucursal;
 	}
-	public String getDireccionSucursalAsociada() {
-		return direccionSucursalAsociada;
+	public String getDireccionSucursal() {
+		return direccionSucursal;
 	}
-	public void setDireccionSucursalAsociada(String direccionSucursalAsociada) {
-		this.direccionSucursalAsociada = direccionSucursalAsociada;
+	public void setDireccionSucursal(String direccionSucursal) {
+		this.direccionSucursal = direccionSucursal;
 	}
-	public long getIdEstante() {
-		return idEstante;
+	public long getCodigo() {
+		return codigo;
 	}
-	public void setIdEstante(long idEstante) {
-		this.idEstante = idEstante;
-	}
-	public long getVolumenLimite() {
-		return volumenLimite;
-	}
-	public void setVolumenLimite(long volumenLimite) {
-		this.volumenLimite = volumenLimite;
-	}
-	public long getPesoLimite() {
-		return pesoLimite;
-	}
-	public void setPesoLimite(long pesoLimite) {
-		this.pesoLimite = pesoLimite;
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
 	}
 	
 	public String getTipoProducto() {
@@ -64,6 +48,12 @@ public class Estante implements VOEstante {
 	}
 	public void setTipoProducto(String tipoProducto) {
 		this.tipoProducto = tipoProducto;
+	}
+	public long getCapacidad() {
+		return capacidad;
+	}
+	public void setCapacidad(long capacidad) {
+		this.capacidad = capacidad;
 	}
 
 	

@@ -133,16 +133,15 @@ CREATE TABLE EnDisplay
 (
     producto REFERENCES Productos,
     estante REFERENCES Estantes,
-    numEnEstante numeric(20,2),
     nivelAbastecimiento numeric(20,2),
     cantidad numeric(20,2),
     espacioDisponible numeric(20, 2),
     
     PRIMARY KEY (producto, estante),
-    CHECK(numEnEstante is not null and numEnEstante >= 0),
     CHECK(cantidad is not null and cantidad >= 0),
     CHECK(nivelAbastecimiento is not null and nivelAbastecimiento >= 0),
     CHECK(espacioDisponible is not null and espacioDisponible >= 0)
+
 );
 COMMIT;
 
@@ -151,12 +150,10 @@ CREATE TABLE StockDisponible
 (
     producto REFERENCES Productos,
     bodega REFERENCES Bodegas,
-    numEnBodega numeric(20,2),
     cantidad numeric(20,2),
     espacioDisponible numeric(20, 2),
     
     PRIMARY KEY (producto, bodega),
-    CHECK(numEnBodega is not null and numEnBodega >= 0),
     CHECK(cantidad is not null and cantidad >= 0),
     CHECK(espacioDisponible is not null and espacioDisponible >= 0)
 );

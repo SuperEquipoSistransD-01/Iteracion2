@@ -429,7 +429,7 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	try 
     	{
     		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Categoría Almacenamiento?", "Ok", JOptionPane.QUESTION_MESSAGE);
-    		long capacidad = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica de la Bodega?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		long capacidad = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad de la Bodega?", "Ok", JOptionPane.QUESTION_MESSAGE));
     		if (ciudadSucursal != null && capacidad != 0 && direccionSucursal != null && rol.equals("gs"))
     		{
         		VOBodega tb = parranderos.adicionarBodega(ciudadSucursal, direccionSucursal, categoriaAlmacenamiento,capacidad);
@@ -461,14 +461,13 @@ public class InterfazSuperandes extends JFrame implements ActionListener
     	{
     		String categoriaAlmacenamiento = JOptionPane.showInputDialog (this, "Tipo de Producto?", "Ok", JOptionPane.QUESTION_MESSAGE);
     		
-    		long volumenLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad volumétrica del Estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		long pesoLimite = Long.parseLong(JOptionPane.showInputDialog (this, "Peso Límite del estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
-    		if (ciudadSucursal != null && direccionSucursal != null && volumenLimite != 0 && pesoLimite != 0 && rol.equals("gs"))
+    		long capacidad = Long.parseLong(JOptionPane.showInputDialog (this, "Capacidad del Estante?", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		if (ciudadSucursal != null && direccionSucursal != null && capacidad != 0 && rol.equals("gs"))
     		{
-        		VOEstante tb = parranderos.adicionarEstante(ciudadSucursal, direccionSucursal, volumenLimite, pesoLimite, categoriaAlmacenamiento);
+        		VOEstante tb = parranderos.adicionarEstante(ciudadSucursal, direccionSucursal, capacidad, categoriaAlmacenamiento);
         		if (tb == null)
         		{    		
-        			throw new Exception ("No se pudo crear un estante con volumen Limite: "+volumenLimite);
+        			throw new Exception ("No se pudo crear un estante con volumen Limite: "+ capacidad);
         		}
         		String resultado = "En adicionarEstante\n\n";
         		resultado += "Estante adicionada exitosamente: " + tb;
