@@ -222,6 +222,7 @@ public class SuperAndes
 	
 	public VOCarrito abandonarCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal, long abandono) {
 		log.info ("Abanadonando carrito [" + clienteCC + ", " + ciudadSucursal +", "+direccionSucursal+ ", "+abandono+ "]");
+		System.out.println("EnSuperAndes");
         Carrito resp = pp.abandonarCarrito(clienteCC, ciudadSucursal, direccionSucursal, abandono);
         log.info ("Abandonando carrito: " + resp + " tuplas insertadas");
         return resp;

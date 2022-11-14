@@ -77,10 +77,30 @@ class SQLEnDisplay
         return (long) q.executeUnique();
 	}
 	
+	public long productoAlCarritoEspDis(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long producto, long cantidad) 
+	{
+		
+        Query q = pm.newQuery(SQL, "update enDisplay set endisplay.espacioDisponible = endisplay.espacioDisponible + ? where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = 0 and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?) "
+        		+ " and endisplay.estante in (select endisplay.estante from estantes, endisplay where endisplay.estante = estantes.codigo and estantes.ciudadSucursal = ? and estantes.direccionSucursal = ? and endisplay.producto = ?)");
+        q.setParameters(cantidad, producto, clienteCC, ciudadSucursal, direccionSucursal, ciudadSucursal, direccionSucursal, producto);
+        return (long) q.executeUnique();
+	}
+	
 	public long devolverProductoCarritoD(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long producto, long abandono) 
 	{
         Query q = pm.newQuery(SQL, "update enDisplay "
         		+ "set endisplay.cantidad = endisplay.cantidad + (select c.cantidad from estaEnCarrito c where c.clienteCC = ? and c.abandono = ? and c.ciudadSucursal = ? and c.direccionSucursal = ? and c.codigo = ?) "
+        		+ "where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal "
+        		+ "and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = ? and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?)"
+        		+ " and endisplay.estante in (select endisplay.estante from estantes, endisplay where endisplay.estante = estantes.codigo and estantes.ciudadSucursal = ? and estantes.direccionSucursal = ? and endisplay.producto = ?)");
+        q.setParameters(clienteCC, abandono,ciudadSucursal, direccionSucursal, producto, producto, clienteCC, abandono,ciudadSucursal, direccionSucursal, ciudadSucursal, direccionSucursal, producto);
+        return (long) q.executeUnique();
+	}
+	
+	public long devolverProductoCarritoEspDis(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal, long producto, long abandono) 
+	{
+        Query q = pm.newQuery(SQL, "update enDisplay "
+        		+ "set endisplay.espacioDisponible = endisplay.espacioDisponible - (select c.cantidad from estaEnCarrito c where c.clienteCC = ? and c.abandono = ? and c.ciudadSucursal = ? and c.direccionSucursal = ? and c.codigo = ?) "
         		+ "where endisplay.producto in (select productos.codigo from endisplay, estantes, productos, carritos where productos.codigo = ? and productos.codigo = endisplay.producto and endisplay.estante = estantes.codigo and estantes.ciudadSucursal = carritos.ciudadSucursal "
         		+ "and estantes.direccionSucursal = carritos.direccionSucursal and carritos.clienteCC = ? and carritos.abandono = ? and carritos.ciudadSucursal = ? and carritos.direccionSucursal = ?)"
         		+ " and endisplay.estante in (select endisplay.estante from estantes, endisplay where endisplay.estante = estantes.codigo and estantes.ciudadSucursal = ? and estantes.direccionSucursal = ? and endisplay.producto = ?)");
