@@ -129,5 +129,11 @@ class SQLEstaEnCarrito
 		q.setResultClass(ConsultaFrecuentes.class);
 		return (List<ConsultaFrecuentes>) q.executeList();
 	}
+	
+	public long terminarCompra(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal) {
+		Query q = pm.newQuery(SQL, "DELETE FROM EstaEnCarrito where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0");
+		q.setParameters(clienteCC, ciudadSucursal, direccionSucursal);
+		return (long) q.executeUnique();
+	}
 
 }

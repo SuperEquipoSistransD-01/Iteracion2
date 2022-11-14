@@ -546,6 +546,35 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+	
+	public void terminarCompraCarrito(long clientecc, String nombreSucursal, String direccionSucursal) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            
+            long tuplasEliminadas = sqlEstaEnCarrito.terminarCompra(pm, clientecc, nombreSucursal, direccionSucursal) + sqlCarrito.terminarCompra(pm, clientecc, nombreSucursal, direccionSucursal);
+            
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("carrito: " + tuplasEliminadas + " tuplas eliminadas");
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	public Estante adicionarEstante(String nombreSucursal, String direccionSucursal,
 			String tipoProducto, long capacidad) {
@@ -1104,7 +1133,10 @@ public class PersistenciaParranderos
         		proveedor = pedidos.next();
         		adicionarPedidoConsolidado(pedidosPorProveedor.get(proveedor), proveedor, ciudadSucursal, direccionSucursal);
         	}
-            System.out.println("a dormir");
+        	
+        	//Borra elementos de EstaEnCarrito y al carrito
+        	terminarCompraCarrito(clienteCC, ciudadSucursal, direccionSucursal);    
+        	
             tx.commit();
             
             return textoFactura;

@@ -2818,3 +2818,57 @@ Total: 		$102000
 15:28:58,120 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida
 15:28:58,143 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Generando los VO de Tipos de bebida: 1 existentes
 >>>>>>> e0eb8c919d8bdf84ac174a969c6ab93f1b238a3c
+17:56:12,022 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+17:56:12,023 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+17:56:12,043 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+17:56:29,005 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+17:56:42,660 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 17:56:30.039
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+18:00:40,962 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:00:40,963 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:00:40,983 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:00:59,889 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:01:21,683 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM Carritos where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0".
+ORA-02292: restricción de integridad (ISIS2304D14202220.SYS_C00846760) violada - registro secundario encontrado
+
+18:01:21,851 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 18:01:00.183
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+18:02:39,459 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:02:39,460 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:02:39,480 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:02:52,981 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:03:02,968 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM Carritos where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0".
+ORA-02292: restricción de integridad (ISIS2304D14202220.SYS_C00846760) violada - registro secundario encontrado
+
+18:03:03,209 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 18:02:53.302
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+18:04:04,676 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+18:04:04,676 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+18:04:04,696 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+18:04:17,994 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+18:04:27,848 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 18:04:18.492
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
