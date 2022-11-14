@@ -103,6 +103,7 @@ class SQLCarrito
 	
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	public long terminarCompra(PersistenceManager pm, long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		Query q = pm.newQuery(SQL, "DELETE FROM Carritos where clienteCC = ? and ciudadSucursal = ? and direccionSucursal = ? and abandono = 0");
@@ -111,6 +112,8 @@ class SQLCarrito
 	}
 =======
 >>>>>>> 4208028ca2dd24e895903ff4bc831786158c5fef
+=======
+>>>>>>> refs/remotes/origin/master
 
 
 
