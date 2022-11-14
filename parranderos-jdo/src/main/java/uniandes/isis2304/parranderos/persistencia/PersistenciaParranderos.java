@@ -148,6 +148,8 @@ public class PersistenciaParranderos
 	
 	private SQLPedido sqlPedido;
 	
+	private SQLStockDisponible sqlStockDisponible;
+	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -265,6 +267,7 @@ public class PersistenciaParranderos
 		sqlCompras = new SQLCompras(this);
 		sqlCantProductoComprado = new SQLCantProductoComprado(this);
 		sqlPedido = new SQLPedido(this);
+		sqlStockDisponible = new SQLStockDisponible(this);
 	}
 
 	/**
@@ -689,7 +692,10 @@ public class PersistenciaParranderos
             {
             	producto = pedidos.get(i);
             	codigo = nextval ();
-            	sqlPedido.adicionarPedido(pm, codigo, ciudadSucursal, direccionSucursal, proveedor, producto.get(0), fechaPedido, producto.get(1), diasParaEntrega, codigoConsolidado);
+            	tuplasInsertadas= tuplasInsertadas + sqlPedido.adicionarPedido(pm, codigo, ciudadSucursal, direccionSucursal, proveedor, producto.get(0), fechaPedido, producto.get(1), diasParaEntrega, codigoConsolidado);
+            	
+            	//Deja los espacios disponibles del producto solicitado en 0 para que no puedan solicitarse más luego de un pedido que no ha llegado
+            	tuplasInsertadas = tuplasInsertadas + volver0EspacioDisponible(producto.get(0), ciudadSucursal, direccionSucursal);
             }
             	
             tx.commit();
@@ -821,6 +827,16 @@ public class PersistenciaParranderos
 		return sqlProducto.obtenerProducto(pmf.getPersistenceManager(), codigo).get(0);
 	}
 	
+	public Estante obtenerEstante(String ciudadSucursal, String direccionSucursal, long producto)
+	{
+		return sqlEstante.obtenerEstante(pmf.getPersistenceManager(), ciudadSucursal, direccionSucursal, producto).get(0);
+	}
+	
+	public Bodega obtenerBodega(String ciudadSucursal, String direccionSucursal, long producto)
+	{
+		return sqlBodega.obtenerBodega(pmf.getPersistenceManager(), ciudadSucursal, direccionSucursal, producto).get(0);
+	}
+	
 	public List<EstaEnCarrito> obtenerProductosCarrito(long clienteCC, String ciudadSucursal, String direccionSucursal) {
 		return sqlEstaEnCarrito.obtenerProductosCarrito(pmf.getPersistenceManager(), clienteCC, ciudadSucursal, direccionSucursal);
 	}
@@ -838,6 +854,31 @@ public class PersistenciaParranderos
 	public AcuerdoCompra obtenerAcuerdoCompra(long producto, String ciudadSucursal, String direccionSucursal)
 	{
 		return sqlAcuerdosCompra.obtenerAcuerdosCompra(pmf.getPersistenceManager(), producto, ciudadSucursal, direccionSucursal).get(0);
+	}
+	
+	public long volver0EspacioDisponible(long producto, String ciudadSucursal, String direccionSucursal) 
+	{
+		long tuplasModificadas = 0;
+		
+		try
+		{
+			long estante = obtenerEstante(ciudadSucursal, direccionSucursal, producto).getCodigo();
+			tuplasModificadas = tuplasModificadas + sqlEnDisplay.volver0EspacioDisponible(pmf.getPersistenceManager(), estante, producto);
+		}
+		catch  (Exception e)
+		{
+			System.out.println("no tiene estante");
+		}
+		try
+		{
+			long bodega = obtenerBodega(ciudadSucursal, direccionSucursal, producto).getCodigo();
+			tuplasModificadas = tuplasModificadas + sqlStockDisponible.volver0EspacioDisponible(pmf.getPersistenceManager(), bodega, producto);
+		}
+		catch  (Exception e)
+		{
+			System.out.println("no tiene bodega");
+		}
+		return tuplasModificadas;
 	}
 	
 	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {
@@ -1028,11 +1069,14 @@ public class PersistenciaParranderos
         		numEnSucursal = obtenerNumProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
         		acuerdoCompra = obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal);
         		nivelReorden = acuerdoCompra.getNivelReorden();
+        		espacioDisponible = obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
+    			
         		
-        		if (numEnSucursal <= nivelReorden)
+        		System.out.println(nivelReorden);
+        		System.out.println(numEnSucursal);
+        		
+        		if (numEnSucursal <= nivelReorden && espacioDisponible > 0)
         		{
-        			espacioDisponible = obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
-        			
         			if (!pedidosPorProveedor.containsKey(acuerdoCompra.getProveedor()))
         			{	
         				numProductosPedidos = new ArrayList<Long>();

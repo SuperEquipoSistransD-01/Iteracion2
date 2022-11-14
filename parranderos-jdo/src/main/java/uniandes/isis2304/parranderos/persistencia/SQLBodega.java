@@ -7,6 +7,9 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.Bodega;
+import uniandes.isis2304.parranderos.negocio.Estante;
+
  class SQLBodega {
 	 /* ****************************************************************
 		 * 			Constantes
@@ -42,6 +45,15 @@ import javax.jdo.Query;
 	        Query q = pm.newQuery(SQL, "INSERT INTO " + "BODEGAS" + "	(codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad) values (?, ?, ?, ?, ?)");
 	        q.setParameters(idBodega, nombreSucursalAsociada, direccionSucursalAsociada, categoriaAlmacenamiento, capacidad);
 	        return (long) q.executeUnique();            
+		}
+		
+		public List<Bodega> obtenerBodega(PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long producto) {
+			Query q = pm.newQuery(SQL, "SELECT codigo, ciudadSucursal, direccionSucursal, categoriaAlmacenamiento, capacidad FROM Bodegas inner join StockDisponible on codigo = bodega WHERE ciudadSucursal = ? and direccionSucursal = ? and producto = ?");
+			q.setResultClass(Bodega.class);
+			System.out.println("entra3");
+			q.setParameters(ciudadSucursal, direccionSucursal, producto);
+			System.out.println("entra4");
+			return (List<Bodega>) q.executeList();
 		}
 
 }
