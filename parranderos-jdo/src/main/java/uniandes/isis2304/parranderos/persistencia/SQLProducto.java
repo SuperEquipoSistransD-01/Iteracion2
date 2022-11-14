@@ -61,4 +61,12 @@ class SQLProducto {
 		return (long) q.executeList().get(0);
 	}
 
+	public long obtenerDisponibilidadProductoEnSucursal(PersistenceManager pm, long producto,String ciudadSucursal, String direccionSucursal) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT SUM(espacioDisponible) FROM((SELECT espacioDisponible FROM ((SELECT ciudad, direccion, codigo as codigoBodega FROM (Sucursales INNER JOIN Bodegas ON ciudad = ciudadSucursal AND direccion = direccionSucursal) WHERE ciudad = ? and direccion = ?) INNER JOIN (SELECT * FROM StockDisponible WHERE producto = ?) ON codigoBodega = bodega)) UNION ALL (SELECT espacioDisponible FROM ((SELECT ciudad, direccion, codigo as codigoEstante FROM (Sucursales INNER JOIN Estantes ON ciudad = ciudadSucursal AND direccion = direccionSucursal) WHERE ciudad = ? and direccion = ?)INNER JOIN (SELECT *FROM EnDisplay WHERE producto = ?) ON codigoEstante = estante)))");	
+		q.setResultClass(Long.class);
+		q.setParameters(ciudadSucursal, direccionSucursal, producto, ciudadSucursal, direccionSucursal, producto);
+		return (long) q.executeList().get(0);
+	}
+
 }

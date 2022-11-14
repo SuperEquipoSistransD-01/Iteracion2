@@ -778,6 +778,11 @@ public class PersistenciaParranderos
 		return sqlProducto.obtenerNumProductoEnSucursal(pmf.getPersistenceManager(), producto, ciudadSucursal, direccionSucursal);
 	}
 	
+	public long obtenerDisponibilidadProductoEnSucursal(long producto, String ciudadSucursal, String direccionSucursal)
+	{
+		return sqlProducto.obtenerDisponibilidadProductoEnSucursal(pmf.getPersistenceManager(), producto, ciudadSucursal, direccionSucursal);
+	}
+	
 	public AcuerdoCompra obtenerAcuerdoCompra(long producto, String ciudadSucursal, String direccionSucursal)
 	{
 		return sqlAcuerdosCompra.obtenerAcuerdosCompra(pmf.getPersistenceManager(), producto, ciudadSucursal, direccionSucursal).get(0);
@@ -948,7 +953,9 @@ public class PersistenciaParranderos
         	
         		adicionarCantProductoComprado(compra.getCodigo(), producto.getCodigo(), cantidad);
         		
+        		System.out.println(producto.getCodigo());
         		System.out.println(obtenerNumProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal));
+        		System.out.println(obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal));
         		System.out.println(obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal).getNivelReorden());
         	}
         	

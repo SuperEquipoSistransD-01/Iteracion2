@@ -1856,3 +1856,45 @@ Producto:	Cantidad:	Precio:
 Zucaritas	X2	$20000
 Don Pacho	X3	$24000
 Total: 		$44000
+19:47:24,904 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+19:47:24,905 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+19:47:24,930 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+19:51:20,929 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+19:51:27,286 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-13 19:51:21.3
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Total: 		$72000
+19:56:16,935 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+19:56:19,875 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-13 19:56:17.188
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Total: 		$72000
+20:22:48,661 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+20:22:48,662 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+20:22:48,682 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+20:23:03,450 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+20:23:07,345 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+20:23:07,345 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+null
+20:27:31,431 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+20:27:31,432 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+20:27:31,453 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+20:27:49,252 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+20:27:53,373 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-13 20:27:49.546
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Total: 		$72000
+20:28:49,448 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+20:28:49,449 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+20:28:49,468 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+20:29:02,340 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
