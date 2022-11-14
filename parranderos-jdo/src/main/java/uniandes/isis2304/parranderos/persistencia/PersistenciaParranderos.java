@@ -145,6 +145,8 @@ public class PersistenciaParranderos
 	
 	private SQLCantProductoComprado sqlCantProductoComprado;
 	
+	private SQLPedido sqlPedido;
+	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -261,6 +263,7 @@ public class PersistenciaParranderos
 		sqlEstaEnCarrito = new SQLEstaEnCarrito(this);
 		sqlCompras = new SQLCompras(this);
 		sqlCantProductoComprado = new SQLCantProductoComprado(this);
+		sqlPedido = new SQLPedido(this);
 	}
 
 	/**
@@ -369,13 +372,9 @@ public class PersistenciaParranderos
         try
         {
             tx.begin();            
-            System.out.println("Paso 1");
             long tuplasInsertadas1 = sqlCarrito.nuevoAbandono(pm, clienteCC, ciudadSucursal, direccionSucursal);
-            System.out.println("Paso 2");
             long tuplasInsertadas2 = sqlEstaEnCarrito.abandonarCarrito1(pm, clienteCC, ciudadSucursal, direccionSucursal, abandono);
-            System.out.println("Paso 3");
             long tuplasInsertadas3 = sqlCarrito.abandonarCarrito(pm, clienteCC, ciudadSucursal, direccionSucursal, 0);
-            System.out.println("Paso 4");
             tx.commit();
             
             log.trace ("Carrito abandono: " + clienteCC + ": " + tuplasInsertadas1 + " tuplas insertadas"+tuplasInsertadas2+tuplasInsertadas3);
@@ -669,17 +668,31 @@ public class PersistenciaParranderos
         }
 	}
 	
-	public void adicionarPedidoConsolidado(ArrayList<ArrayList<Long>> pedidos, long proveedor)
+	public void adicionarPedidoConsolidado(ArrayList<ArrayList<Long>> pedidos, long proveedor, String ciudadSucursal, String direccionSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            
             long diasParaEntrega = Long.parseLong(JOptionPane.showInputDialog (new JFrame(), "En cuantos días espera que llegue el pedido del proveedor de código " + proveedor + "?", "", JOptionPane.QUESTION_MESSAGE));
-            System.out.println(diasParaEntrega);
+            long codigoConsolidado = nextval ();
+            Timestamp fechaPedido = obtenerFechaActual();
+            
+            long tuplasInsertadas = 0;
+            
+            ArrayList<Long> producto;
+            long codigo = 0;
+            for (int i = 0; i < pedidos.size(); i++)
+            {
+            	producto = pedidos.get(i);
+            	codigo = nextval ();
+            	sqlPedido.adicionarPedido(pm, codigo, ciudadSucursal, direccionSucursal, proveedor, producto.get(0), fechaPedido, producto.get(1), diasParaEntrega, codigoConsolidado);
+            }
+            	
             tx.commit();
-            log.trace ("Acuerdo de Compra: " + 1 + " tuplas modificadas");
+            log.trace ("Acuerdo de Compra: " + tuplasInsertadas + " tuplas modificadas");
             }
         catch (Exception e)
         {
@@ -874,7 +887,6 @@ public class PersistenciaParranderos
             tx.begin();            
             long tuplasInsertadas = sqlEnDisplay.productoAlCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
             long tuplasInsertadas1 = sqlEstaEnCarrito.productoAlCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, 0, producto, cantidad);
-            long tuplasInsertadas2 = sqlEnDisplay.productoAlCarritoEspDis(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, cantidad);
             tx.commit();
             
             log.trace ("Carrito: " + clienteCC + ": " + tuplasInsertadas + " tuplas insertadas" + tuplasInsertadas1);
@@ -936,7 +948,6 @@ public class PersistenciaParranderos
             tx.begin();            
             long abandono = 0;
             long tuplasInsertadas = sqlEnDisplay.devolverProductoCarritoD(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
-            long tuplasInsertadas2 = sqlEnDisplay.devolverProductoCarritoEspDis(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
             long tuplasInsertadas1 = sqlEstaEnCarrito.devolverProductoCarritoC(pm, clienteCC, ciudadSucursal, direccionSucursal, producto, abandono);
             tx.commit();
             
@@ -1042,9 +1053,9 @@ public class PersistenciaParranderos
         	while (pedidos.hasNext())
         	{
         		proveedor = pedidos.next();
-        		adicionarPedidoConsolidado(pedidosPorProveedor.get(proveedor), proveedor);
+        		adicionarPedidoConsolidado(pedidosPorProveedor.get(proveedor), proveedor, ciudadSucursal, direccionSucursal);
         	}
-            
+            System.out.println("a dormir");
             tx.commit();
             
             return textoFactura;
@@ -1078,7 +1089,6 @@ public class PersistenciaParranderos
             {
             	//System.out.println(tb.getClienteCC()+ "," + tb.getCiudadSucursal()+"," + tb.getDireccionSucursal()+"," + tb.getCodigo());
             	sqlEnDisplay.devolverProductoCarritoD(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
-            	sqlEnDisplay.devolverProductoCarritoEspDis(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             	sqlEstaEnCarrito.devolverProductoCarritoC(pm, tb.getClienteCC(), tb.getCiudadSucursal(), tb.getDireccionSucursal(), tb.getCodigo(), 1);
             }
             

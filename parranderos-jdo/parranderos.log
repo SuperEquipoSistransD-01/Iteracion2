@@ -2225,3 +2225,147 @@ ORA-00001: restricción única (ISIS2304D14202220.SYS_C00843172) violada
 00:00:14,028 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto [123457, 12345]
 00:00:14,755 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Devolviendo producto: uniandes.isis2304.parranderos.negocio.EstaEnCarrito@355de439 tuplas insertadas
 >>>>>>> 705e6e7a468ae3c7d238486253c42815f6a3753e
+10:31:52,748 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:31:52,749 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:31:52,769 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:32:08,778 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:32:19,694 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:32:09.147
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:39:18,025 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:39:18,026 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:39:18,047 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:40:18,207 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:40:32,640 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:40:18.484
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:50:04,091 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:50:04,092 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:50:04,111 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:50:26,703 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:50:39,076 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:50:41,237 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:50:41,377 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:50:26.988
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:52:52,196 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:52:52,196 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:52:52,219 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:53:06,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:53:16,271 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:53:24,348 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:53:24,496 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:53:06.442
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:54:38,962 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:54:38,963 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:54:38,985 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:54:52,697 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:55:01,589 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:55:03,847 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:55:04,029 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:54:52.986
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:56:59,803 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:56:59,803 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:56:59,824 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:57:14,785 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:57:22,933 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:57:25,121 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:57:25,275 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:57:15.053
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+10:58:04,094 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+10:58:04,094 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+10:58:04,114 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+10:58:19,206 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+10:58:27,827 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:58:29,424 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+10:58:29,593 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 10:58:19.507
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+11:00:16,189 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+11:00:16,190 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+11:00:16,209 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+11:00:32,425 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+11:00:40,999 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+11:00:42,531 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO Pedidos (codigo, ciudadSucursal, direccionSucursal, proveedor, producto, fechaPedido, cantidad, diasParaEntrega, codigoConsolidado, diasDesdePedido, llego) VALUES (?,?,?,?,?,?,?,?,?,0,0)".
+ORA-00904: "CODIGOCONSOLIDADO": identificador no válido
+
+11:00:42,662 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 11:00:32.703
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
+11:04:19,030 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Interfaz
+11:04:19,031 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se aplica configuración indicada en el archivo de configuración
+11:04:19,054 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazSuperandes] - Se encontró un archivo de configuración válido: Tablas BD
+11:04:34,270 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Pagando Compra [12345, Bogota, Calle 140]
+11:04:46,679 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.SuperAndes] - Compra Facturada: 
+Fecha: 2022-11-14 11:04:34.525
+Cédula del Cliente: 12345
+Producto:	Cantidad:	Precio:
+Zucaritas	X4	$40000
+Don Pacho	X4	$32000
+Axion	X2	$30000
+Total: 		$102000
