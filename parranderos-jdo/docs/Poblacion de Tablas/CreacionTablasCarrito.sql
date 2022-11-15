@@ -315,6 +315,9 @@ values (124445,	'OpBogSal',	'operador2', 1234,	'Bogota',	'Salitre',	'o');
 insert into usuarios (numDocumento,	nombre,	correoElectronico,	clave,	ciudadSucursal,	direccionSucursal,	Rol)
 values (124446,	'OperadorCali14',	'operador3', 1234,	'Cali',	'La 14',	'o');
 
+insert into usuarios (numDocumento,	nombre,	correoElectronico,	clave,	ciudadSucursal,	direccionSucursal,	Rol)
+values (123455,	'Vale',	'vale',	1234,	'Bogota',	'Calle 140',	'gs');
+
 --Usuarios OK
 
 insert into clientes (numDocumento,	tipoDocumento,	nombre,	correoElectronico,	clave)
