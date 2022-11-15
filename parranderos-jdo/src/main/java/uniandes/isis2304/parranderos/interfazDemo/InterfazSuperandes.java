@@ -522,6 +522,50 @@ public class InterfazSuperandes extends JFrame implements ActionListener
 		}
     }
     
+    public void registrarLlegadaPedido( )
+    {
+    	try 
+    	{
+    		long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido operador, por favor digite su numero de documento", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String clave = JOptionPane.showInputDialog (this, "Por favor digite su clave", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		if (documento != 0 && clave != "")
+    		{
+    			List<Usuarios> lista = parranderos.obtenerUsuario(documento, clave);
+        		if (lista.size() == 0)
+        		{    		
+        			throw new Exception ("No se pudo acceder a este perfil");
+        		}
+        		
+        		Usuarios operador = lista.get(0);
+        		this.ciudadSucursal = operador.getCiudadSucursal();
+        		this.direccionSucursal = operador.getDireccionSucursal();
+      
+        		Long pedidoConsolidado = Long.parseLong(JOptionPane.showInputDialog (this, "Ingrese el número de pedido consolidado cuya llegada desea registrar", "Ok", JOptionPane.QUESTION_MESSAGE));
+    			
+        		long tb = parranderos.registrarLlegadaPedidoConsolidado(ciudadSucursal, direccionSucursal, pedidoConsolidado);
+        		if (tb == 0)
+        		{    		
+        			throw new Exception ("No se pudo registrar el pedido consolidado");
+        		}
+        		String resultado = "En registrarLlegadaPedido\n\n";
+        		resultado += "Pedido adicionado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
     public void registrarCliente( )
     {
     	try 

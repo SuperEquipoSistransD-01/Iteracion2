@@ -351,6 +351,14 @@ public class SuperAndes
 		return resp;
 	}
 
+	public long registrarLlegadaPedidoConsolidado(String ciudadSucursal, String direccionSucursal,
+			Long pedidoConsolidado) {
+		log.info ("Registro Pediodo [" + pedidoConsolidado + "]");
+        long resp = pp.registrarLlegadaPedidoConsolidado(ciudadSucursal, direccionSucursal, pedidoConsolidado);
+        log.info ("Devolviendo producto: " + resp + " tuplas insertadas");
+		return resp;
+	}
+
 
 
 

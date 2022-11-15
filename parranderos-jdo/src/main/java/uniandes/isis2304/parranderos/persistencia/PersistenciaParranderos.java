@@ -746,6 +746,38 @@ public class PersistenciaParranderos
         }
 	}
 	
+	public long registrarLlegadaPedidoConsolidado(String ciudadSucursal, String direccionSucursal, long pedidoConsolidado)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin(); 
+     
+            long tuplasModificadas = sqlProducto.registrarLlegadaProductoConsolidado(pm, ciudadSucursal, direccionSucursal, pedidoConsolidado);
+            System.out.println(tuplasModificadas);
+            tx.commit();
+            
+            log.trace ("Pedidos: " + tuplasModificadas + " tuplas modificadas");
+            return tuplasModificadas;
+        }
+        catch (Exception e)
+        {
+        
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return 0;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
 	public Clientes registrarCliente(long numDocumento, String tipoDocumento, String nombre, String correoElectronico, String clave) {
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1099,11 +1131,7 @@ public class PersistenciaParranderos
         		acuerdoCompra = obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal);
         		nivelReorden = acuerdoCompra.getNivelReorden();
         		espacioDisponible = obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
-    			
-        		
-        		System.out.println(nivelReorden);
-        		System.out.println(numEnSucursal);
-        		
+
         		if (numEnSucursal <= nivelReorden && espacioDisponible > 0)
         		{
         			if (!pedidosPorProveedor.containsKey(acuerdoCompra.getProveedor()))

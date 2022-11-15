@@ -111,6 +111,15 @@
 					}
 				]
 		},
+			{ "menuTitle": "Pedidos",
+			  "options":
+				[
+					{
+						"label": "Registrar Llegada de un Pedido",
+						"event": "registrarLlegadaPedido" 
+					}
+				]
+		},
 			{ "menuTitle": "Clientes",
 			  "options":
 				[
