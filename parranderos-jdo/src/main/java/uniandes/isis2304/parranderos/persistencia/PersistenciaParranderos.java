@@ -546,6 +546,35 @@ public class PersistenciaParranderos
             pm.close();
         }
 	}
+	
+	public void terminarCompraCarrito(long clientecc, String nombreSucursal, String direccionSucursal) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            
+            long tuplasEliminadas = sqlEstaEnCarrito.terminarCompra(pm, clientecc, nombreSucursal, direccionSucursal) + sqlCarrito.terminarCompra(pm, clientecc, nombreSucursal, direccionSucursal);
+            
+            tx.commit();
+            System.out.println("Despues de commit");
+            log.trace ("carrito: " + tuplasEliminadas + " tuplas eliminadas");
+        }
+        catch (Exception e)
+        {
+        	System.out.println("LAcosdn");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	public Estante adicionarEstante(String nombreSucursal, String direccionSucursal,
 			String tipoProducto, long capacidad) {
@@ -706,6 +735,38 @@ public class PersistenciaParranderos
         	System.out.println("Excepcion");
 //        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	public long registrarLlegadaPedidoConsolidado(String ciudadSucursal, String direccionSucursal, long pedidoConsolidado)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin(); 
+     
+            long tuplasModificadas = sqlProducto.registrarLlegadaProductoConsolidado(pm, ciudadSucursal, direccionSucursal, pedidoConsolidado);
+            System.out.println(tuplasModificadas);
+            tx.commit();
+            
+            log.trace ("Pedidos: " + tuplasModificadas + " tuplas modificadas");
+            return tuplasModificadas;
+        }
+        catch (Exception e)
+        {
+        
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return 0;
         }
         finally
         {
@@ -1070,11 +1131,7 @@ public class PersistenciaParranderos
         		acuerdoCompra = obtenerAcuerdoCompra(producto.getCodigo(), ciudadSucursal, direccionSucursal);
         		nivelReorden = acuerdoCompra.getNivelReorden();
         		espacioDisponible = obtenerDisponibilidadProductoEnSucursal(producto.getCodigo(), ciudadSucursal, direccionSucursal);
-    			
-        		
-        		System.out.println(nivelReorden);
-        		System.out.println(numEnSucursal);
-        		
+
         		if (numEnSucursal <= nivelReorden && espacioDisponible > 0)
         		{
         			if (!pedidosPorProveedor.containsKey(acuerdoCompra.getProveedor()))
@@ -1108,7 +1165,10 @@ public class PersistenciaParranderos
         		proveedor = pedidos.next();
         		adicionarPedidoConsolidado(pedidosPorProveedor.get(proveedor), proveedor, ciudadSucursal, direccionSucursal);
         	}
-            System.out.println("a dormir");
+        	
+        	//Borra elementos de EstaEnCarrito y al carrito
+        	terminarCompraCarrito(clienteCC, ciudadSucursal, direccionSucursal);    
+        	
             tx.commit();
             
             return textoFactura;
