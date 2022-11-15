@@ -83,7 +83,7 @@ CREATE TABLE Pedidos
     volumenProducto numeric(20,2),
     diasParaEntrega numeric(3),
     llego numeric(1),
-    pedidoConsolidado numeric(20,2) UNIQUE,
+    pedidoConsolidado numeric(20,2),
     
     PRIMARY KEY (codigo),
     FOREIGN KEY (ciudadSucursal, direccionSucursal, proveedor, producto) REFERENCES AcuerdosCompra,

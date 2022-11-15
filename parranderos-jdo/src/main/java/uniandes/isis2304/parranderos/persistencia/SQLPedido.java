@@ -8,6 +8,8 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.ConsultaDemanda;
 import uniandes.isis2304.parranderos.negocio.ConsultaFrecuentes;
+import uniandes.isis2304.parranderos.negocio.Pedidos;
+import uniandes.isis2304.parranderos.negocio.numProductosPedidos;
 
 class SQLPedido {
 	private final static String SQL = PersistenciaParranderos.SQL;
@@ -77,6 +79,14 @@ class SQLPedido {
 		q.setResultClass(ConsultaDemanda.class);
 		System.out.println("En SQL2");
 		return (List<ConsultaDemanda>) q.executeList();
+	}
+
+	public List<numProductosPedidos> obtenerPedidosDePedidoConsolidado(PersistenceManager pm, long pedidoConsolidado) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT producto, volumenProducto FROM Pedidos WHERE pedidoConsolidado = ?");
+		q.setResultClass(numProductosPedidos.class);
+		q.setParameters(pedidoConsolidado);
+		return (List<numProductosPedidos>) q.executeList();
 	}
 	
 	

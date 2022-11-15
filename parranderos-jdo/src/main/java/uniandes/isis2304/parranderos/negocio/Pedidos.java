@@ -23,7 +23,7 @@ public class Pedidos implements VOPedidos{
     	this.setDiasDesdePedido(0);
     	this.setDiasParaEntrega(0);
     	this.setDireccionSucursal("");
-    	this.setFechaPedido(fechaPedido);
+    	this.setFechaPedido(null);
     	this.setProducto(0);
     	this.setProveedor(0);
     	this.setVolumenProducto(0);
@@ -40,6 +40,7 @@ public class Pedidos implements VOPedidos{
     long diasDesdePedido,
     long volumenProducto,
     long diasParaEntrega,
+    long llego,
     long pedidoConsolidado) {
     	this.setCiudadSucursal(ciudadSucursal);
     	this.setCodigo(codigo);
@@ -51,7 +52,7 @@ public class Pedidos implements VOPedidos{
     	this.setProveedor(proveedor);
     	this.setVolumenProducto(volumenProducto);
     	this.setPedidoConsolidado(pedidoConsolidado);
-    	this.setLlego(0);
+    	this.setLlego(llego);
     }
     
 	public long getCodigo() {

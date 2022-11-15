@@ -47,6 +47,7 @@ import uniandes.isis2304.parranderos.negocio.Clientes;
 import uniandes.isis2304.parranderos.negocio.EnDisplay;
 import uniandes.isis2304.parranderos.negocio.EstaEnCarrito;
 import uniandes.isis2304.parranderos.negocio.Estante;
+import uniandes.isis2304.parranderos.negocio.Pedidos;
 import uniandes.isis2304.parranderos.negocio.Productos;
 import uniandes.isis2304.parranderos.negocio.Promociones;
 import uniandes.isis2304.parranderos.negocio.Proveedores;
@@ -54,6 +55,7 @@ import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.Usuarios;
 import uniandes.isis2304.parranderos.negocio.VOConsultaFrecuentes;
 import uniandes.isis2304.parranderos.negocio.VOEstaEnCarrito;
+import uniandes.isis2304.parranderos.negocio.numProductosPedidos;
 import uniandes.isis2304.parranderos.negocio.AcuerdoCompra;
 import uniandes.isis2304.parranderos.negocio.ClienteSucursal;
 import uniandes.isis2304.parranderos.negocio.Compras;
@@ -755,10 +757,16 @@ public class PersistenciaParranderos
             tx.begin(); 
      
             long tuplasModificadas = sqlProducto.registrarLlegadaProductoConsolidado(pm, ciudadSucursal, direccionSucursal, pedidoConsolidado);
-            System.out.println(tuplasModificadas);
+            
+            if (tuplasModificadas > 0)
+            {
+            	adicionarProductosPedidoAStock(pedidoConsolidado, ciudadSucursal, direccionSucursal);
+            }
+            
             tx.commit();
             
             log.trace ("Pedidos: " + tuplasModificadas + " tuplas modificadas");
+            
             return tuplasModificadas;
         }
         catch (Exception e)
@@ -919,12 +927,16 @@ public class PersistenciaParranderos
 	
 	public long volver0EspacioDisponible(long producto, String ciudadSucursal, String direccionSucursal) 
 	{
-		long tuplasModificadas = 0;
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+		long tuplasModificadas = 0;		
+		
+		tx.begin();
 		
 		try
 		{
 			long estante = obtenerEstante(ciudadSucursal, direccionSucursal, producto).getCodigo();
-			tuplasModificadas = tuplasModificadas + sqlEnDisplay.volver0EspacioDisponible(pmf.getPersistenceManager(), estante, producto);
+			tuplasModificadas = tuplasModificadas + sqlEnDisplay.volver0EspacioDisponible(pm, estante, producto);
 		}
 		catch  (Exception e)
 		{
@@ -933,13 +945,70 @@ public class PersistenciaParranderos
 		try
 		{
 			long bodega = obtenerBodega(ciudadSucursal, direccionSucursal, producto).getCodigo();
-			tuplasModificadas = tuplasModificadas + sqlStockDisponible.volver0EspacioDisponible(pmf.getPersistenceManager(), bodega, producto);
+			tuplasModificadas = tuplasModificadas + sqlStockDisponible.volver0EspacioDisponible(pm, bodega, producto);
 		}
 		catch  (Exception e)
 		{
 			System.out.println("no tiene bodega");
 		}
+		
+		tx.commit();
+		
 		return tuplasModificadas;
+	}
+	
+	public void adicionarProductosPedidoAStock(long pedidoConsolidado, String ciudadSucursal, String direccionSucursal)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            
+            List<numProductosPedidos> pedidos = sqlPedido.obtenerPedidosDePedidoConsolidado(pm, pedidoConsolidado);
+            
+            long tuplasModificadas = 0;
+            
+            long producto = 0;
+            long cantidad = 0;
+            for(int i = 0; i < pedidos.size(); i++)
+            {
+            	producto = pedidos.get(i).getProducto();
+            	cantidad = pedidos.get(i).getVolumenProducto();
+            	
+            	try
+            	{
+            		long bodega = obtenerBodega(ciudadSucursal, direccionSucursal, producto).getCodigo();
+            		
+            		tuplasModificadas = tuplasModificadas + sqlStockDisponible.sumarCantProductoABodega(pm, bodega, producto, cantidad);
+            	}
+            	
+            	catch(Exception e)
+            	{
+            		long estante = obtenerEstante(ciudadSucursal, direccionSucursal, producto).getCodigo();
+            		
+            		tuplasModificadas = tuplasModificadas + sqlEnDisplay.sumarCantProductoAEstante(pm, estante, producto, cantidad);  		
+            	}
+            }
+            
+            tx.commit();
+            
+            log.trace (tuplasModificadas + " tuplas modificadas");
+        }
+        catch (Exception e)
+        {
+        	System.out.println("falla");
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
 	}
 	
 	public List<ConsultaFrecuentes> darFrecuentesSucursal(long documento, long clave) {

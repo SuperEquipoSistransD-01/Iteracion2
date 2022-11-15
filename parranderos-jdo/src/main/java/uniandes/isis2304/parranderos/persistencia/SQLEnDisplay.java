@@ -114,6 +114,13 @@ class SQLEnDisplay
 		q.setParameters(producto, estante);
         return (long) q.executeUnique();
 	}
+
+	public long sumarCantProductoAEstante(PersistenceManager pm, long estante, long producto, long cantidad) {
+		Query q = pm.newQuery(SQL, "UPDATE EnDisplay SET cantidad = cantidad + ?  WHERE producto = ? and estante = ?");
+		q.setParameters(cantidad, producto, estante);
+        return (long) q.executeUnique();
+		
+	}
 	
 	
 	

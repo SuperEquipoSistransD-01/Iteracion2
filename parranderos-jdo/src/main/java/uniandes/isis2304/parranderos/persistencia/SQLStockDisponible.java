@@ -56,5 +56,12 @@ class SQLStockDisponible {
         return (long) q.executeUnique();
 	}
 	
+	public long sumarCantProductoABodega(PersistenceManager pm, long bodega, long producto, long cantidad) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE StockDisponible SET cantidad = cantidad + ?  WHERE producto = ? and bodega = ?");
+		q.setParameters(cantidad, producto, bodega);
+        return (long) q.executeUnique();
+	}
+	
 
 }
