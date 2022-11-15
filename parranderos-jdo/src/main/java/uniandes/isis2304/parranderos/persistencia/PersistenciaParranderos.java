@@ -756,7 +756,7 @@ public class PersistenciaParranderos
         {
             tx.begin(); 
      
-            long tuplasModificadas = sqlProducto.registrarLlegadaProductoConsolidado(pm, ciudadSucursal, direccionSucursal, pedidoConsolidado);
+            long tuplasModificadas = sqlPedido.registrarLlegadaPedidoConsolidado(pm, ciudadSucursal, direccionSucursal, pedidoConsolidado);
             
             if (tuplasModificadas > 0)
             {

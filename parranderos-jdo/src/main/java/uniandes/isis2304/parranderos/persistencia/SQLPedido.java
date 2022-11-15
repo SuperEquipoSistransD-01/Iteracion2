@@ -89,6 +89,12 @@ class SQLPedido {
 		return (List<numProductosPedidos>) q.executeList();
 	}
 	
+	public long registrarLlegadaPedidoConsolidado(PersistenceManager pm, String ciudadSucursal, String direccionSucursal, long pedidoConsolidado) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE Pedidos SET llego = 1 WHERE ciudadSucursal = ? AND direccionSucursal = ? AND pedidoConsolidado = ? AND llego = 0");
+        q.setParameters(ciudadSucursal, direccionSucursal, pedidoConsolidado);
+        return (long) q.executeUnique();
+	}
 	
 
 }
