@@ -1047,6 +1047,65 @@ public class InterfazSuperandes extends JFrame implements ActionListener
         return resp;
 	}
     
+    public void consultarUsuariosCompraronProductoFechas( )
+    {
+    	try 
+    	{
+			long documento  = Long.parseLong(JOptionPane.showInputDialog (this, "Querido gerente de sucursal o gerente general, por favor digite su numero de identidad. ", "Ok", JOptionPane.QUESTION_MESSAGE));
+    		String clave = JOptionPane.showInputDialog (this, "Querido gerente de sucursal, por favor digite su clave. ", "Ok", JOptionPane.QUESTION_MESSAGE);
+    		if (documento != 0 && clave != "")
+    		{
+    			Usuarios tb = parranderos.obtenerUsuario(documento, clave).get(0);
+    			rol = tb.getRol();
+    			System.out.println(rol);
+    			
+        		if ("gg".equals(rol))
+        		{
+        			long producto  = Long.parseLong(JOptionPane.showInputDialog (this, "Ingrese el código del producto que desea consultar ", "Ok", JOptionPane.QUESTION_MESSAGE));
+        			
+            		String fecha1= JOptionPane.showInputDialog (this, "Ingrese la primera fecha del intervalo que desea consultar (dd/mm/YY) ", "Ok", JOptionPane.QUESTION_MESSAGE);
+            		String fecha2= JOptionPane.showInputDialog (this, "Ingrese la segunda fecha del intervalo que desea consultar (dd/mm/YY) ", "Ok", JOptionPane.QUESTION_MESSAGE);
+        			
+        			List <VOConsultaDemanda> lista = parranderos.darDemanda();
+        			System.out.println(lista.size());
+        			
+            		if (lista.size() == 0)
+            		{    		
+            			throw new Exception ("Ningún cliente a comprado el producto consultado en el rango de fechas estipulado");
+            		}
+            		
+            		String resultado = "En consultarProductos de baja demanda";
+        			resultado +=  "\n" + listarProductosBajaDemanda(lista);
+        			resultado += "\n ";
+        			resultado += "\n Operación terminada";
+        			panelDatos.actualizarInterfaz(resultado);
+        		}
+        		
+        		else if ("gs".equals(rol))
+        		{
+        			
+        		}
+        		
+        		else
+        		{    		
+        			throw new Exception ("No se pudo iniciar sesion");
+        		}  
+        		
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+	} 
+    	catch (Exception e) 
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    }
+    
     public void pagarCompra( )
     {
     	try 

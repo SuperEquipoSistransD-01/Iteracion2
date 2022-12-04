@@ -152,6 +152,22 @@
 					{
 						"label": "Consultar Productos de Baja Demanda",
 						"event": "consultarDemanda" 
+					},
+					{
+						"label": "Consultar Usuarios que Compraron un determinado Producto en un rango de Fechas",
+						"event": "consultarUsuariosCompraronProductoFechas" 
+					},
+					{
+						"label": "Consultar Usuarios que NO Compraron un determinado Producto en un rango de Fechas",
+						"event": "consultarUsuariosNoCompraronProductoFechas" 
+					},
+					{
+						"label": "Consultar Productos más y menos Vendidos y Proveedores más y menos Solicitados por Semana",
+						"event": "consultarProductosProveedoresPorSemana" 
+					},
+					{
+						"label": "Consultar los Buenos Clientes",
+						"event": "consultarBuenosClientes" 
 					}
 				]
 		},		
